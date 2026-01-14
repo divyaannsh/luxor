@@ -1,0 +1,23 @@
+.productImgSlider {
+  border: 1px solid #c2c2c2;
+  background: #f4f4f4;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 10px;
+}
+
+.popularFont {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.slickSlider {
+  border: 2px solid; /* Set your desired border color */
+  padding: 10px; /* Adjust padding as needed */
+  box-sizing: border-box;
+}

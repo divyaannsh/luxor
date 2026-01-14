@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nextapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/www/next-luxemburg:/var/www/next-luxemburg
+    ports:
+      - 8001:3000

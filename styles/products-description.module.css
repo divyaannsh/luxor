@@ -1,0 +1,87 @@
+.product_des_container {
+  padding: 6rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  box-sizing: border-box;
+}
+
+/* for nth + 1(odd number description box) */
+.odd {
+  display: flex;
+  gap: 2rem;
+}
+
+.descriptionBody {
+  background-color: #ebecec;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+
+.descriptionBody h6 {
+  line-height: 2;
+  font-size: 1.14rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.btn {
+  padding-left: 6rem;
+  padding-top: 3rem;
+}
+
+.btn button {
+  background-color: #c62a2b;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.2em 1em;
+}
+
+.imageBody {
+  flex: 2;
+}
+
+/* for nth + 2(odd number description box) */
+.even {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row-reverse;
+}
+
+.even .descriptionBody {
+  background-color: #ebecec;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+
+.even .descriptionBody h6 {
+  line-height: 2;
+  font-size: 1.14rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.even .btn {
+  padding-left: 6rem;
+  padding-top: 3rem;
+}
+
+.even .btn button {
+  background-color: #c62a2b;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.2em 1em;
+}
+
+.even .imageBody {
+  flex: 2;
+  text-align: end;
+}

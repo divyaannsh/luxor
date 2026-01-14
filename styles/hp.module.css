@@ -1,0 +1,315 @@
+/* .navbar {
+     margin-top: 10%;
+     position: fixed;
+     background-color: #fff;
+} */
+
+.navbar2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 450;
+  padding-top: 2%;
+  padding-bottom: 0;
+}
+
+/* .navbar2 a {
+     font-size: 2vw;
+     color: black;
+} */
+
+.productItem img {
+  width: 100vw;
+  margin-top: -60px;
+}
+
+/* .navbar a {
+     padding: 0;
+} */
+
+.header {
+  padding: 1.5% 4%;
+}
+
+.aboutus {
+  font-size: 2vw;
+}
+
+/* .navbar a {
+     font-size: 2vw;
+} */
+
+.image_cont {
+  position: relative;
+}
+
+.img_abs {
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  color: aliceblue;
+  z-index: 1;
+  top: 40%;
+  left: 5%;
+}
+
+.toxic-img {
+  height: 100%;
+  width: 100%;
+  /* background-color: #348ea7; */
+  /* border-radius: 50%;
+     padding: 5%; */
+  border: none;
+}
+
+.round-img-cont {
+  height: 100%;
+  width: 100;
+}
+
+.dyn-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.dyn-img {
+  /* height: 100%; */
+  width: 60vw;
+}
+
+.dyn-para {
+  width: 60vw;
+}
+
+.dyn-para p {
+  font-size: 2vw;
+}
+
+.broadline-cont {
+  gap: 1%;
+}
+
+.broadline-card {
+  height: 100%;
+  width: 100%;
+}
+
+.pen-container {
+  width: 25vw;
+}
+
+.marker-container {
+  width: 75vw;
+}
+
+/* --------------------------------------------------------heading--------------- */
+
+.award-heading h2 {
+  font-size: 3.7vw;
+}
+
+.certi-heading h2 {
+  font-size: 3.7vw;
+}
+
+.footer-heading1 h2 {
+  font-size: 3.7vw;
+}
+
+.luxor-heading h2 {
+  font-size: 3.7vw;
+}
+
+.org-heading h2 {
+  font-size: 3.7vw;
+}
+
+.heading h2 {
+  font-size: 3.7vw;
+}
+
+.heading1 h2 {
+  font-size: 3.7vw;
+}
+
+.fs-10 {
+  font-size: 10px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-26 {
+  font-size: 26px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-40 {
+  font-size: 30px;
+}
+.fs-50 {
+  font-size: 50px;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.text_justify {
+  text-align: justify;
+}
+
+.fs-50 {
+  font-size: 50px;
+}
+
+.text_grey {
+  color: #626161;
+}
+
+#eco-write {
+  margin-right: 1rem;
+}
+
+.text_darkgrey {
+  color: #2b2a29;
+}
+
+.text_red {
+  color: #d90427;
+}
+
+.lh_1 {
+  line-height: 1.4;
+}
+
+.text_black {
+  color: black;
+}
+
+.input_field {
+  height: 44px;
+}
+
+.ahover:hover{
+  color: #fa1616;
+}
+
+.text_width {
+  width: 28%;
+}
+.bg_red {
+  background-color: #ed1b24;
+}
+
+/* -----------------------------------media query--------------------------*/
+
+@media (max-width: 768px) {
+  .header {
+    height: 17vw;
+  }
+
+  .main-broad-container {
+    flex-direction: column;
+  }
+
+  .pen-container {
+    transform: rotate(90deg);
+    height: 100px;
+    width: 100px;
+  }
+
+  .pen-container img {
+    height: 300px;
+    width: 300px;
+    scale: 1;
+    /* margin-left: 30%; */
+    margin-top: -600px;
+  }
+
+  /* .pen-container img {
+          transform: rotate(320deg);
+          scale: 1;
+          height: 235px;
+          width: 234px;
+     } */
+
+  .marker-container {
+    width: 100vw;
+    padding: 0 2% 0 2%;
+  }
+
+  ------------------------------heading----------------- .award-heading h2 {
+    font-size: 5.7vw;
+  }
+
+  .certi-heading h2 {
+    font-size: 5.3vw;
+  }
+
+  .footer-heading1 h2 {
+    font-size: 5.3vw;
+  }
+
+  .luxor-heading h2 {
+    font-size: 5.3vw;
+  }
+
+  .org-heading h2 {
+    font-size: 5.3vw;
+  }
+
+  .heading h2 {
+    font-size: 5.3vw;
+  }
+
+  .heading1 h2 {
+    font-size: 5.3vw;
+  }
+
+  .home1-img img {
+    width: auto;
+    height: 100%;
+  }
+
+  /* .home1-img {
+          margin-bottom: 20%;
+     } */
+}
+
+@media (min-width: 1299px) and (max-width: 1499px) {
+  .footer_bg {
+    background-size: 100% 100%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .footer_bg {
+    background-size: 100% 100%;
+  }
+}

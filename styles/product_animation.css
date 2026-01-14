@@ -1,0 +1,16 @@
+.prd-1  , .prd-2  ,  .prd-3{
+    position: relative;
+    z-index:10;
+    
+
+}
+
+.prd_img_hover1 ,  .prd_img_hover2 , .prd_img_hover3 {
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+     display: none;
+     justify-content: center;
+     margin: auto;
+}
+

@@ -1,0 +1,125 @@
+.body {
+  min-width: 100vw;
+  height: 72vh;
+  display: flex;
+  /* background-image: url("../../public/assets/images//lookbook.png");  */
+  /* display: grid; */
+  place-items: center;
+}
+.imgcontainer {
+  /* height: 350px; */
+  margin: auto;
+  /* margin-top: 2rem; */
+  margin-top: 0rem;
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  /* display: grid; */
+  place-items: center;
+  margin-bottom: 0;
+}
+
+.slideContainer {
+  padding: 18px;
+  margin: auto;
+  display: flex;
+  /* position: /relative; */
+  /* z-index: -11; */
+  /* width: calc(250px*9); */
+
+  animation: scroll 140s linear 1s infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(calc(-100%));
+  }
+  20% {
+    transform: translateX(calc(-200%));
+  }
+  30% {
+    transform: translateX(calc(-300%));
+  }
+  40% {
+    transform: translateX(calc(-400%));
+  }
+  50% {
+    transform: translateX(calc(-500%));
+  }
+  60% {
+    transform: translateX(calc(-400%));
+  }
+  70% {
+    transform: translateX(calc(-300%));
+  }
+  80% {
+    transform: translateX(calc(-200%));
+  }
+  90% {
+    transform: translateX(calc(-100%));
+  }
+  100% {
+    transform: translateX(calc(0%));
+  }
+}
+
+@keyframes marquee {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+.slideImage {
+  /* height: 300px; */
+  /* width: 300px; */
+  display: flex;
+  /* align-items: center;  */
+  padding: 1%;
+  padding-top: 0%;
+  /* background-image: url("../../public/assets/images//lookbook.png");  */
+
+  /* z-index: 11; */
+  /* perspective: 100px; */
+}
+
+.img:hover {
+  cursor: pointer;
+  position: relative;
+  /* transition: opacity 2s ease-in-out; */
+  transform: scale(1.1);
+  -webkit-box-shadow: 9px -9px 175px 5px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 9px -9px 175px 5px rgba(0, 0, 0, 0.49);
+  box-shadow: 9px -9px 175px 5px rgba(0, 0, 0, 0.49);
+}
+.htext {
+  text-align: center;
+  margin-left: 1%;
+  writing-mode: vertical-rl;
+  font-size: 100px;
+  animation: fade 5s linear;
+  transform: rotate(180deg);
+}
+
+@keyframes fade {
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  .body {
+    height: 49vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 799px) {
+  .body {
+    height: 57vh;
+  }
+}
+@media screen and (max-width: 479px) {
+  .body {
+    height: 70vh;
+  }
+}

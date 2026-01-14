@@ -1,0 +1,118 @@
+
+
+
+
+
+
+/* journey */
+
+#jr_img1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 335px;
+    left: 357px;
+    /* border:1px solid red */
+  }
+  
+  #jr_circle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    top: 150px;
+    opacity: 0;
+  }
+  
+  #jr_img2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 465px;
+    left: 793px;
+    /* border:1px solid red */
+  
+  }
+  
+  #jr_circle2 {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    top: 150px;
+    right: 40px;
+    opacity: 1;
+  }
+  
+  #jr_img3 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 261px;
+    left: 938px;
+    /* border: 1px solid red; */
+  }
+  
+  #jr_circle3 {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    top: 200px;
+    right: 30px;
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  #jr_img4 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 144px;
+    left: 1146px;
+    /* border: 1px solid red; */
+  }
+   
+  #jr_circle4 {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    top: 150px;
+    right: 20px;
+    opacity: 1;
+  }
+  
+  
+  
+  #jr_img5 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 196px;
+    left: 1397px;
+    /* border: 1px solid red; */
+  
+  }
+   
+  #jr_circle5 {
+     
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    top: 150px;
+    right: 35px;
+    opacity: 1;
+  }
+  
+  
+  

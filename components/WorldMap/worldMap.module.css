@@ -1,0 +1,20 @@
+.imageStyle {
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+  margin-bottom: 7rem;
+  margin-top: 6rem;
+}
+
+@media screen and (max-width: 500px) {
+  .imageStyle {
+    height: 50vh;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .imageStyle {
+    margin-top: 0;
+  }
+}

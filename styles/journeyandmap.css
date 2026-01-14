@@ -1,0 +1,964 @@
+
+
+
+
+
+
+
+
+.l1 {
+    left: 21%;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    width: 16.5%;
+    height: 40%;
+    opacity: 0;
+    transition: 0.8s;
+  }
+  
+  .l1:hover {
+    opacity: 1;
+    margin-top: -20px;
+    width: 21%;
+    top: 26.5%;
+    left: 19.5%;
+    height: 32%;
+    /* border: 2px solid red;   
+    border-radius: 50%; */
+  }
+  
+  .l2 {
+    position: absolute;
+    top: 42%;
+    z-index: 1;
+    left: 50%;
+    width: 16.5%;
+    height: 30%;
+    opacity: 0;
+    transition: 0.8s;
+  }
+  
+  .l2:hover {
+    opacity: 1;
+    margin-top: -30px;
+    width: 21%;
+    top: 42%;
+    left: 47.5%;
+    height: 31.5%;
+  }
+  
+  .l3 {
+    position: absolute;
+    top: 24%;
+    z-index: 1;
+    left: 60.7%;
+    width: 8.5%;
+    height: 16%;
+    opacity: 0;
+    transition: 0.8s;
+  }
+  
+  .l3:hover {
+    opacity: 1;
+    margin-top: -29px;
+    width: 18%;
+    top: 15.5%;
+    left: 55.9%;
+    height: 25%;
+  }
+  
+  .l4 {
+    position: absolute;
+    right: 1%;
+    top: 17%;
+    z-index: 1;
+    width: 9%;
+    height: 17%;
+    opacity: 0;
+    transition: 0.8s;
+  }
+  
+  .l4:hover {
+    opacity: 1;
+    margin-top: -29px;
+    width: 14%;
+    top: 16%;
+    right: -2%;
+    height: 19%;
+  }
+  
+  .l5 {
+    position: absolute;
+    width: 6%;
+    z-index: 1;
+    height: 12%;
+    top: 11%;
+    opacity: 0;
+    right: 21%;
+    transition: 0.8s;
+  
+  }
+  
+  .l5:hover {
+    opacity: 1;
+    margin-top: -29px;
+    width: 14%;
+    top: 5%;
+    right: 17%;
+    height: 19%;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+  .f1>div {
+    display: none;
+    /* border:2px solid red; */
+  }
+  .f1 {
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 47%;
+    text-align: center;
+    top: 34%;
+    left: 13%;
+    opacity: 0;
+    line-height: 0px;
+    
+    /* border:2px solid red; */
+  
+  }
+  .f1:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 26%;
+    left: 10%;
+    /* border:2px solid red; */
+  }
+  .f1:hover>div{
+    display: block;
+  }
+  
+  
+  
+  .f2>div {
+    display: none;
+    /* border:2px solid red; */
+  }
+
+  
+  .f2 {
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 42%;
+    text-align: center;
+    left: 17.7%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f2:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 34%;
+    left: 15%;
+  }
+  .f2:hover>div{
+    display: block;
+  }
+  
+  .f3>div {
+    display: none;
+  }
+  .f3 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 27%;
+    text-align: center;
+    left: 16.3%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f3:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 19%;
+    left: 14%;
+  }
+  .f3:hover>div{
+    display: block;
+  }
+  
+  .f4>div {
+    display: none;
+  }
+  .f4 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 62%;
+    text-align: center;
+    left: 32%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f4:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 54%;
+    left: 29%;
+  }
+  .f4:hover>div{
+    display: block;
+  }
+  
+  
+  
+  
+  .f5>div {
+    display: none;
+  }
+  .f5 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 78%;
+    text-align: center;
+    left: 31%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f5:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 69%;
+    left: 28%;
+  }
+  .f5:hover>div{
+    display: block;
+  }
+  
+  
+  .f6>div {
+    display: none;
+  }
+  .f6 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 53%;
+    text-align: center;
+    left: 47.3%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f6:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 45%;
+    left: 45%;
+  }
+  .f6:hover>div{
+    display: block;
+  }
+  
+  .f7>div {
+    display: none;
+  }
+  .f7 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 57%;
+    text-align: center;
+    left: 51.3%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f7:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 49%;
+    left: 49%;
+  }
+  .f7:hover>div{
+    display: block;
+  }
+  
+  .f8>div {
+    display: none;
+  }
+  .f8 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 59%;
+    text-align: center;
+    left: 57.3%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f8:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 51%;
+    left: 55%;
+  }
+  
+  .f8:hover>div{
+    display: block;
+  }
+  
+  .f9>div {
+    display: none;
+  }
+  .f9 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 66%;
+    text-align: center;
+    left: 53%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f9:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 58%;
+    left: 50%;
+  }
+  .f9:hover>div{
+    display: block;
+  }
+  
+  .f10>div {
+    display: none;
+  }
+  .f10 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 76%;
+    text-align: center;
+    left: 53%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f10:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 68%;
+    left: 50%;
+  }
+  .f10:hover>div{
+    display: block;
+  }
+  
+
+  .f11>div {
+    display: none;
+  }
+
+  .f11{
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 18%;
+    text-align: center;
+    left: 49.5%;
+    opacity: 0;
+    line-height: 0px;
+  }
+   
+
+  .f11:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 13%;
+    left: 47%;
+  }
+  .f11:hover>div{
+    display: block;
+  }
+  
+  .f12>div {
+    display: none;
+  }
+   
+  .f12 { 
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 33%;
+    text-align: center;
+    left: 47.5%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f12:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 29%;
+    left: 45%;
+  }
+   
+   
+  .f12:hover>div{
+    display: block;
+  }
+  
+  
+  
+  .f13>div {
+    display: none;
+  }
+   
+  .f13 {
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 27%;
+    text-align: center;
+    left: 56%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f13:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 21%;
+    left: 54%;
+  }
+
+  .f13:hover>div{
+    display: block;
+  }
+
+  .f14>div {
+    display: none;
+  }
+   
+  .f14 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 15%;
+    text-align: center;
+    left: 58.5%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f14:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 9%;
+    left: 56%;
+  }
+  .f14:hover>div{
+    display: block;
+  }
+  .f15>div {
+    display: none;
+  }
+  .f15 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 11%;
+    text-align: center;
+    left: 65.5%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f15:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 6%;
+    left: 63%;
+  }
+  .f15:hover>div{
+    display: block;
+  }
+  .f16>div {
+    display: none;
+  }
+  
+  .f16 {
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 14%;
+    text-align: center;
+    left: 74%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f16:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 5%;
+    left: 72%;
+  }
+  .f16:hover>div{
+    display: block;
+  }
+  .f17>div {
+    display: none;
+  }
+  .f17 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 12%;
+    text-align: center;
+    left: 82%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f17:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 4%;
+    left: 80.5%;
+  }
+  .f17:hover>div{
+    display: block;
+  }
+  .f18>div {
+    display: none;
+  }
+  .f18 {
+  
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 29%;
+    text-align: center;
+    left: 73%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f18:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 20%;
+    left: 71%;
+  }
+  .f18:hover>div{
+    display: block;
+  }
+  .f19>div {
+    display: none;
+  }
+  .f19 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 32%;
+    text-align: center;
+    left: 81%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f19:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top:22%;
+    left: 79%;
+  }
+  .f19:hover>div{
+    display: block;
+  }
+  .f20>div {
+    display: none;
+  }
+  .f20 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 44%;
+    text-align: center;
+    left: 78.5%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f20:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 35%;
+    left: 76%;
+  }
+  .f20:hover>div{
+    display: block;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .f21>div {
+    display: none;
+  }
+  .f21 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 45%;
+    text-align: center;
+    left: 73%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f21:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 38%;
+    left: 71%;
+  }
+  .f21:hover>div{
+    display: block;
+  }
+  .f22>div {
+    display: none;
+  }
+  .f22 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 46%;
+    text-align: center;
+    left: 66.8%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f22:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 39%;
+    left: 64%;
+  }
+  .f22:hover>div{
+    display: block;
+  }
+  .f23>div {
+    display: none;
+  }
+  .f23 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 43%;
+    text-align: center;
+    left: 62%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f23:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 36%;
+    left: 59%;
+  }
+  .f23:hover>div{
+    display: block;
+  }
+  .f24>div {
+    display: none;
+  }
+  .f24 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 45%;
+    text-align: center;
+    left: 58.5%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f24:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 35%;
+    left: 56%;
+  }
+  .f24:hover>div{
+    display: block;
+  }
+  .f25>div {
+    display: none;
+  }
+  .f25 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 77%;
+    text-align: center;
+    left: 78%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f25:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 69%;
+    left: 76%;
+  }
+  .f25:hover>div{
+    display: block;
+  }
+  .f26>div {
+    display: none;
+  }
+  .f26 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 73%;
+    text-align: center;
+    left: 83.5%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f26:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 65%;
+    left: 81%;
+  }
+  .f26:hover>div{
+    display: block;
+  }
+  .f27>div {
+    display: none;
+  }
+  .f27 {
+    
+    position: absolute;
+    width: 3%;
+    cursor: pointer;
+    height: 5%;
+    top: 81%;
+    text-align: center;
+    left: 86.8%;
+    opacity: 0;
+    line-height: 0px;
+  
+  }
+  .f27:hover {
+    display: block;
+    /* margin-top: -29px; */
+    transition: 0.8s;
+    opacity: 1;
+    width: 8%;
+    height: 7%;
+    top: 73%;
+    left: 84%;
+  }
+  .f27:hover>div{
+    display: block;
+  }
+  

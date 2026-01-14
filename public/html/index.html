@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../html/CSS/style.css" />
+    
+  </head>
+
+  
+  <body>
+    <div class="tab">
+      <nav className="navbar navbar-light d-none d-lg-block bg_red">
+        <div className="container d-block">
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <a href="/" className="logo">
+                <span className="">
+                  <img 
+                      src="../assets/luxorlogo.png" 
+                      alt="Logo" 
+                      class="img-fluid w-100" 
+                      style="width: 250px; height: 50px; object-fit: contain;" 
+                    />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sidebar">
+        <button
+          class="tablinks"
+          onclick="openCity(event, 'Chicago')"
+          id="defaultOpen"
+        >
+          1963
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Rome')">1975</button>
+        <button class="tablinks" onclick="openCity(event, 'Sydney')">
+          1976
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Prague')">
+          1980
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Miami')">
+          1982
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'London')">
+          1996
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">
+          1999
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+          2002
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Mumbai')">
+          2003
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Singapore')">
+          2004
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Dubai')">
+          2005
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Madrid')">
+          2006
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Barcelona')">
+          2007
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Amsterdam')">
+          2008
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Moscow')">
+          2009
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Bangkok')">
+          2011
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Melbourne')">
+          2012
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Toronto')">
+          2014
+        </button>
+        <button class="tablinks" onclick="openCity(event, '2017')">
+          2017
+        </button>
+        <button class="tablinks" onclick="openCity(event, '2018')">
+          2018
+        </button>
+        <button class="tablinks" onclick="openCity(event, '2019')">
+          2019
+        </button>
+        <button class="tablinks" onclick="openCity(event, '2020')">
+          2020
+        </button>
+        <button class="tablinks" onclick="openCity(event, '2022')">
+          2022
+        </button>
+        <button class="tablinks" onclick="openCity(event, '2023')">
+          2023
+        </button>
+      </div>
+    </div>
+    <div
+      id="Chicago"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">Birth of Luxor By <br /> Mr. Dk Jain</div>
+          
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/1963.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Rome"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Introduced Fiber Tip Technology in India
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/1975.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Sydney"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Pioneered the Launch of Fineliners, Hi-liters and Markers
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/1976.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Prague"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Luxor International Business Division Launched
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/1980.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Miami"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Introduced the Schneider Brand from Japan
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/1982.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div
+        id="London"
+        class="tabcontent"
+        style="
+          background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+        "
+      >
+        <div class="p-3">
+          <div class="row p-md-5 p-3 justify-content-center row-mod">
+            <div
+              class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+            >
+              <div class="head text-center">
+                Introduced Parker Brand in India
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-12 text-center scale-in-center align-self-center"
+            >
+              <img src="../html/images/1996.jpg" class="img-thumbnail w-75" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div
+        id="Paris"
+        class="tabcontent"
+        style="
+          background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+        "
+      >
+        <div class="p-3">
+          <div class="row p-md-5 p-3 justify-content-center row-mod">
+            <div
+              class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+            >
+              <div class="head text-center">
+                Crossed One Million Units Per Day Mark in Manufacturing Pens
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-12 text-center scale-in-center align-self-center"
+            >
+              <img src="../html/images/1999.jpg" class="img-thumbnail w-75" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Tokyo"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>Diversified into the Hospitality Industry</li>
+                <li>
+                  Attained Status of Largest Exporter of Writing Instruments in
+                  India
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2002.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Mumbai"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Introduced Waterman Brand in India
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2003.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Singapore"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Awarded the Coveted Superbrand Award
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2004.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Dubai"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">Invested into Fiber Optics</div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2005.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Madrid"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Luxor International Exporting to Over 85 Countries Luxor-Signature
+              Retail Foray
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2006.jpg" class="img-thumbnail" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Barcelona"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              <ul>
+                <li>Launch of Luxor Notebooks</li>
+                <li>Diversified into Real Estate</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2007.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="Amsterdam"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Luxor New Manufacturing Unit in Haridwar
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2008.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Moscow"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Launch of Luxor e-commerce Business- www.luxor.in
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2009.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Bangkok"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Luxor Launches Nano Technology in Cleaning & Protection Products
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2011.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Melbourne"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center">
+              Parker Fine Writing Centre in Noida
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2012.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="Toronto"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>Opening Nib Manufacturing facility to the world</li>
+                <li>
+                  Luxor International becomes a part of "We Connect' Programme
+                  for Women Empowerement
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2014.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="2017"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>ACHIEVED A NEW MILESTONE OF MANUFACTURING 5 MILLION PENS PER DAY</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2017.png" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="2018"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>INCREASED FOCUS ON E-COMMERCE RENEWED FOCUS ON AFRICA AND US MARKETS</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2018.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="2019"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>AWARDED-INDIA'S LARGEST EXPORTER OF WRITING INSTRUMENTS</li>
+              </ul>
+            </div>
+          </div>
+          <div
+          class="col-md-6 col-12 text-center scale-in-center align-self-center"
+        >
+          <img src="../html/images/2019.png" class="img-thumbnail w-75" />
+        </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="2020"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>LAUNCH OF LUXOR NANO CLEANING & DISINFECTANT PRODUCTS FOR LONG- LASTING PROTECTION</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2020.jpeg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="2022"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>LAUNCH OF LUXOR NANO CLEANING & DISINFECTANT PRODUCTS FOR LONG- LASTING PROTECTION</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2022.png" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="2023"
+      class="tabcontent"
+      style="
+        background-image: url(../html/images/Popular-picks-Lineart.png) !important;
+      "
+    >
+      <div class="p-3">
+        <div class="row p-md-5 p-3 justify-content-center row-mod">
+          <div
+            class="col-md-6 col-12 d-flex align-items-between fade-in-left justify-content-center flex-column p-2 paracontent"
+          >
+            <div class="head text-center small-text">
+              <ul>
+                <li>UNVEILING OF SPECIAL COMMEMORATIVE STAMP BY INDIA POST IN HONOUR OF OUR VISIONARY FOUNDER LATE SHRI D.K. JAIN ON HIS 80TH BIRTH ANNIVERSARY</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-12 text-center scale-in-center align-self-center"
+          >
+            <img src="../html/images/2023.jpg" class="img-thumbnail w-75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>

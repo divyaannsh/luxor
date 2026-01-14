@@ -1,0 +1,9 @@
+.prd_heading{
+    text-align: center;
+}
+
+.product-img{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}

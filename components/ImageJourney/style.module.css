@@ -1,0 +1,109 @@
+.l1 {
+  left: 21%;
+  z-index: 1;
+  position: absolute;
+  top: 30%;
+  width: 16.5%;
+  height: 40%;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.l1:hover {
+  opacity: 1;
+  margin-top: -20px;
+  width: 21%;
+  top: 28%;
+  left: 19.5%;
+  height: 32%;
+  /* border: 2px solid red;   
+    border-radius: 50%; */
+}
+
+.l2 {
+  position: absolute;
+  top: 42%;
+  z-index: 1;
+  left: 50%;
+  width: 16.5%;
+  height: 30%;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.l2:hover {
+  opacity: 1;
+  margin-top: -30px;
+  width: 21%;
+  top: 44%;
+  left: 47.5%;
+  height: 31.5%;
+}
+
+.l3 {
+  position: absolute;
+  top: 24%;
+  z-index: 1;
+  left: 60.7%;
+  width: 8.5%;
+  height: 16%;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.l3:hover {
+  opacity: 1;
+  margin-top: -29px;
+  width: 18%;
+  top: 17%;
+  left: 55.9%;
+  height: 25%;
+}
+
+.l4 {
+  position: absolute;
+  right: 1%;
+  top: 17%;
+  z-index: 1;
+  width: 9%;
+  height: 17%;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.l4:hover {
+  opacity: 1;
+  margin-top: -29px;
+  width: 14%;
+  top: 17%;
+  right: -2%;
+  height: 19%;
+}
+
+.l5 {
+  position: absolute;
+  width: 6%;
+  z-index: 1;
+  height: 12%;
+  top: 13%;
+  opacity: 0;
+  right: 21%;
+  transition: 0.8s;
+}
+
+.l5:hover {
+  opacity: 1;
+  margin-top: -29px;
+  width: 14%;
+  top: 6%;
+  right: 17%;
+  height: 19%;
+}
+
+.round-img-journey {
+  border-radius: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 2px #000 solid;
+}

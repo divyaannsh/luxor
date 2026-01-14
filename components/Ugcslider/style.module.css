@@ -1,0 +1,109 @@
+.body {
+  min-width: 100vw;
+  height: 75vh;
+  display: flex;
+  /* background-image: url("../../public/assets/images//lookbook.png");  */
+  /* display: grid; */
+  place-items: center;
+}
+
+.slideImage {
+  /* height: 300px; */
+  /* width: 300px; */
+  display: flex;
+  /* align-items: center;  */
+  padding: 1%;
+  padding-top: 0%;
+  /* background-image: url("../../public/assets/images//lookbook.png");  */
+
+  /* z-index: 11; */
+  /* perspective: 100px; */
+}
+
+.img:hover {
+  cursor: pointer;
+  position: relative;
+  /* transition: opacity 2s ease-in-out; */
+  transform: scale(1.1);
+  -webkit-box-shadow: 3px -3px 15px 3px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 3px -3px 15px 3px rgba(0, 0, 0, 0.49);
+  box-shadow: 3px -3px 15px 3px rgba(0, 0, 0, 0.49);
+}
+
+.htext {
+  text-align: center;
+  margin-left: 1%;
+  writing-mode: vertical-rl;
+  font-size: 100px;
+  animation: fade 5s linear;
+  transform: rotate(180deg);
+}
+
+@keyframes fade {}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  .body {
+    height: 51vh;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 799px) {
+  .body {
+    height: 58vh;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .body {
+    height: 70vh;
+  }
+}
+
+.imgcontainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.slideContainer {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  padding: 18px;
+  animation: scroll-left 140s linear 1s infinite;
+}
+
+.img {
+  margin: 0 10px;
+  /* Adjust spacing between images */
+  height: 75%;
+  /* Ensure images are responsive */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(4%);
+    /* Start position off-screen right */
+  }
+
+  20% {
+    transform: translateX(10 );
+    /* Show content for initial cycles */
+  }
+
+  80% {
+    transform: translateX(-100%);
+    /* Move left, covering the width of the images */
+  }
+
+  100% {
+    transform: translateX(-200%);
+    /* Extend beyond the end for seamless loop */
+  }
+}

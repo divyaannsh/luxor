@@ -1,0 +1,74 @@
+.ugcb {
+  background-image: url("../../public/assets/images//lookbook.png");
+}
+
+.blogText1 {
+  opacity: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook1:hover .blogText1 {
+  opacity: 1;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+
+.lookBook1,.lookBook2,.lookBook3 img {
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook1:hover,.lookBook2:hover,.lookBook3:hover img {
+  -webkit-filter: brightness(90%);
+}
+
+.lookBook1,
+.lookBook2,
+.lookBook3 {
+  cursor: pointer;
+}
+.blogText2 {
+  opacity: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook2:hover .blogText2 {
+  opacity: 1;
+  transition: opacity 0s ease-in 700ms, opacity 700ms;
+}
+.blogText3 {
+  opacity: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook3:hover .blogText3 {
+  opacity: 1;
+  transition: opacity 1s ease-in 700ms, opacity 600ms;
+}
+
+.video-img1 {
+  object-fit: fill;
+  width: 100%;
+  height: 590px;
+}
+.video-img {
+  object-fit: fill;
+  width: 100%;
+  height: 590px;
+}
+
+@media screen and (max-width: 500px) {
+  .video-img1 {
+    object-fit: contain;
+    height: auto;
+  }
+  .video-img {
+    object-fit: contain;
+    height: auto;
+  }
+}

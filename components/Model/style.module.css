@@ -1,19 +1,21 @@
 .modal_wrapper {
     width: 500px;
-    height: 600px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
   }
   
   .modal {
     background: white;
-    height:100%;
-    width:100%;
+    width: 100%;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
   
   .modal_overlay {
-    position: absolute;
-    top: 3450px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -21,7 +23,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 5;
+    z-index: 9999;
   }
   
   .modal_body {
@@ -30,35 +32,74 @@
   
   .modal_header{
     display: flex;
-    justify-content: flex-end;
-    font-size: 25px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .modal_header h3 {
+    margin: 0;
+    color: #333;
+  }
+
+  .close_button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+
+  .close_button:hover {
+    background-color: #f0f0f0;
   }
 
 .form_group {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .form_group label {
     display: block;
     margin-bottom: 0.5em;
+    font-weight: 600;
+    color: #333;
 }
 
 .form_group input,
 .form_group textarea {
     width: 100%;
-    padding: 0.5em;
+    padding: 0.75em;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
 }
 
-.form_group input.error,
-.form_group textarea.error {
-    border-color: red;
+.form_group input:focus,
+.form_group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form_group textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .error_message {
-    color: red;
+    color: #dc3545;
     font-size: 0.875em;
     margin-top: 0.25em;
 }
@@ -67,8 +108,39 @@
     display: flex;
     justify-content: flex-end;
     gap: 1em;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
 }
 
-.modal_footer button {
-    padding: 0.5em 1em;
+.submit_button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.submit_button:hover {
+    background-color: #0056b3;
+}
+
+.cancel_button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cancel_button:hover {
+    background-color: #545b62;
 }

@@ -37,7 +37,7 @@ export default class Carasol extends Component {
             muted
             className={style["video-img1"]}
             loop
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/Banner_change_final.mp4`}
+            src="/assets/videos/journey.mp4"
           />
         </div> */}
         <div className="carousel_banner" style={this.state.imageStyle}>

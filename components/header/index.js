@@ -24,21 +24,22 @@ const Header = (props) => {
   const [searchedString, setSearchedString] = useState("");
   const [all_main_cat_wise_prods, set_all_main_cat_wise_prods] = useState([]);
 
-  console.log("all_prd-->", all_prd);
+  // Removed debug console.log to prevent spam
 
   const [filtered_main_cat_wise_prods, set_filtered_main_cat_wise_prods] =
     useState([]);
 
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState("en");
 
   useEffect(() => {
-    var addScript = document.createElement("script");
-    addScript.setAttribute(
-      "src",
-      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    );
-    document.body.appendChild(addScript);
-    window.googleTranslateElementInit = googleTranslateElementInit;
+    // Disable Google Translate to prevent stack overflow
+    // var addScript = document.createElement("script");
+    // addScript.setAttribute(
+    //   "src",
+    //   "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    // );
+    // document.body.appendChild(addScript);
+    // window.googleTranslateElementInit = googleTranslateElementInit;
 
     if (hasCookie("googtrans")) {
       setSelected(getCookie("googtrans"));
@@ -104,7 +105,7 @@ const Header = (props) => {
         // ignore offline/network errors
       }
     })();
-  }, [all_prd.length]);
+  }, []); // Run only once on mount
 
   const searchHanlder = () => {
     console.log("SearchString-->", searchedString);
@@ -214,9 +215,9 @@ const Header = (props) => {
                   />
                   {searchedString !== "" && (
                     <datalist id="filtered_main_cat_wise_prods">
-                      {filtered_main_cat_wise_prods.map((item) => (
-                        <option>{item.name}</option>
-                      ))}
+                      {filtered_main_cat_wise_prods.map((item, ind) => {
+                        return <option value={item._id}>{item.name}</option>;
+                      })}
                     </datalist>
                   )}
                   <button
@@ -234,9 +235,9 @@ const Header = (props) => {
                   className="form-select selectData shadow-none input_field notranslate"
                   onChange={(e) => langChange(e, e.target.value)}
                 >
-                  <option selected>Select Language</option>
-                  {languages.map((t) => {
-                    return <option value={t.value}>{t.label}</option>;
+                  <option value="en">Select Language</option>
+                  {languages.map((t, ind) => {
+                    return <option key={`lang-${ind}`} value={t.value}>{t.label}</option>;
                   })}
                 </select>
                 {/*  <>
@@ -513,7 +514,7 @@ const Header = (props) => {
           <div
             className="offcanvas offcanvas_toggle offcanvas-start"
             data-bs-scroll="true"
-            tabindex="-1"
+            tabIndex="-1"
             id="offcanvasWithBothOptions"
             aria-labelledby="offcanvasWithBothOptionsLabel"
           >
@@ -575,9 +576,9 @@ const Header = (props) => {
                   </li>
                 </ul>
               </div>
-              <li class="dropdown nav-item">
+              <li className="dropdown nav-item">
                 <a
-                  class="nav-link text-start dropdown-toggle btn fs-16 text_black p-2"
+                  className="nav-link text-start dropdown-toggle btn fs-16 text_black p-2"
                   href="#"
                   id="product-dropdown"
                   role="button"
@@ -596,6 +597,7 @@ const Header = (props) => {
                       if (item._doc) {
                         return (
                           <li
+                            key={`prd-${ind}-${item._doc._id}`}
                             className={`d-block ${styles["main_prd"]}`}
                             onClick={(e) => {
                               debugger;
@@ -603,16 +605,16 @@ const Header = (props) => {
                             }}
                           >
                             <a className="dropdown-item fs-16 text_black">
-                              {/* {item._doc.name} */}
-                              {item.name}
+                              {item._doc.name}
                             </a>
                             <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
                               {item._doc &&
                                 item._doc.length > 0 &&
-                                item._doc.map((ele) => {
+                                item._doc.map((ele, ind) => {
                                   return (
-                                    <React.Fragment>
+                                    <React.Fragment key={`header-doc-2-${ind}-${ele._id}`}>
                                       <li
+                                        className="dropdown-item dropdown-submenu-left"
                                         onClick={(e) => {
                                           debugger;
                                           e.stopPropagation();
@@ -625,15 +627,8 @@ const Header = (props) => {
                                           );
                                         }}
                                       >
-                                        <a className="dropdown-item">
-                                          {ele.category
-                                            ? ele.category
-                                            : ele.category.toLowerCase()
-                                              ? ele.category.toLowerCase()
-                                              : ""}
-                                        </a>
+                                        {ele.name}
                                       </li>
-                                      <hr className="dropdown-divider ms-3 me-3" />
                                     </React.Fragment>
                                   );
                                 })}
@@ -679,31 +674,23 @@ const Header = (props) => {
             </div>
           </div>
         </div>
-      </div>
       {/* <nav className='navbar'>
                 <ul>
                     <li>
                         <a  >
-                            <select className='aboutus' onChange={e => window.location.href = e.target.value}>
-                                <option selected hidden> choose </option>
-                                <option value="about" > About Us  </option>
-                                <option value="contact" > Contact Us  </option>
+                            <select className="aboutus" defaultValue="" onChange={e => window.location.href = e.target.value}>
+                                <option value="" disabled> choose </option>
+                                <option value="about"> About Us  </option>
+                                <option value="contact"> Contact Us  </option>
                                 <option value="Vision">Vision</option>
                                 <option value="Mission">Mission</option>
                                 <option value="Milstone">Milstone</option>
                             </select>
                         </a>
                     </li>
-
-                    <li><Link href="/product">Product</Link></li>
-                    <li><a href="#services">E- Catalogue</a></li>
-                    <li><a href="#contact">Media</a></li>
-                    <li><a href="#contact">Art Gallery</a></li>
-                    <li><a href="#contact">Career</a></li>
-
                 </ul>
-
-            </nav > */}
+            </nav> */}
+        </div>
     </React.Fragment>
   );
 };

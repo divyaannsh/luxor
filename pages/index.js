@@ -28,7 +28,6 @@ export async function getServerSideProps({ req, res }) {
   return {
     props: {
       all_prd: [],
-      // json: json.result
     },
   };
 }

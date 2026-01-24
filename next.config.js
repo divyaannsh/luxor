@@ -22,6 +22,8 @@ const nextConfig = {
   },
   images: {
     disableStaticImages: false,
+    domains: ['localhost'],
+    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,

@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
-import Image5 from "public/assets/journey/road_journey.jpg";
+import Image5 from "/public/assets/journey/road_journey.jpg";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Flip from "gsap/Flip";
 import Draggable from "gsap/Draggable";
-import jr_one from 'public/assets/journey_images/jr_one_old.png'
-import jr_two from 'public/assets/journey_images/jr_two.png'
-import jr_three from 'public/assets/journey_images/jr__three.png'
-import jr_four from 'public/assets/journey_images/jr_four.jpg'
-import jr_five from 'public/assets/journey_images/jr_five.jpg'
+import jr_one from '/public/assets/journey_images/jr_one_old.png'
+import jr_two from '/public/assets/journey_images/jr_two.png'
+import jr_three from '/public/assets/journey_images/jr__three.png'
+import jr_four from '/public/assets/journey_images/jr_four.jpg'
+import jr_five from '/public/assets/journey_images/jr_five.jpg'
 // or all tools are exported from the "all" file (excluding members-only plugins):
 import { MotionPathPlugin } from "gsap/all";
 import Image from 'next/image';

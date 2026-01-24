@@ -16,7 +16,7 @@ function index() {
                         href={"/listing/PCW/653917908eef3ad8ecb0d295"}
                         style={{ color: "white" }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>PCW
+                        <i className="fa-solid fa-play me-2 fs-10"></i>PCW
                       </a>
                     </li> */}
                     <li className="mb-2  d-block fs-14">
@@ -26,7 +26,7 @@ function index() {
                           color: "white",
                         }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Pens
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Pens
                       </a>
                     </li>
                     <li className="mb-2 d-block fs-14">
@@ -36,7 +36,7 @@ function index() {
                           color: "white",
                         }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Highlighters
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Highlighters
                       </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
@@ -46,7 +46,7 @@ function index() {
                           color: "white",
                         }}
                         >
-                      <i class="fa-solid fa-play me-2 fs-10"></i>Display Pack
+                      <i className="fa-solid fa-play me-2 fs-10"></i>Display Pack
                       </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
@@ -56,7 +56,7 @@ function index() {
                           color: "white",
                         }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Notebooks &
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Notebooks &
                         Stationery
                       </a>
                     </li>
@@ -65,7 +65,7 @@ function index() {
                         href="listing/markers/653912250252d0fe24b4346c"
                         style={{ color: "white" }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Markers
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Markers
                       </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
@@ -75,7 +75,7 @@ function index() {
                           color: "white",
                         }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Art & Hobby
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Art & Hobby
                       </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
@@ -85,7 +85,7 @@ function index() {
                           color: "white",
                         }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Sustainable
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Sustainable
                       </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
@@ -95,7 +95,7 @@ function index() {
                           color: "white",
                         }}
                       >
-                        <i class="fa-solid fa-play me-2 fs-10"></i>Value Packs
+                        <i className="fa-solid fa-play me-2 fs-10"></i>Value Packs
                       </a>
                     </li>
                   </div>
@@ -109,17 +109,17 @@ function index() {
                 <li className="mb-2 d-block fs-14">
                   {" "}
                   <a href="/overview" className="text-white">
-                    <i class="fa-solid fa-play me-2 fs-10"></i>Overview
+                    <i className="fa-solid fa-play me-2 fs-10"></i>Overview
                   </a>
                 </li>
                 <li className="mb-2 d-block fs-14">
                   <a href="/career" className="text-white">
-                    <i class="fa-solid fa-play me-2 fs-10"></i>Career
+                    <i className="fa-solid fa-play me-2 fs-10"></i>Career
                   </a>
                 </li>
                 <li className="mb-2 d-block fs-14">
                 <a href="/media" className="text-white">
-                  <i class="fa-solid fa-play me-2 fs-10"></i>News & Media
+                  <i className="fa-solid fa-play me-2 fs-10"></i>News & Media
                   </a>
                 </li>
                 <li className="mb-2 d-block fs-14">
@@ -127,7 +127,7 @@ function index() {
                     href="#Partners"
                     style={{ cursor: "pointer", color: "white" }}
                   >
-                    <i class="fa-solid fa-play me-2 fs-10"></i>
+                    <i className="fa-solid fa-play me-2 fs-10"></i>
                     Partners/Resellers
                   </a>
                 </li>
@@ -141,13 +141,13 @@ function index() {
                   style={{ cursor: "pointer", color: "white" }}
                 >
                   <li className="mb-3 d-block fs-14">
-                    <i class="fa-solid fa-play me-2"></i>Privacy Policy
+                    <i className="fa-solid fa-play me-2"></i>Privacy Policy
                   </li>
                 </a>
 
                 <li className="mb-3 d-block fs-14">
                   <a href={"/privacy"} style={{ cursor: "pointer", color: "white" }}>
-                    <i class="fa-solid fa-play me-2"></i>Cookie Policy
+                    <i className="fa-solid fa-play me-2"></i>Cookie Policy
                   </a>
                 </li>
 
@@ -156,12 +156,12 @@ function index() {
                   href={"/privacy"}
                   style={{ cursor: "pointer", color: "white" }}
                 >
-                  <i class="fa-solid fa-play me-2"></i>Terms & Conditions
+                  <i className="fa-solid fa-play me-2"></i>Terms & Conditions
                   </a>
                 </li> */}
                 <li className="mb-3 d-block fs-14">
                   <a href="#award" style={{ cursor: "pointer", color: "white" }}>
-                    <i class="fa-solid fa-play me-2"></i>Awards & Certification
+                    <i className="fa-solid fa-play me-2"></i>Awards & Certification
                   </a>
                 </li>
 
@@ -170,7 +170,7 @@ function index() {
                     href={"/privacy"}
                     style={{ cursor: "pointer", color: "white" }}
                   >
-                    <i class="fa-solid fa-play me-2"></i>Terms & Conditions
+                    <i className="fa-solid fa-play me-2"></i>Terms & Conditions
                   </a>
                 </li>
                 <li className="mb-3 d-block fs-14">
@@ -178,7 +178,7 @@ function index() {
                     href="#award"
                     style={{ cursor: "pointer", color: "white" }}
                   >
-                    <i class="fa-solid fa-play me-2"></i>Awards & Certification
+                    <i className="fa-solid fa-play me-2"></i>Awards & Certification
                   </a>
                 </li>
 
@@ -187,7 +187,7 @@ function index() {
                     href={"/contact"}
                     style={{ cursor: "pointer", color: "white" }}
                   >
-                    <i class="fa-solid fa-play me-2"></i>Contact Us
+                    <i className="fa-solid fa-play me-2"></i>Contact Us
                   </a>
                 </li>
               </ul>
@@ -196,7 +196,7 @@ function index() {
             <h3 className="fs-20 text-white mb-4">Corporate Information</h3> 
               <ul className="text-white ">
                 <li className="d-block fs-14">
-                  <i class="fa-solid fa-envelope me-2 mb-3 fs-14 "></i>
+                  <i className="fa-solid fa-envelope me-2 mb-3 fs-14 "></i>
                   <a
                     className="text-white"
                     href="mailto:export.enquiry@luxoroffice.com"
@@ -205,10 +205,10 @@ function index() {
                   </a>
                 </li>
                 <li className="mb-3 d-block fs-14">
-                  <i class="fa-solid fa-phone me-2"></i>0120-4899000
+                  <i className="fa-solid fa-phone me-2"></i>0120-4899000
                 </li>
                 <li className="mb-3 d-block fs-14">
-                  <i class="fa-solid fa-location-dot me-2"></i>
+                  <i className="fa-solid fa-location-dot me-2"></i>
                   C-42, Phase-II, Noida, District - Gautam Budh Nagar,<br /> Uttar
                   Pradesh - 201305<br />
                   Phone: +91-120-4197000-03<br />
@@ -221,7 +221,7 @@ function index() {
                     style={{ color: "#fff" }}
                     target="_blank"
                   >
-                    <i class="fa-brands fa-square-facebook fs-24 me-2"></i>
+                    <i className="fa-brands fa-square-facebook fs-24 me-2"></i>
                   </a>
                   <a
                     href="https://www.instagram.com/luxorpenofficial//"
@@ -229,7 +229,7 @@ function index() {
                     target="_blank"
                   >
                     {" "}
-                    <i class="fa-brands fa-instagram fs-24 me-2"></i>
+                    <i className="fa-brands fa-instagram fs-24 me-2"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/company/luxorpen/"
@@ -237,7 +237,7 @@ function index() {
                     target="_blank"
                   >
                     {" "}
-                    <i class="fa-brands fs-26 fa-linkedin"></i>
+                    <i className="fa-brands fs-26 fa-linkedin"></i>
                   </a>
                 </li>
               </ul>

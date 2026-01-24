@@ -18,7 +18,7 @@ export default class NewCarasol extends Component {
     return (
       <Carousel
         autoPlay={true}
-        showThumbs={true}
+        showThumbs={false}
         renderStatus={<></>}
         infiniteLoop={true}
         interval={15000}
@@ -29,7 +29,14 @@ export default class NewCarasol extends Component {
             muted
             className={style["video-img1"]}
             loop
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/1.mp4`}
+            src="/assets/videos/journey.mp4"
+            onError={(e) => {
+              console.error("Video failed to load:", e);
+              e.target.style.display = 'none';
+            }}
+            onLoad={() => {
+              console.log("Video loaded successfully");
+            }}
           />
         </div>
         <div className="carousel_banner" style={this.state.imageStyle}>
@@ -39,7 +46,14 @@ export default class NewCarasol extends Component {
             muted
             className={style["video-img1"]}
             loop
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/2.mp4`}
+            src="/assets/videos/journey.mp4"
+            onError={(e) => {
+              console.error("Map video failed to load:", e);
+              e.target.style.display = 'none';
+            }}
+            onLoad={() => {
+              console.log("Map video loaded successfully");
+            }}
           />
         </div>
         <div className="carousel_banner" style={this.state.imageStyle}>
@@ -49,7 +63,14 @@ export default class NewCarasol extends Component {
             muted
             className={style["video-img1"]}
             loop
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/3.mp4`}
+            src="/assets/videos/journey.mp4"
+            onError={(e) => {
+              console.error("Video 3 failed to load:", e);
+              e.target.style.display = 'none';
+            }}
+            onLoad={() => {
+              console.log("Video 3 loaded successfully");
+            }}
           />
         </div>
         <div className="carousel_banner" style={this.state.imageStyle}>
@@ -59,8 +80,32 @@ export default class NewCarasol extends Component {
             muted
             className={style["video-img1"]}
             loop
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/4.mp4`}
+            src="/assets/videos/journey.mp4"
+            onError={(e) => {
+              console.error("Video 4 failed to load:", e);
+              e.target.style.display = 'none';
+            }}
+            onLoad={() => {
+              console.log("Video 4 loaded successfully");
+            }}
           />
+        </div>
+        <div className="carousel_banner" style={this.state.imageStyle}>
+          <div 
+            style={{
+              width: '100%',
+              height: '400px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold'
+            }}
+          >
+            🎨 Luxor Writing Instruments
+          </div>
         </div>
       </Carousel>
     );

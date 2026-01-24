@@ -105,11 +105,11 @@ const index = (props) => {
             <div className="col-md-3 col-lg-2 mb-3">
               <div className="mt-5 p-3">
                 <h3>Categories</h3>
-                <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+                <div className="accordion" id="accordionExample">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingOne">
                       <button
-                        class="accordion-button collapsed"
+                        className="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
@@ -122,11 +122,11 @@ const index = (props) => {
                     </h2>
                     <div
                       id="collapseOne"
-                      class="accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         <a
                           href={
                             "/listing/metal%20pens/6537d22343346433a3754325"
@@ -135,14 +135,14 @@ const index = (props) => {
                           Metal Pens
                         </a>
                       </div>
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         <a href="/listing/everyday%20writing/6537d24c6c7d38d8e947c8fa">
                           Everyday Writing
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <a
                       href="/listing/Highlighters/653911ba8e6902ca42c1d6e9"
                       style={{ color: "#000000" }}
@@ -150,7 +150,7 @@ const index = (props) => {
                       Highlighters
                     </a>
                   </div>
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <a
                       href="/listing/Art%20&%20Hobby/653911ce6d8ae7473f9325a7"
                       style={{ color: "#000000" }}
@@ -158,7 +158,7 @@ const index = (props) => {
                       Art & Hobby
                     </a>
                   </div>
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <a
                       href="/listing/Sustainable/653911eb04804c4985fe52bb"
                       style={{ color: "#000000" }}
@@ -166,7 +166,7 @@ const index = (props) => {
                       Sustainable
                     </a>
                   </div>
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <a
                       href="/listing/Notebook%20and%20Stationery/653911fdeb3253e94826bcac"
                       style={{ color: "#000000" }}
@@ -174,7 +174,7 @@ const index = (props) => {
                       Notebook and Stationery
                     </a>
                   </div>
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <a
                       href="/listing/Value%20Packs/6539120edb6bdba29040cb2c"
                       style={{ color: "#000000" }}
@@ -183,10 +183,10 @@ const index = (props) => {
                     </a>
                   </div>
 
-                  <div class="accordion-item border">
-                    <h2 class="accordion-header" id="headingTwo">
+                  <div className="accordion-item border">
+                    <h2 className="accordion-header" id="headingTwo">
                       <button
-                        class="accordion-button collapsed"
+                        className="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -199,29 +199,29 @@ const index = (props) => {
                     </h2>
                     <div
                       id="collapseTwo"
-                      class="accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingTwo"
                       data-bs-parent="#accordionExample"
                       style={{ color: "#fff" }}
                     >
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         <a href="/listing/Permanent%20Markers/65397016d2ea5f856977cf94">
                           Permanent Markers
                         </a>
                       </div>
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         <a href="/listing/WHITEBOARD%20MARKERS/65397048d7b96ccee7f63082">
                         Whiteboard Markers
                         </a>
                       </div>
-                      <div class="accordion-body">
+                      <div className="accordion-body">
                         <a href="/listing/Whiteboard%20Care%20Kits/65397066f05601bf5d55de41">
                           Whiteboard Care Kits
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <a
                       href="/listing/Kids%20Colouring/653912399a126cb9bb92f68c"
                       style={{ color: "#000000" }}
@@ -229,7 +229,7 @@ const index = (props) => {
                       Kids Colouring
                     </a>
                   </div>
-                  {/* <div class="accordion-body">
+                  {/* <div className="accordion-body">
                     <a
                       href="/listing/PCW/653917908eef3ad8ecb0d295"
                       style={{ color: "#000000" }}
@@ -281,10 +281,10 @@ const index = (props) => {
                 {p_n && p_n > 1 ? (
                   <ul className="pagination justify-content-center mx-2">
                     <li
-                      class="page-item disabled "
+                      className="page-item disabled "
                       style={{ cursor: "pointer" }}
                     >
-                      <a class="page-link " href="#" tabindex="-1">
+                      <a className="page-link " href="#" tabindex="-1">
                         Previous
                       </a>
                     </li>
@@ -298,7 +298,7 @@ const index = (props) => {
                       .fill(undefined)
                       .map((item, i) => {
                         return (
-                          <React.Fragment>
+                          <React.Fragment key={`page-${i}`}>
                             <ul
                               className="pagination justify-content-center mx-2 "
                               style={{ cursor: "pointer" }}
@@ -355,16 +355,18 @@ const index = (props) => {
                   <div className="row mt-4 ">
                     <div className="d-flex flex-wrap m-2">
                       {props.all_prd && props.all_prd.length > 0
-                        ? props.all_prd.map((ele) => {
-                            let image_file =
-                              ele.root_folder_name && ele.file_name
-                                ? process.env.NEXT_PUBLIC_BASE_URL +
-                                  "/" +
-                                  ele.root_folder_name +
-                                  ele.file_name
-                                : "";
+                        ? props.all_prd.map((ele, index) => {
+                            let image_file = "";
+                            
+                            // Handle local data structure
+                            if (ele.image) {
+                              image_file = ele.image;
+                            } else if (ele.root_folder_name && ele.file_name) {
+                              // Handle API data structure
+                              image_file = process.env.NEXT_PUBLIC_BASE_URL + "/" + ele.root_folder_name + ele.file_name;
+                            }
                             return (
-                              <>
+                              <React.Fragment key={`prd-frag-${index}-${ele._id}`}>
                                 <div
                                   className={`col-lg-3 col-md-4 mb-3  ${styles["main_prd"]} ${styles["product-list"]} `}
                                   onClick={() => {
@@ -412,17 +414,30 @@ const index = (props) => {
                                     </div>
                                     <div className="card-body  d-flex flex-column justify-content-evenly">
                                       <div className="">
-                                        <Image
-                                          width={300}
-                                          height={70}
-                                          style={{ mixBlendMode: "multiply" }}
-                                          className="img-fluid min_height  h-100 position_static"
-                                          objectFit="contain"
-                                          src={
-                                            image_file != "" ? image_file : Logo
-                                          }
-                                          alt="Products"
-                                        />
+                                        {image_file && image_file !== "" ? (
+                                          <Image
+                                            width={300}
+                                            height={70}
+                                            style={{ mixBlendMode: "multiply" }}
+                                            className="img-fluid min_height  h-100 position_static"
+                                            objectFit="contain"
+                                            src={image_file}
+                                            alt={ele.name || "Products"}
+                                            onError={(e) => {
+                                              e.target.src = Logo;
+                                            }}
+                                          />
+                                        ) : (
+                                          <Image
+                                            width={300}
+                                            height={70}
+                                            style={{ mixBlendMode: "multiply" }}
+                                            className="img-fluid min_height  h-100 position_static"
+                                            objectFit="contain"
+                                            src={Logo}
+                                            alt={ele.name || "Products"}
+                                          />
+                                        )}
                                       </div>
                                     </div>
                                     <div className="card-footer bg-transparent border-0">
@@ -441,7 +456,7 @@ const index = (props) => {
                                     </div>
                                   </div>
                                 </div>
-                              </>
+                              </React.Fragment>
                             );
                           })
                         : " No record found "}
@@ -464,7 +479,8 @@ const index = (props) => {
                               height={350}
                               className="img-fluid"
                               src={Parker}
-                              alt="Products"
+                              alt="Parker Pen"
+                              priority
                             />
                           </div>
                           <div className="">
@@ -517,8 +533,8 @@ export async function getServerSideProps(context) {
     if (status && result.cat_wise_products.length > 0) {
       return {
         props: {
-          total: result?.total,
-          all_prd: result?.cat_wise_products,
+          total: result.total || 0,
+          all_prd: result.cat_wise_products,
           page_no: page_no ? page_no : 1,
         },
       };
@@ -530,8 +546,6 @@ export async function getServerSideProps(context) {
   return {
     props: {
       all_prd: [],
-
-      // json: json.result
     },
   };
 }

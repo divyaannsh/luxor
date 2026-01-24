@@ -162,9 +162,9 @@ const ProductPage = (props) => {
 
       {/* <div className="prd_container">
         {cat_prdcts.length > 0 &&
-          cat_prdcts.map((ele) => {
+          cat_prdcts.map((ele, index) => {
             return (
-              <React.Fragment>
+              <React.Fragment key={`cat-prd-${index}-${ele._id}`}>
                 <div
                   className="product-box  prd_card "
                   onClick={() => router.push("product/" + ele._id)}

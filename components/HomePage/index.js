@@ -124,24 +124,30 @@ function App(props) {
   function newLaumch() {
     let pen_marker_line = document.querySelectorAll(".pen_marker_line");
     let marker_marks = document.querySelectorAll(".new_launch_marker img");
-    gsap.to(marker_marks, {
-      duration: 2,
-      x: 400,
-      scrollTrigger: {
-        trigger: marker_marks,
-        toggleActions: "restart pause resume reset",
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
-        end: "bottom 20%",
-      },
-    });
-    gsap.fromTo(
-      pen_marker_line,
-      {
+    
+    // Only run GSAP animations if elements exist
+    if (marker_marks && marker_marks.length > 0) {
+      gsap.to(marker_marks, {
         duration: 2,
-        width: 0,
-        opacity: 5,
-      },
+        x: 400,
+        scrollTrigger: {
+          trigger: marker_marks,
+          toggleActions: "restart pause resume reset",
+          onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+          start: "top 70%",
+          end: "bottom 20%",
+        },
+      });
+    }
+    
+    if (pen_marker_line && pen_marker_line.length > 0) {
+      gsap.fromTo(
+        pen_marker_line,
+        {
+          duration: 2,
+          width: 0,
+          opacity: 5,
+        },
 
       {
         duration: 2,
@@ -162,6 +168,7 @@ function App(props) {
         },
       }
     );
+    }
   }
   function drawPen(pen_div, pen_image_div, pen_draw_div, pen_colour, card_div, size_div) {
     let penDiv = document.querySelectorAll(pen_div);
@@ -169,7 +176,9 @@ function App(props) {
     let marker_line = document.querySelectorAll(pen_draw_div);
     let card = document.querySelectorAll(card_div);
 
-    gsap.to(penDiv, {
+    // Only run GSAP animations if elements exist
+    if (penDiv && penDiv.length > 0) {
+      gsap.to(penDiv, {
       //  backgroundColor:"red",
       // width: 300,
       // scale: 1,
@@ -200,6 +209,7 @@ function App(props) {
       // dirat1ion: 2,
       duration: 2,
     });
+    }
   }
   function removeDrawPen(
     pen_div,
@@ -299,12 +309,12 @@ function App(props) {
           <div
             style={{
               display: "flex",
-              width: "100vw",
+              width: "100%",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <h3 className="fs-50 fw-700 text_black">New Launches</h3>
+            <h3 className="fs-50 fw-700 text-black">New Launches</h3>
           </div>
         </div>
         <button
@@ -1334,39 +1344,55 @@ function App(props) {
                 ref={productCarouselRef}
               >
                 {all_prdcts.length > 0 &&
-                  all_prdcts.map((ele) => {
-                    let image_file = ele._doc
-                      ? process.env.NEXT_PUBLIC_BASE_URL +
-                      "/" +
-                      ele._doc.master_folder_name +
-                      "/" +
-                      ele._doc.file_name
-                      : process.env.NEXT_PUBLIC_BASE_URL +
-                      "/" +
-                      ele.master_folder_name +
-                      "/" +
-                      ele.file_name;
+                  all_prdcts.map((ele, index) => {
+                    // Use local images instead of API-based ones
+                    const localImages = [
+                      pcw, kids, neronew, vistanew, AneliaBlack, 
+                      marker_blue, OutlineMarkerPurple, BroadtipMarker,
+                      Fineliner, Elan, Ikon, Fluorescent, WBM_120,
+                      MetallicMarkerGold11, Pastel, metal_pens
+                    ];
+                    
+                    const imageSrc = localImages[index % localImages.length];
+                    
                     return (
-                      <React.Fragment>
-                        <div
-                          className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3 mb-3 prd_box"
-                          onClick={() =>
-                            router.push("listing/" + ele.name + "/" + ele._id)
-                          }
-                        >
-                          <div className="card h-100 rounded-0 shadow-sm border-0 cards_hover">
-                            <Image
-                              className="mb-0"
-                              src={image_file}
-                              // width={500}
-                              width={400}
-                              height={400}
-                              alt={ele.name}
-                              objectFit="fill"
-                            />
-                          </div>
-                        </div>
-                      </React.Fragment>
+                      <>
+                        {[0, 1, 2].map((index) => (
+                    <div
+                      key={`slide-${index}`}
+                      className="col-lg-3 col-md-4 mb-3"
+                      onClick={() => {
+                        // console.log(ele)
+                        // getSelectedItem({
+                        //   cat_info: {
+                        //     _id: ele._id,
+                        //     category: ele.category_type
+                        //       ? ele.category_type.category
+                        //       : ele.marker_category_type
+                        //         ? ele.marker_category_type
+                        //             .marker_category
+                        //         : ele.category,
+                        //   },
+                        //   prd_id: ele._id,
+                        // });
+                        // router.push("/product/" + ele._id);
+                      }}
+                    >
+                      <Image
+                        src={imageSrc}
+                        alt={ele.name}
+                        width={300}
+                        height={300}
+                        className="img-fluid"
+                        priority={index < 4}
+                        onError={(e) => {
+                          e.target.src = Logo;
+                        }}
+                      />
+                      <h6 className="text-center mt-2">{ele.name}</h6>
+                    </div>
+                  ))}
+                      </>
                     );
                   })}
               </div>
@@ -1400,7 +1426,30 @@ function App(props) {
               muted
               className={`img-fluid ${style["video-img1"]}`}
               loop
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/final_map_export_aeroplane.mp4`}
+              src="/assets/videos/journey.mp4"
+              onError={(e) => {
+                console.error("Map video failed to load:", e);
+                e.target.style.display = 'none';
+                // Fallback to placeholder
+                e.target.parentElement.innerHTML = `
+                  <div style="
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center; 
+                    height: 400px;
+                    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+                    color: #6c757d;
+                    font-size: 18px;
+                    font-weight: 500;
+                    border-radius: 8px;
+                  ">
+                    Global Presence Map
+                  </div>
+                `;
+              }}
+              onLoad={() => {
+                console.log("Map video loaded successfully");
+              }}
             />
           </div>
         </div>
@@ -1668,11 +1717,20 @@ function App(props) {
         </Modal>
       }
       <section className="footer">
-        <h1 class="fs-40 text-center my-5 fw-600" id="Partners">
+        <h1 className="fs-40 text-center my-5 fw-600" id="Partners">
           Be Our Partner/Reseller
         </h1>
         <div className="partner-cont">
-          <Image height={450} width={1000} src={Image18} alt="homepage" />
+          <Image 
+            height={450} 
+            width={1000} 
+            src={Image18} 
+            alt="Luxor Partner Program" 
+            onError={(e) => {
+              console.error("Partner image failed to load:", e);
+              e.target.src = "/assets/luxorlogo.png";
+            }}
+          />
         </div>
         <div className="footer-btn">
           <div className="footer-btn2">
@@ -1681,7 +1739,7 @@ function App(props) {
         </div>
         <section className="certifications pb-5">
           <div className="container">
-            <h2 class="fs-50 text-center my-5 fw-600" text_black id="award">
+            <h2 className="fs-50 text-center my-5 fw-600 text-black" id="award">
               Certificates
             </h2>
             <div className="row">
@@ -1690,41 +1748,140 @@ function App(props) {
                   <div className="carousel-item active">
                     <div className="row">
                       <div className="col">
-                        <Image src={Recycled} alt="Recycled" />
+                        <Image 
+                          src={Recycled} 
+                          alt="Recycled Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("Recycled certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={Reach} alt="ap" />
+                        <Image 
+                          src={Reach} 
+                          alt="Reach Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("Reach certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={ORK} alt="ap" />
+                        <Image 
+                          src={ORK} 
+                          alt="ORK Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("ORK certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={OHS} alt="ap" />
+                        <Image 
+                          src={OHS} 
+                          alt="OHS Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("OHS certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={ISO14001} alt="ap" />
+                        <Image 
+                          src={ISO14001} 
+                          alt="ISO 14001 Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("ISO 14001 certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className="carousel-item">
                     <div className="row">
                       <div className="col">
-                        <Image src={ISo9001} alt="ap" />
+                        <Image 
+                          src={ISo9001} 
+                          alt="ISO 9001 Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("ISO 9001 certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={EN71} alt="ap" />
+                        <Image 
+                          src={EN71} 
+                          alt="EN71 Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("EN71 certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={Eco} alt="Eco" />
+                        <Image 
+                          src={Eco} 
+                          alt="Eco Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("Eco certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={Ce} alt="Ce" />
+                        <Image 
+                          src={Ce} 
+                          alt="CE Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("CE certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={Ap} alt="ap" />
+                        <Image 
+                          src={Ap} 
+                          alt="AP Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("AP certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                       <div className="col">
-                        <Image src={Tpat} alt="ap" />
+                        <Image 
+                          src={Tpat} 
+                          alt="TPAT Certificate" 
+                          width={200}
+                          height={150}
+                          onError={(e) => {
+                            console.error("TPAT certificate failed to load:", e);
+                            e.target.src = "/assets/luxorlogo.png";
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
@@ -1746,7 +1903,7 @@ function App(props) {
           </div>
         </section>
         <div className="background">
-          <h2 class="fs-50 text-center my-5 fw-600">
+          <h2 className="fs-50 text-center my-5 fw-600">
             Awards & Recognitions
           </h2>
           <div className="award-img-cont">

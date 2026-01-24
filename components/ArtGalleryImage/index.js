@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import border from "public/assets/images/border.png";
+import border from "/public/assets/images/border.png";
 import Image from "next/image";
 
 const ArtGallImage = ({ imgName, content, vidId, heading }) => {
@@ -104,7 +104,7 @@ const ArtGallImage = ({ imgName, content, vidId, heading }) => {
             style={{
               position: "absolute",
               bottom: "-15%",
-              left: "-10%",
+              left: "5%",
             }}
             className="border-img"
           >

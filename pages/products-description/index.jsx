@@ -102,8 +102,8 @@ const ProductsDescription = () => {
 
       {/* Product-category description section */}
       <div className={styles.product_des_container}>
-        {ProductsCategory.map((product) => (
-          <div className={styles[product.number]}>
+        {ProductsCategory.map((product, index) => (
+          <div key={`product-${index}-${product.number}`} className={styles[product.number]}>
             <div className={styles.descriptionBody}>
               <h6 className="text_justify">{product.description}</h6>
               <div className={styles.btn}>

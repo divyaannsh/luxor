@@ -1,35 +1,35 @@
 import React from "react";
 import Link from "next/link";
 
-import LuxorGroupbrandsinindia from "public/assets/images/Overview/connectlogo.png";
-import banner from "public/assets/images/Overview/Overview Section Banner.jpg";
-import revamped from "public/assets/images/Overview/about-us-revamped.png";
-import success from "public/assets/images/Overview/OurInfra Structure.png";
-import luor from "public/assets/images/Overview/Building & Pen Element.png";
-import datetat from "public/assets/images/Overview/bwlow.png";
-import pen from "public/assets/images/Overview/pen.png";
-import plexconsil from "public/assets/images/aboutpage/webp/plexconsil.webp";
-import wim from "public/assets/images/aboutpage/webp/wim.webp";
-import luxor1 from "public/assets/images/Overview/luxor1.png";
-import luxor2 from "public/assets/images/Overview/luxor2.png";
-import luxor3 from "public/assets/images/Overview/luxor3.png";
-import luxor4 from "public/assets/images/Overview/luxor4.png";
-import Ap from "public/assets/images/certificates/Ap.jpg";
-import Ce from "public/assets/images/certificates/Ce.jpg";
-import Eco from "public/assets/images/certificates/Eco.jpg";
-import EN71 from "public/assets/images/certificates/EN71.jpg";
-import ISo9001 from "public/assets/images/certificates/ISo9001.jpg";
-import ISO14001 from "public/assets/images/certificates/ISO14001.jpg";
-import OHS from "public/assets/images/certificates/OHS.jpg";
-import ORK from "public/assets/images/certificates/ORK.jpg";
-import Reach from "public/assets/images/certificates/Reach.jpg";
-import Recycled from "public/assets/images/certificates/Recycled.jpg";
-import Tpat from "public/assets/images/certificates/Tpat.jpg";
-import feo from "public/assets/images/aboutpage/webp/feo.webp";
+import LuxorGroupbrandsinindia from "/public/assets/images/Overview/LuxorGroupbrandsinindia.png";
+import banner from "/public/assets/images/Overview/Overview Section Banner.jpg";
+import revamped from "/public/assets/images/Overview/about-us-revamped.png";
+import success from "/public/assets/images/Overview/OurInfra Structure.png";
+import luor from "/public/assets/images/Overview/Building & Pen Element.png";
+import datetat from "/public/assets/images/Overview/bwlow.png";
+import pen from "/public/assets/images/Overview/pen.png";
+import plexconsil from "/public/assets/images/aboutpage/webp/plexconsil.webp";
+import wim from "/public/assets/images/aboutpage/webp/wim.webp";
+import luxor1 from "/public/assets/images/Overview/luxor1.png";
+import luxor2 from "/public/assets/images/Overview/luxor2.png";
+import luxor3 from "/public/assets/images/Overview/luxor3.png";
+import luxor4 from "/public/assets/images/Overview/luxor4.png";
+import Ap from "/public/assets/images/certificates/Ap.jpg";
+import Ce from "/public/assets/images/certificates/Ce.jpg";
+import Eco from "/public/assets/images/certificates/Eco.jpg";
+import EN71 from "/public/assets/images/certificates/EN71.jpg";
+import ISo9001 from "/public/assets/images/certificates/ISo9001.jpg";
+import ISO14001 from "/public/assets/images/certificates/ISO14001.jpg";
+import OHS from "/public/assets/images/certificates/OHS.jpg";
+import ORK from "/public/assets/images/certificates/ORK.jpg";
+import Reach from "/public/assets/images/certificates/Reach.jpg";
+import Recycled from "/public/assets/images/certificates/Recycled.jpg";
+import Tpat from "/public/assets/images/certificates/Tpat.jpg";
+import feo from "/public/assets/images/aboutpage/feo.jpg";
 import style from "../../components/HomePage/style.module.css";
-import fortyyearsImg from "public/assets/images/aboutpage/Over 60 Year.png";
-import birthofluxor from "public/assets/images/aboutpage/birth-of-luxor.jpg";
-import Sustainable from "public/assets/images/Overview/Sustainable.jpg";
+import fortyyearsImg from "/public/assets/images/aboutpage/fortyyears.jpg";
+import birthofluxor from "/public/assets/images/aboutpage/birth-of-luxor.jpg";
+import Sustainable from "/public/assets/images/Overview/Sustainable.jpg";
 import Image from "next/image";
 function scrollLeft() {
     document.querySelector("div").scrollLeft -= 100;
@@ -112,7 +112,7 @@ const index = () => {
                         muted
                         className={style["video-img1"]}
                         loop
-                        src={`${process.env.NEXT_PUBLIC_BASE_URL}/dotnew.mp4`}
+                        src="/assets/videos/journey.mp4"
                     />
                 </div>
             </section>

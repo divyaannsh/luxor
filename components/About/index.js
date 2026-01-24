@@ -1,17 +1,17 @@
 import React from "react";
 import Link from "next/link";
 
-import banner from "public/assets/images/aboutpage/webp/banner.webp";
-import pcw from "public/assets/images/aboutpage/webp/pcw.webp";
-import plexconsil from "public/assets/images/aboutpage/webp/plexconsil.webp";
-import wim from "public/assets/images/aboutpage/webp/wim.webp";
-import feo from "public/assets/images/aboutpage/webp/feo.webp";
+import banner from "/public/assets/images/aboutpage/webp/banner.webp";
+import pcw from "/public/assets/images/aboutpage/webp/pcw.webp";
+import plexconsil from "/public/assets/images/aboutpage/webp/plexconsil.webp";
+import wim from "/public/assets/images/aboutpage/webp/wim.webp";
+import feo from "/public/assets/images/aboutpage/webp/feo.webp";
 
-import fortyyearsImg from "public/assets/images/aboutpage/fortyyears-img.jpg";
-import birthofluxor from "public/assets/images/aboutpage/birth-of-luxor.jpg";
-import exportingImg from "public/assets/images/aboutpage/exporting-over-countries.jpg";
-import md_profile from "public/assets/images/aboutpage/md_profile.jpg";
-import ecowrite from "public/assets/images/aboutpage/ecowrite.jpg";
+import fortyyearsImg from "/public/assets/images/aboutpage/fortyyears-img.jpg";
+import birthofluxor from "/public/assets/images/aboutpage/birth-of-luxor.jpg";
+import exportingImg from "/public/assets/images/aboutpage/exporting-over-countries.jpg";
+import md_profile from "/public/assets/images/aboutpage/md_profile.jpg";
+import ecowrite from "/public/assets/images/aboutpage/ecowrite.jpg";
 import Image from "next/image";
 import style from "../HomePage/style.module.css";
 const index = () => {
@@ -84,7 +84,7 @@ const index = () => {
               className={style["video-img"]}
               style={{ objectFit: "contain" }}
               loop
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/2.mp4`}
+              src="/assets/videos/journey.mp4"
             />
             {/* <JourneyMap /> */}
             {/* <ImageMap /> */}

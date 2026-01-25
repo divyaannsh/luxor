@@ -1,0 +1,63 @@
+[
+  {
+    "_id": "6539114d1d035f1f14e54c9c",
+    "name": "Pens",
+    "created_on": "2023-10-25T12:59:57.480Z",
+    "__v": 0,
+    "file_name": "Pen17025380983401709620320220.jpg",
+    "master_folder_name": "master_prd_icons/pens"
+  },
+  {
+    "_id": "653911ba8e6902ca42c1d6e9",
+    "name": "Highlighters",
+    "created_on": "2023-10-25T13:01:46.732Z",
+    "__v": 0,
+    "file_name": "Highlighter170253812579317096204171381.jpg",
+    "master_folder_name": "master_prd_icons/heighlighters",
+    "product_folder_name": "master_prd_icons/heighlighters/product_images"
+  },
+  {
+    "_id": "653911ce6d8ae7473f9325a7",
+    "name": "Art & Hobby",
+    "created_on": "2023-10-25T13:02:06.376Z",
+    "__v": 0,
+    "file_name": "Art & Hobby17025381671551709620936301.jpg",
+    "master_folder_name": "master_prd_icons/art_hobby",
+    "product_folder_name": "master_prd_icons/art_hobby/product_images"
+  },
+  {
+    "_id": "653912250252d0fe24b4346c",
+    "name": "Markers",
+    "created_on": "2023-10-25T13:03:33.877Z",
+    "__v": 0,
+    "file_name": "Markers17025385368091709621365183.jpg",
+    "master_folder_name": "master_prd_icons/markers"
+  },
+  {
+    "_id": "653912399a126cb9bb92f68c",
+    "name": "Kids Colouring",
+    "created_on": "2023-10-25T13:03:53.668Z",
+    "__v": 0,
+    "file_name": "Kids Coloring17025385558741709621464766.jpg",
+    "master_folder_name": "master_prd_icons/kids_coloring",
+    "product_folder_name": "master_prd_icons/kids_coloring/product_images"
+  },
+  {
+    "_id": "653911fdeb3253e94826bcac",
+    "name": "Notebook and Stationery",
+    "created_on": "2023-10-25T13:02:53.437Z",
+    "__v": 0,
+    "file_name": "Note Book17025382062711709621221435.png",
+    "master_folder_name": "master_prd_icons/notebook_and_stationary",
+    "product_folder_name": "master_prd_icons/notebook_and_stationary/product_images"
+  },
+  {
+    "_id": "6539120edb6bdba29040cb2c",
+    "name": "Value Packs",
+    "created_on": "2023-10-25T13:03:10.423Z",
+    "__v": 0,
+    "file_name": "VAlue Pack17025382296001709621159588.png",
+    "master_folder_name": "master_prd_icons/value_packs",
+    "product_folder_name": "master_prd_icons/value_packs/product_images"
+  }
+]

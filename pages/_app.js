@@ -18,24 +18,56 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     // Check online status
-    setIsOnline(navigator.onLine);
+    if (typeof window !== 'undefined') {
+      setIsOnline(navigator.onLine);
+      
+      // Listen for online/offline events
+      const handleOnline = () => setIsOnline(true);
+      const handleOffline = () => setIsOnline(false);
+      
+      window.addEventListener('online', handleOnline);
+      window.addEventListener('offline', handleOffline);
+      
+      // Cleanup
+      return () => {
+        window.removeEventListener('online', handleOnline);
+        window.removeEventListener('offline', handleOffline);
+      };
+    }
     
-    // Listen for online/offline events
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-    
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
-    
-    // Register service worker
+    // Service Worker - disable in development to prevent conflicts
     if ('serviceWorker' in navigator && typeof window !== 'undefined') {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('ServiceWorker registration successful');
-        })
-        .catch(err => {
-          console.log('ServiceWorker registration failed: ', err);
+      // Only register in production or if explicitly enabled
+      const isDev = process.env.NODE_ENV === 'development';
+      const useSW = process.env.NEXT_PUBLIC_USE_SW === 'true';
+      
+      if (!isDev || useSW) {
+        // Unregister any existing service workers first
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+          }
         });
+        
+        // Register service worker after a delay
+        setTimeout(() => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+              // Silently fail - don't break the app
+              console.warn('ServiceWorker registration failed:', err);
+            });
+        }, 1000);
+      } else {
+        // In development, unregister any existing service workers
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+          }
+        });
+      }
     }
 
     import("bootstrap/dist/js/bootstrap.bundle.min.js");

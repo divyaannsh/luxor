@@ -126,25 +126,113 @@ export const localProducts = [
 
 export const localCategories = [
   {
-    _id: "1",
-    category: "Markers",
-    cat_type: "marker",
-    description: "Professional markers for all writing needs",
-    image: "/assets/broadline-marker.png"
+    _id: "6539114d1d035f1f14e54c9c",
+    name: "Pens",
+    created_on: "2023-10-25T12:59:57.480Z",
+    file_name: "Pen17025380983401709620320220.jpg",
+    master_folder_name: "master_prd_icons/pens"
   },
   {
-    _id: "2",
-    category: "Pens", 
-    cat_type: "pen",
-    description: "Quality pens for writing and drawing",
-    image: "/assets/popular1.png"
+    _id: "653912250252d0fe24b4346c",
+    name: "Markers",
+    created_on: "2023-10-25T13:03:33.877Z",
+    file_name: "Markers17025385368091709621365183.jpg",
+    master_folder_name: "master_prd_icons/markers"
   },
   {
-    _id: "3",
-    category: "Art Supplies",
-    cat_type: "art",
-    description: "Creative art supplies and materials",
-    image: "/assets/product1.png"
+    _id: "653911ba8e6902ca42c1d6e9",
+    name: "Highlighters",
+    created_on: "2023-10-25T13:01:46.732Z",
+    file_name: "Highlighter170253812579317096204171381.jpg",
+    master_folder_name: "master_prd_icons/heighlighters",
+    product_folder_name: "master_prd_icons/heighlighters/product_images"
+  },
+  {
+    _id: "653911ce6d8ae7473f9325a7",
+    name: "Art & Hobby",
+    created_on: "2023-10-25T13:02:06.376Z",
+    file_name: "Art & Hobby17025381671551709620936301.jpg",
+    master_folder_name: "master_prd_icons/art_hobby",
+    product_folder_name: "master_prd_icons/art_hobby/product_images"
+  },
+  {
+    _id: "653912399a126cb9bb92f68c",
+    name: "Kids Colouring",
+    created_on: "2023-10-25T13:03:53.668Z",
+    file_name: "Kids Coloring17025385558741709621464766.jpg",
+    master_folder_name: "master_prd_icons/kids_coloring",
+    product_folder_name: "master_prd_icons/kids_coloring/product_images"
+  },
+  {
+    _id: "653911fdeb3253e94826bcac",
+    name: "Notebook and Stationery",
+    created_on: "2023-10-25T13:02:53.437Z",
+    file_name: "Note Book17025382062711709621221435.png",
+    master_folder_name: "master_prd_icons/notebook_and_stationary",
+    product_folder_name: "master_prd_icons/notebook_and_stationary/product_images"
+  },
+  {
+    _id: "6539120edb6bdba29040cb2c",
+    name: "Value Packs",
+    created_on: "2023-10-25T13:03:10.423Z",
+    file_name: "VAlue Pack17025382296001709621159588.png",
+    master_folder_name: "master_prd_icons/value_packs",
+    product_folder_name: "master_prd_icons/value_packs/product_images"
+  }
+];
+
+// Subcategories for Pens
+export const localPenSubCategories = [
+  {
+    _id: "6537d22343346433a3754325",
+    category: "metal pens",
+    color: "all colors",
+    created_on: "2023-10-24T14:18:11.102Z",
+    file_name: "metal_pen.jpg",
+    master_folder_name: "master_prd_icons/pens/metal_pens",
+    product_folder_name: "master_prd_icons/pens/metal_pens/product_images",
+    product_category_type: "6539114d1d035f1f14e54c9c" // Links to Pens category
+  },
+  {
+    _id: "6537d24c6c7d38d8e947c8fa",
+    category: "everyday writing",
+    color: "all colors",
+    created_on: "2023-10-24T14:18:52.052Z",
+    file_name: "every_day_writing.jpg",
+    master_folder_name: "master_prd_icons/pens/everyday_writing",
+    product_folder_name: "master_prd_icons/pens/everyday_writing/product_images",
+    product_category_type: "6539114d1d035f1f14e54c9c" // Links to Pens category
+  }
+];
+
+// Subcategories for Markers
+export const localMarkerSubCategories = [
+  {
+    _id: "65397016d2ea5f856977cf94",
+    category: "Permanent Markers",
+    created_on: "2023-10-25T19:44:22.460Z",
+    file_name: "permament_markers.jpg",
+    master_folder_name: "master_prd_icons/markers/permanent_markers",
+    product_folder_name: "master_prd_icons/markers/permanent_markers/product_images",
+    product_category_type: "653912250252d0fe24b4346c" // Links to Markers category
+  },
+  {
+    _id: "65397048d7b96ccee7f63082",
+    category: "WHITEBOARD MARKERS",
+    created_on: "2023-10-25T19:45:12.879Z",
+    file_name: "whibard_nakrers.jpg",
+    master_folder_name: "master_prd_icons/markers/whiteboard_markers",
+    product_folder_name: "master_prd_icons/markers/whiteboard_markers/product_images",
+    product_category_type: "653912250252d0fe24b4346c" // Links to Markers category
+  },
+  {
+    _id: "65397066f05601bf5d55de41",
+    category: "Whiteboard Care Kits",
+    created_on: "2023-10-25T19:45:42.984Z",
+    file_name: "care_kits.jpeg",
+    master_folder_name: "master_prd_icons/markers/whiteboard_care_kits",
+    product_folder_name: "master_prd_icons/markers/whiteboard_care_kits/product_images",
+    product_category_type: "653912250252d0fe24b4346c" // Links to Markers category
   }
 ];
 

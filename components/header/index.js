@@ -82,9 +82,20 @@ const Header = (props) => {
   useEffect(() => {
     (async function () {
       try {
-        // let { result, status } = await allProductsCategory();
+        // Try to fetch from API first
         let { result, status } = await newProductCategory();
         let response = await newProductSubCategory();
+
+        // If API fails or returns empty, use local data as fallback
+        if (!status || !result || result.length === 0) {
+          const { localCategories, localPenSubCategories, localMarkerSubCategories } = await import("Actions/localData");
+          result = localCategories;
+          const allSubCategories = [
+            ...(localPenSubCategories || []),
+            ...(localMarkerSubCategories || [])
+          ];
+          response = { result: allSubCategories, status: true };
+        }
 
         const categories = Array.isArray(result) ? result : [];
         const subCategories = Array.isArray(response?.result) ? response.result : [];
@@ -100,9 +111,49 @@ const Header = (props) => {
           }
         });
 
-        if (status) set_all_prd(new_cat_data);
+        if (new_cat_data.length > 0) {
+          set_all_prd(new_cat_data);
+        } else {
+          // Final fallback - use local data directly
+          const { localCategories, localPenSubCategories, localMarkerSubCategories } = await import("Actions/localData");
+          const allSubCategories = [
+            ...(localPenSubCategories || []),
+            ...(localMarkerSubCategories || [])
+          ];
+          const fallback_data = localCategories.map((cat) => {
+            const selected_sub_cat = allSubCategories.filter(
+              (sub_cat) => cat._id === sub_cat.product_category_type
+            );
+            if (selected_sub_cat.length > 0) {
+              return { ...cat, _doc: selected_sub_cat };
+            } else {
+              return cat;
+            }
+          });
+          set_all_prd(fallback_data);
+        }
       } catch (e) {
-        // ignore offline/network errors
+        // On error, use local data as fallback
+        try {
+          const { localCategories, localPenSubCategories, localMarkerSubCategories } = await import("Actions/localData");
+          const allSubCategories = [
+            ...(localPenSubCategories || []),
+            ...(localMarkerSubCategories || [])
+          ];
+          const fallback_data = localCategories.map((cat) => {
+            const selected_sub_cat = allSubCategories.filter(
+              (sub_cat) => cat._id === sub_cat.product_category_type
+            );
+            if (selected_sub_cat.length > 0) {
+              return { ...cat, _doc: selected_sub_cat };
+            } else {
+              return cat;
+            }
+          });
+          set_all_prd(fallback_data);
+        } catch (fallbackError) {
+          console.warn('Failed to load product data:', fallbackError);
+        }
       }
     })();
   }, []); // Run only once on mount
@@ -358,17 +409,39 @@ const Header = (props) => {
                   </li>
                 </ul>
               </div> */}
-              <div className="dropdown">
-                <li
-                  className="dropdown nav-item"
-                  onClick={() => router.push("/products-description")}
-                >
+              <div 
+                className="dropdown"
+                onMouseEnter={(e) => {
+                  // Show dropdown on hover
+                  const dropdown = e.currentTarget.querySelector('.dropdown-menu');
+                  if (dropdown) {
+                    dropdown.classList.add('show');
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  // Hide dropdown when mouse leaves
+                  const dropdown = e.currentTarget.querySelector('.dropdown-menu');
+                  if (dropdown) {
+                    dropdown.classList.remove('show');
+                  }
+                }}
+              >
+                <li className="dropdown nav-item">
                   <a
                     className="btn dropdown-toggle pt-0 ahover"
                     type="button"
                     id="dropdownProduct"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // Toggle dropdown on click as well
+                      const dropdown = e.currentTarget.closest('.dropdown').querySelector('.dropdown-menu');
+                      if (dropdown) {
+                        dropdown.classList.toggle('show');
+                      }
+                    }}
                   >
                     Product
                   </a>
@@ -376,68 +449,92 @@ const Header = (props) => {
 
                 <ul
                   className="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton"
+                  aria-labelledby="dropdownProduct"
                 >
-                  {all_prd.length > 0 &&
+                  {all_prd.length > 0 ? (
                     all_prd.map((item, ind) => {
-                      if (item._doc) {
+                      if (item._doc && Array.isArray(item._doc) && item._doc.length > 0) {
                         return (
                           <li
+                            key={`product-${ind}-${item._id || ind}`}
                             className={`d-block ${styles["main_prd"]}`}
-                            onClick={(e) => {
-                              debugger;
-                              goToListingPage(item);
+                            onMouseEnter={(e) => {
+                              // Show submenu on hover
+                              const submenu = e.currentTarget.querySelector('.dropdown-submenu');
+                              if (submenu) {
+                                submenu.classList.add('show');
+                                submenu.style.display = 'block';
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              // Hide submenu when mouse leaves
+                              const submenu = e.currentTarget.querySelector('.dropdown-submenu');
+                              if (submenu) {
+                                submenu.classList.remove('show');
+                                submenu.style.display = 'none';
+                              }
                             }}
                           >
-                            <a className="dropdown-item fs-16 text_black ahover">
-                              {/* {item._doc.name} */}
+                            <a 
+                              className="dropdown-item fs-16 text_black ahover"
+                              style={{ cursor: 'pointer' }}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                // Don't navigate on main item click if it has submenu
+                              }}
+                            >
                               {item.name}
+                              <i className="fa fa-chevron-right float-end" style={{ fontSize: '12px', marginTop: '4px' }}></i>
                             </a>
                             <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
-                              {item._doc &&
-                                item._doc.length > 0 &&
-                                item._doc.map((ele) => {
-                                  return (
-                                    <React.Fragment>
-                                      <li
-                                        onClick={(e) => {
-                                          debugger;
-                                          e.stopPropagation();
-                                          goToProductPage(
-                                            item,
-                                            ele._id,
-                                            ele.category
-                                              ? ele.category
-                                              : ele.category
-                                          );
-                                        }}
-                                      >
-                                        <a className="dropdown-item ahover">
-                                          {ele.category
-                                            ? ele.category.toLowerCase()
-                                            : ""}
-                                        </a>
-                                      </li>
+                              {item._doc.map((ele, subInd) => {
+                                return (
+                                  <React.Fragment key={`submenu-${ind}-${subInd}-${ele._id || subInd}`}>
+                                    <li
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        goToProductPage(
+                                          item,
+                                          ele._id,
+                                          ele.category || ele.name || ''
+                                        );
+                                      }}
+                                    >
+                                      <a className="dropdown-item ahover" style={{ cursor: 'pointer' }}>
+                                        {ele.category ? ele.category.toLowerCase() : ele.name || ''}
+                                      </a>
+                                    </li>
+                                    {subInd < item._doc.length - 1 && (
                                       <hr className="dropdown-divider ms-3 me-3" />
-                                    </React.Fragment>
-                                  );
-                                })}
+                                    )}
+                                  </React.Fragment>
+                                );
+                              })}
                             </ul>
                           </li>
                         );
                       } else {
                         return (
                           <li
-                            className={`d-block ${styles["main_prd"]} `}
-                            onClick={() => goToProductPage(item)}
+                            key={`product-simple-${ind}-${item._id || ind}`}
+                            className={`d-block ${styles["main_prd"]}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              goToProductPage(item);
+                            }}
                           >
-                            <a className="dropdown-item fs-16 text_black ahover">
+                            <a className="dropdown-item fs-16 text_black ahover" style={{ cursor: 'pointer' }}>
                               {item.name}
                             </a>
                           </li>
                         );
                       }
-                    })}
+                    })
+                  ) : (
+                    <li>
+                      <a className="dropdown-item fs-16 text_black">No products available</a>
+                    </li>
+                  )}
                 </ul>
               </div>
               <li className="nav-item">

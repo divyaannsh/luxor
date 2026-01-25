@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "65397016d2ea5f856977cf94",
+    "marker_category": "Permanent Markers",
+    "created_on": "2023-10-25T19:44:22.460Z",
+    "__v": 0,
+    "file_name": "permament_markers.jpg",
+    "master_folder_name": "master_prd_icons/markers/permanent_markers",
+    "product_folder_name": "master_prd_icons/markers/permanent_markers/product_images"
+  },
+  {
+    "_id": "65397048d7b96ccee7f63082",
+    "marker_category": "WHITEBOARD MARKERS",
+    "created_on": "2023-10-25T19:45:12.879Z",
+    "__v": 0,
+    "file_name": "whibard_nakrers.jpg",
+    "master_folder_name": "master_prd_icons/markers/whiteboard_markers",
+    "product_folder_name": "master_prd_icons/markers/whiteboard_markers/product_images"
+  },
+  {
+    "_id": "65397066f05601bf5d55de41",
+    "marker_category": "Whiteboard Care Kits",
+    "created_on": "2023-10-25T19:45:42.984Z",
+    "__v": 0,
+    "file_name": "care_kits.jpeg",
+    "master_folder_name": "master_prd_icons/markers/whiteboard_care_kits",
+    "product_folder_name": "master_prd_icons/markers/whiteboard_care_kits/product_images"
+  }
+]

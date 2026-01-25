@@ -1,0 +1,8 @@
+{
+  "ignore_dirs": [
+    ".next",
+    "node_modules",
+    "Actions/offlineData.js",
+    "Actions/offlineDataLoader.js"
+  ]
+}

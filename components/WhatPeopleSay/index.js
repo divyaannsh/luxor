@@ -1,7 +1,4 @@
-import React, { Component, createRef, useRef } from "react";
-import ReactDOM from "react-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import React, { Component, useState, useEffect } from "react";
 import Image from "next/image";
 import style from "./style.module.css";
 import image1 from "public/assets/whatpeoplesay/images1.jpg";
@@ -25,66 +22,99 @@ import image23 from "public/assets/whatpeoplesay/images23.jpg";
 import image24 from "public/assets/whatpeoplesay/images24.jpg";
 import image25 from "public/assets/whatpeoplesay/images25.jpg";
 
-const sliderImgSize = {
-  width: 380,
-  height: 400,
-};
+const availableImages = [
+  { src: image1, alt: "Social Impact 1" },
+  { src: image3, alt: "Social Impact 3" },
+  { src: image4, alt: "Social Impact 4" },
+  { src: image5, alt: "Social Impact 5" },
+  { src: image6, alt: "Social Impact 6" },
+  { src: image8, alt: "Social Impact 8" },
+  { src: image9, alt: "Social Impact 9" },
+  { src: image10, alt: "Social Impact 10" },
+  { src: image11, alt: "Social Impact 11" },
+  { src: image12, alt: "Social Impact 12" },
+  { src: image13, alt: "Social Impact 13" },
+  { src: image14, alt: "Social Impact 14" },
+  { src: image15, alt: "Social Impact 15" },
+  { src: image17, alt: "Social Impact 17" },
+  { src: image18, alt: "Social Impact 18" },
+  { src: image21, alt: "Social Impact 21" },
+  { src: image22, alt: "Social Impact 22" },
+  { src: image23, alt: "Social Impact 23" },
+  { src: image24, alt: "Social Impact 24" },
+  { src: image25, alt: "Social Impact 25" },
+];
 
-export default class WhatPeopleSayCarosel extends Component {
-  constructor(props) {
-    super(props);
-    const ref = createRef();
-  }
+export default function WhatPeopleSayCarosel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  render() {
-    const availableImages = [
-      { src: image1, alt: "Social Impact 1" },
-      { src: image3, alt: "Social Impact 3" },
-      { src: image4, alt: "Social Impact 4" },
-      { src: image5, alt: "Social Impact 5" },
-      { src: image6, alt: "Social Impact 6" },
-      { src: image8, alt: "Social Impact 8" },
-      { src: image9, alt: "Social Impact 9" },
-      { src: image10, alt: "Social Impact 10" },
-      { src: image11, alt: "Social Impact 11" },
-      { src: image12, alt: "Social Impact 12" },
-      { src: image13, alt: "Social Impact 13" },
-      { src: image14, alt: "Social Impact 14" },
-      { src: image15, alt: "Social Impact 15" },
-      { src: image17, alt: "Social Impact 17" },
-      { src: image18, alt: "Social Impact 18" },
-      { src: image21, alt: "Social Impact 21" },
-      { src: image22, alt: "Social Impact 22" },
-      { src: image23, alt: "Social Impact 23" },
-      { src: image24, alt: "Social Impact 24" },
-      { src: image25, alt: "Social Impact 25" },
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % availableImages.length);
+        setIsTransitioning(false);
+      }, 400); // Half of transition time
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Get three images: previous, current (center), next
+  const getVisibleImages = () => {
+    const prevIndex = (currentIndex - 1 + availableImages.length) % availableImages.length;
+    const nextIndex = (currentIndex + 1) % availableImages.length;
+    
+    return [
+      availableImages[prevIndex],
+      availableImages[currentIndex],
+      availableImages[nextIndex],
     ];
+  };
 
-    return (
-      <div className={style.body}>
-        <div className={style.imgcontainer}>
-          <h1 className="fs-40 text-center my-5 fw-600">Social Impact Initiatives</h1>
-          <div className={style.slideContainer} ref={this.ref}>
-            <Carousel
-              autoPlay={true}
-              showThumbs={false}
-              infiniteLoop={true}
-              interval={3000}
-              showArrows={true}
-              showStatus={false}
-              showIndicators={true}
-            >
-              {availableImages.map((image, index) => {
-                return (
-                  <div key={`people-${index}`} className="col-lg-3 col-md-4 mb-3">
-                    <Image src={image.src} alt={`People ${index + 1}`} className="img-fluid" />
-                  </div>
-                );
-              })}
-            </Carousel>
+  const visibleImages = getVisibleImages();
+
+  return (
+    <div className={style.body}>
+      <div className={style.imgcontainer}>
+        <h1 className="fs-40 text-center my-5 fw-600">Social Impact Initiatives</h1>
+        <div className={style.slideContainer}>
+          <div className={style.carouselWrapper}>
+            {visibleImages.map((image, index) => {
+              const isCenter = index === 1;
+              const isLeft = index === 0;
+              const isRight = index === 2;
+              
+              return (
+                <div
+                  key={`${currentIndex}-${index}-${isTransitioning ? 'transition' : 'static'}`}
+                  className={`${style.carouselSlide} ${
+                    isCenter 
+                      ? style.centerSlide 
+                      : isLeft 
+                        ? style.leftSlide 
+                        : style.rightSlide
+                  }`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="img-fluid"
+                    width={isCenter ? 550 : 350}
+                    height={isCenter ? 500 : 400}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

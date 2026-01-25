@@ -2238,7 +2238,19 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   display: none;
   position: absolute;
   left: 100%;
-  top: -10px;
+  top: 0;
+  min-width: 200px;
+  background: white;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 0.5rem 0;
+  margin-left: 0.125rem;
+}
+
+.dropdown-menu .dropdown-submenu.show {
+  display: block !important;
 }
 
 .dropdown-submenu {
@@ -2475,12 +2487,30 @@ transition: all 1s ease; */
 }
 
 .dropdown:hover > .dropdown-menu {
-  display: block;
+  display: block !important;
 }
 
 .dropdown > .dropdown-toggle:active {
   /*Without this, clicking will make it sticky*/
   pointer-events: none;
+}
+
+/* Ensure dropdown stays open on hover */
+.dropdown-menu {
+  margin-top: 0;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Fix submenu positioning and visibility */
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block !important;
+}
+
+.dropdown-submenu {
+  margin-left: 0;
 }
 
 .effect {
@@ -2589,6 +2619,27 @@ transition: all 1s ease; */
   }
 }
 
+
+/* Fix for WhatPeopleSay carousel - prevent layout breaking */
+.slideContainer .carousel,
+.slideContainer .carousel-root {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+.slideContainer .carousel .slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 400px;
+}
+
+.slideContainer .carousel .slide img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
 
 .carousel-status{
   display: none !important;

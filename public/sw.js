@@ -59,37 +59,74 @@ self.addEventListener('install', event => {
 
 // Fetch event - serve from cache when offline
 self.addEventListener('fetch', event => {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Skip chrome-extension and other non-http requests
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+
+  // Skip Next.js development chunks - let browser handle them
+  const url = new URL(event.request.url);
+  if (url.pathname.includes('/_next/static/chunks/') && 
+      (url.hostname === 'localhost' || url.hostname === '127.0.0.1')) {
+    return; // Let browser handle dev chunks
+  }
+
   event.respondWith(
     caches.match(event.request)
-      .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
+      .then(cachedResponse => {
+        // If we have a cached response, return it
+        if (cachedResponse) {
+          return cachedResponse;
         }
 
-        // Clone the request
-        const fetchRequest = event.request.clone();
-
-        return fetch(fetchRequest).then(
-          response => {
+        // Try to fetch from network
+        return fetch(event.request)
+          .then(response => {
             // Check if valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
+            if (!response || response.status !== 200) {
               return response;
             }
 
-            // Clone the response
+            // Clone the response for caching
             const responseToCache = response.clone();
 
+            // Cache the response (don't wait for it)
             caches.open(CACHE_NAME)
               .then(cache => {
                 cache.put(event.request, responseToCache);
+              })
+              .catch(() => {
+                // Ignore cache errors
               });
 
             return response;
-          }
-        ).catch(() => {
-          // If fetch fails (offline), try to serve from cache
-          return caches.match(event.request);
+          })
+          .catch(error => {
+            // Network failed - return a basic response for navigation requests
+            if (event.request.mode === 'navigate') {
+              return caches.match('/') || new Response('Offline', {
+                status: 503,
+                statusText: 'Service Unavailable',
+                headers: new Headers({
+                  'Content-Type': 'text/html'
+                })
+              });
+            }
+            
+            // For other requests, return undefined to let browser handle it
+            return undefined;
+          });
+      })
+      .catch(() => {
+        // If cache match fails, let browser handle the request
+        return fetch(event.request).catch(() => {
+          // If fetch also fails, return undefined
+          return undefined;
         });
       })
   );

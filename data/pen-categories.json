@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "6537d22343346433a3754325",
+    "category": "metal pens",
+    "color": "all colors",
+    "created_on": "2023-10-24T14:18:11.102Z",
+    "__v": 0,
+    "file_name": "metal_pen.jpg",
+    "master_folder_name": "master_prd_icons/pens/metal_pens",
+    "product_folder_name": "master_prd_icons/pens/metal_pens/product_images",
+    "product_category_type": "6539114d1d035f1f14e54c9c"
+  },
+  {
+    "_id": "6537d24c6c7d38d8e947c8fa",
+    "category": "everyday writing",
+    "color": "all colors",
+    "created_on": "2023-10-24T14:18:52.052Z",
+    "__v": 0,
+    "file_name": "every_day_writing.jpg",
+    "master_folder_name": "master_prd_icons/pens/everyday_writing",
+    "product_folder_name": "master_prd_icons/pens/everyday_writing/product_images",
+    "product_category_type": "6539114d1d035f1f14e54c9c"
+  },
+  {
+    "_id": "65397016d2ea5f856977cf94",
+    "category": "Permanent Markers",
+    "created_on": "2023-10-25T19:44:22.460Z",
+    "__v": 0,
+    "file_name": "permament_markers.jpg",
+    "master_folder_name": "master_prd_icons/markers/permanent_markers",
+    "product_folder_name": "master_prd_icons/markers/permanent_markers/product_images",
+    "product_category_type": "653912250252d0fe24b4346c"
+  },
+  {
+    "_id": "65397048d7b96ccee7f63082",
+    "category": "WHITEBOARD MARKERS",
+    "created_on": "2023-10-25T19:45:12.879Z",
+    "__v": 0,
+    "file_name": "whibard_nakrers.jpg",
+    "master_folder_name": "master_prd_icons/markers/whiteboard_markers",
+    "product_folder_name": "master_prd_icons/markers/whiteboard_markers/product_images",
+    "product_category_type": "653912250252d0fe24b4346c"
+  },
+  {
+    "_id": "65397066f05601bf5d55de41",
+    "category": "Whiteboard Care Kits",
+    "created_on": "2023-10-25T19:45:42.984Z",
+    "__v": 0,
+    "file_name": "care_kits.jpeg",
+    "master_folder_name": "master_prd_icons/markers/whiteboard_care_kits",
+    "product_folder_name": "master_prd_icons/markers/whiteboard_care_kits/product_images",
+    "product_category_type": "653912250252d0fe24b4346c"
+  }
+]

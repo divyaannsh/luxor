@@ -1,0 +1,1048 @@
+{
+  "cat_wise_products": [
+    {
+      "color_variant": [],
+      "_id": "6538bbae8e0acbf598c850dc",
+      "category_type": null,
+      "name": "Impact ",
+      "color": "all color",
+      "description": "The Impact pen combines a durable stainless steel barrel with a comfortable rubber grip for effortless writing. This ball pen features a Neotec refill, harmonizing style with writing comfort, and comes in an attractive gift presentation.",
+      "icon": "Durable Stainless SteelNeotec RefillPerfect For Gifting",
+      "did_you_know": "The Neotec refill ensures that your writing is both smooth and comfortable, making it a preferred choice for long writing sessions.",
+      "created_on": "2023-10-25T06:54:38.215Z",
+      "__v": 0,
+      "stamps": [
+        "Durable_Stainless_Steel.PNG",
+        "Neotec_Refill.PNG",
+        "Perfect_For_Gifting.PNG"
+      ],
+      "file_name": "11710310474970.jpg",
+      "root_folder_name": "undefined/products/",
+      "main_category_type": "6539114d1d035f1f14e54c9c"
+    },
+    {
+      "_id": "6538bbae8e0acbf598c850e1",
+      "category_type": null,
+      "name": "Gemini ",
+      "color": "all color",
+      "description": "The Gemini pen is a striking combination of tango-chrome and matte lacquered finishes, available in black and blue colors. These pens are equipped with Neotec refills and presented in attractive gift packaging. Additionally, they can be conveniently purchased in blister packs or trays of 10 pens.",
+      "icon": "Tango-Chrome FinishNeotec RefillIdeal For Gifting",
+      "did_you_know": "The color blue is widely recognized for its calming and reassuring qualities, making it the top choice for writing tasks that demand focus and precision.",
+      "created_on": "2023-10-25T06:54:38.215Z",
+      "__v": 0,
+      "stamps": [
+        "Tango_chrome_Finish.PNG",
+        "Ideal_For_Gifting.PNG",
+        "Neotec_Refill.PNG"
+      ],
+      "file_name": "11710309445521.jpg",
+      "root_folder_name": "master_prd_icons/value_packs/product_images/products/",
+      "main_category_type": "6539120edb6bdba29040cb2c",
+      "color_variant": [
+        {
+          "id": "7b00b17248",
+          "label": "Black",
+          "hexcode": "#2b2727",
+          "root_folder_name": "master_prd_icons/value_packs/product_images/products/color_variants/",
+          "file_name": "11710309482282.jpg"
+        },
+        {
+          "id": "2bc553b2d2",
+          "label": "Blue",
+          "hexcode": "#2a2fbb",
+          "root_folder_name": "master_prd_icons/value_packs/product_images/products/color_variants/",
+          "file_name": "21710309510065.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "6538bbae8e0acbf598c85104",
+      "category_type": null,
+      "name": "Ranger Ball Pen",
+      "color": "all color",
+      "description": "The Ranger Ball Pen features a T.C. ball tip for precise writing, a ridged grip for ergonomic comfort, making it ideal for everyday writing. It also includes a ventilated safety cap and is available with a fine tip for precision tasks.",
+      "icon": "T.C. Ball TipRidged GripFine Tip Variant",
+      "did_you_know": "The ridged grip not only enhances comfort but also minimizes hand fatigue during extended writing sessions, ensuring a pleasant writing experience.",
+      "created_on": "2023-10-25T06:54:38.218Z",
+      "__v": 0,
+      "file_name": "11710248395221.jpg",
+      "root_folder_name": "master_prd_icons/eco_write/product_images/products/",
+      "stamps": [
+        "Fine_Tip_Variant.png",
+        "T.C.Ball.Tip.png",
+        "Rubber_Grip.PNG"
+      ],
+      "main_category_type": "653911eb04804c4985fe52bb",
+      "color_variant": [
+        {
+          "id": "7f919ddfb1",
+          "label": "Black",
+          "hexcode": "#121111",
+          "root_folder_name": "master_prd_icons/eco_write/product_images/products/color_variants/",
+          "file_name": "11710248428808.jpg"
+        },
+        {
+          "id": "6de0476d1",
+          "label": "Blue",
+          "hexcode": "#4622aa",
+          "root_folder_name": "master_prd_icons/eco_write/product_images/products/color_variants/",
+          "file_name": "21710248451642.jpg"
+        },
+        {
+          "id": "c0480d8d35",
+          "label": "Red",
+          "hexcode": "#e04252",
+          "root_folder_name": "master_prd_icons/eco_write/product_images/products/color_variants/",
+          "file_name": "31710248469358.jpg"
+        }
+      ]
+    },
+    {
+      "stamps": [],
+      "_id": "6576f4cac4332cf334b751e1",
+      "main_category_type": "653911ce6d8ae7473f9325a7",
+      "name": "Magic colour",
+      "color": "all color",
+      "description": "Magic color 1",
+      "icon": "asda",
+      "did_you_know": "zxczxc",
+      "root_folder_name": "master_prd_icons/art_hobby/product_images/products/",
+      "file_name": "11710310654787.jpg",
+      "created_on": "2023-12-11T11:38:50.434Z",
+      "__v": 0,
+      "category_type": null,
+      "color_variant": [
+        {
+          "id": "4fa37b224e",
+          "label": "Red",
+          "hexcode": "#ed0707",
+          "root_folder_name": "master_prd_icons/art_hobby/product_images/products/color_variants/",
+          "file_name": "11710310703096.jpg"
+        },
+        {
+          "id": "2ea9e93211",
+          "label": "Orange",
+          "hexcode": "#ed9907",
+          "root_folder_name": "master_prd_icons/art_hobby/product_images/products/color_variants/",
+          "file_name": "21710310730873.jpg"
+        },
+        {
+          "id": "b9b513401e",
+          "label": "Yellow",
+          "hexcode": "#f0e928",
+          "root_folder_name": "master_prd_icons/art_hobby/product_images/products/color_variants/",
+          "file_name": "31710310752580.jpg"
+        },
+        {
+          "id": "8e5c774827",
+          "label": "Green",
+          "hexcode": "#f0e928",
+          "root_folder_name": "master_prd_icons/art_hobby/product_images/products/color_variants/",
+          "file_name": "41710310768679.jpg"
+        },
+        {
+          "id": "18176da886b",
+          "label": "White",
+          "hexcode": "#64f028",
+          "root_folder_name": "master_prd_icons/art_hobby/product_images/products/color_variants/",
+          "file_name": "51710310790059.jpg"
+        },
+        {
+          "id": "26106ef542",
+          "label": "Blue",
+          "hexcode": "#19e2e6",
+          "root_folder_name": "master_prd_icons/art_hobby/product_images/products/color_variants/",
+          "file_name": "61710310810955.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa85e",
+      "category_type": null,
+      "name": "Metallic Highliter ",
+      "description": "The Metallic Highlighter is a remarkable highlighting tool featuring a hydrocarbon tip, ensuring smooth and clear markings on paper, copies, and faxes. It uses pastel water-based ink to add a touch of elegance and style to your highlighting.",
+      "icon": " Hydrocarbon TipPastel Water-Based Ink",
+      "did_you_know": "Pastels are created from pure powdered pigment, ground into a pastel with a small amount of gum binder, and then formed into sticks, distinct from chalk.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.364Z",
+      "__v": 0,
+      "file_name": "11709457733979.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "stamps": [
+        "Hydrocarbon_Tip.PNG",
+        "Pastel_Water_Based_Ink.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "76fbff8811",
+          "label": "Blue",
+          "hexcode": "#0679ac",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709450414431.jpg"
+        },
+        {
+          "id": "34c9b50b35",
+          "label": "Red",
+          "hexcode": "#9f362f",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709450435158.jpg"
+        },
+        {
+          "id": "b49e5a076d",
+          "label": "Golden",
+          "hexcode": "#947c40",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709450451790.jpg"
+        },
+        {
+          "id": "12832fba7b9",
+          "label": "Green",
+          "hexcode": "#00905c",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709450470953.jpg"
+        },
+        {
+          "id": "1238c47e2ce",
+          "label": "Grey",
+          "hexcode": "#6d756e",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709450486554.jpg"
+        },
+        {
+          "id": "b6b449a81a",
+          "label": "Orange",
+          "hexcode": "#d46e2d",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709450507075.jpg"
+        },
+        {
+          "id": "d97a8930a5",
+          "label": "Pink",
+          "hexcode": "#bd4680",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "71709450534307.jpg"
+        },
+        {
+          "id": "5e3fb18913",
+          "label": "Purple",
+          "hexcode": "#452d7d",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "81709450556867.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa85c",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Metallic Textliter",
+      "description": "The Metallic Textliter is a unique highlighting tool equipped with a polyester tip, ensuring smooth and clear markings on paper, copies, and faxes. It uses metallic water-based ink for a touch of shimmer and sophistication.",
+      "icon": "Polyester Tip\nMetallic Water-Based Ink\nClear Markings",
+      "did_you_know": "Red, orange, and yellow are warm colors, while violet and blue are cool colors.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.357Z",
+      "__v": 0,
+      "file_name": "11709457771304.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Clear_Markings.PNG",
+        "Metallic_Water_Based_Ink.PNG",
+        "Polyacetal_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "14c170e719c",
+          "label": "Metallic Textliter Blue",
+          "hexcode": "#4d90ad",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709450759825.jpg"
+        },
+        {
+          "id": "13871a22d0d",
+          "label": "Metallic Textliter Golden",
+          "hexcode": "#b2895f",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709450902749.jpg"
+        },
+        {
+          "id": "7a6c8aaeb2",
+          "label": "Metallic Textliter Brown",
+          "hexcode": "#ab8787",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709450940679.jpg"
+        },
+        {
+          "id": "50cc8d5b16",
+          "label": "Metallic Textliter Green",
+          "hexcode": "#00988a",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709450959251.jpg"
+        },
+        {
+          "id": "147543e04df",
+          "label": "Metallic Textliter Grey",
+          "hexcode": "#939393",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709450974264.jpg"
+        },
+        {
+          "id": "148512f7c13",
+          "label": "Metallic Textliter Violet",
+          "hexcode": "#a688a6",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709450990932.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa85a",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Pastel Brush Highliter",
+      "description": "The Pastel Brush Highlighter is an innovative tool for highlighting and marking with its unique polyester brush tip that resembles an artist's paintbrush. It provides smooth and clear markings on various surfaces, including paper, copies, and faxes, thanks to its pastel water-based ink.",
+      "icon": "Polyester Brush Tip\nPastel Water-Based Ink\nClear Markings",
+      "did_you_know": "The polyester brush tip is not only great for highlighting but also perfect for creating watercolor-style artwork in your spare time.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.347Z",
+      "__v": 0,
+      "file_name": "11709457973386.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Clear_Markings.PNG",
+        "Pastel_Water_Based_Ink.PNG",
+        "Polyester_Brush_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "11e823226c3",
+          "label": "Pastel Brush Highliter Blue",
+          "hexcode": "#86d2dd",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709451849610.jpg"
+        },
+        {
+          "id": "366d2f3165",
+          "label": "Pastel Brush Highliter Green",
+          "hexcode": "#a7d7b3",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709451893675.jpg"
+        },
+        {
+          "id": "1067aa341aa",
+          "label": "Pastel Brush Highliter Orange",
+          "hexcode": "#fab398",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709451908276.jpg"
+        },
+        {
+          "id": "be319436c0",
+          "label": "Pastel Brush Highliter Pink",
+          "hexcode": "#e897c1",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709451923229.jpg"
+        },
+        {
+          "id": "14410519caf",
+          "label": "Pastel Brush Highliter Yellow",
+          "hexcode": "#edf1b3",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709451946370.jpg"
+        },
+        {
+          "id": "2a167910ad",
+          "label": "Pastel Brush Highliter Violet",
+          "hexcode": "#929dcf",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709451962523.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa85b",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Twin Highliter ",
+      "description": "The Twin Highlighter is a versatile highlighting tool featuring a hydrocarbon tip that ensures smooth and clear markings on paper, copies, and faxes. It uses fluorescent water-based ink for vibrant highlighting.",
+      "icon": "Hydrocarbon Tip\n Fluorescent Water-Based Ink\nClear Markings",
+      "did_you_know": "Fluorescent ink can make your highlights appear to jump off the page, making it a favorite choice for students and professionals.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.356Z",
+      "__v": 0,
+      "file_name": "11709459506995.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Clear_Markings.PNG",
+        "Fluorescent_Water_Based_Ink.PNG",
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "12615d6651b",
+          "label": "Twin Highliter Blue",
+          "hexcode": "#0071b3",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709453402649.jpg"
+        },
+        {
+          "id": "10299356b21",
+          "label": "Twin Highliter Green",
+          "hexcode": "#4baa42",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709453426385.jpg"
+        },
+        {
+          "id": "4b5b04fbe1",
+          "label": "Twin Highliter Orange",
+          "hexcode": "#e3871c",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709453441287.jpg"
+        },
+        {
+          "id": "143d633c83d",
+          "label": "Twin Highliter Pink",
+          "hexcode": "#ec8bb9",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709453464270.jpg"
+        },
+        {
+          "id": "e2dab071a4",
+          "label": "Twin Highliter Yellow",
+          "hexcode": "#dbd60c",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709453481231.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa85f",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Highliter Fluorescent",
+      "description": "The Highliter Fluorescent is a high-performance highlighting tool equipped with a hydrocarbon tip, ensuring smooth and clear markings on paper, copies, and faxes. It utilizes vibrant fluorescent water-based ink for attention-grabbing highlights.",
+      "icon": "Hydrocarbon Tip\n Fluorescent Water-Based Ink",
+      "did_you_know": "The three primary colors are red, blue, and yellow. All other colors can be made by mixing these three colors together.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.368Z",
+      "__v": 0,
+      "file_name": "11709457291329.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Fluorescent_Water_Based_Ink.PNG",
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "78d8550ee1",
+          "label": "Grey",
+          "hexcode": "#e6e6e6",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709449529707.jpg"
+        },
+        {
+          "id": "946ca68ef5",
+          "label": "Orange",
+          "hexcode": "#ff8800",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709449554710.jpg"
+        },
+        {
+          "id": "104deff54c4",
+          "label": "Pink",
+          "hexcode": "#ff99e9",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709449592597.jpg"
+        },
+        {
+          "id": "21c1b75f15",
+          "label": "Red",
+          "hexcode": "#fd0d0d",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709449618666.jpg"
+        },
+        {
+          "id": "90bd2c2518",
+          "label": "Violet",
+          "hexcode": "#8000ff",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709449767612.jpg"
+        },
+        {
+          "id": "15f5c746c1c",
+          "label": "Blue",
+          "hexcode": "#2ee7ff",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709449793748.jpg"
+        },
+        {
+          "id": "cce6474a33",
+          "label": "Green",
+          "hexcode": "#28e425",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "71709449821013.jpg"
+        },
+        {
+          "id": "53173a6758",
+          "label": "Yellow",
+          "hexcode": "#f2ff38",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "81709449835758.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa860",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Highliter Pastel",
+      "description": "The Highliter Pastel is a versatile highlighting tool featuring a hydrocarbon tip for smooth and clear markings on paper, copies, and faxes. It utilizes fluorescent water-based ink to create vibrant, eye-catching highlights.",
+      "icon": "Hydrocarbon Tip\nFluorescent Water-Based Ink",
+      "did_you_know": "The subtle pastel shades not only look beautiful but also reduce the risk of eye strain when reading highlighted text for an extended period.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.369Z",
+      "__v": 0,
+      "file_name": "11709457361666.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Fluorescent_Water_Based_Ink.PNG",
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "8857c46f93",
+          "label": "Blue",
+          "hexcode": "#a1cdcc",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709450025177.jpg"
+        },
+        {
+          "id": "69de0ef746",
+          "label": "Green",
+          "hexcode": "#9fc8a8",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709450047522.jpg"
+        },
+        {
+          "id": "dc8a13fc0d",
+          "label": "Orange",
+          "hexcode": "#e3a487",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709450151443.jpg"
+        },
+        {
+          "id": "17e939e1a10",
+          "label": "Yellow",
+          "hexcode": "#ead3a6",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709450169533.jpg"
+        },
+        {
+          "id": "cb438b19a",
+          "label": "Pink",
+          "hexcode": "#e093a3",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709450185606.jpg"
+        },
+        {
+          "id": "5b051a7ff1",
+          "label": "Purple",
+          "hexcode": "#a780b0",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709450202262.jpg"
+        },
+        {
+          "id": "1327fa2c464",
+          "label": "Light Red",
+          "hexcode": "#dd7269",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "71709450247635.jpg"
+        },
+        {
+          "id": "7afc58d5d1",
+          "label": "Light Yellow",
+          "hexcode": "#ead884",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "81709450275264.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa861",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Mini Fluorescent Highliter",
+      "description": "The Mini Fluorescent Highlighter is a compact and versatile highlighting tool with a hydrocarbon tip, ensuring smooth and clear markings on paper, copies, and faxes. It features fluorescent water-based ink for eye-catching highlights and is also available in delightful and scented ink options.",
+      "icon": "Hydrocarbon Tip\nFluorescent Water-Based Ink\nFruitful Scented Ink",
+      "did_you_know": "Fruitful scented ink adds delightful fruit-inspired fragrances to your writing or highlighting, engaging the sense of smell for an enhanced experience.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.370Z",
+      "__v": 0,
+      "file_name": "11709457833763.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Fluorescent_Water_Based_Ink.PNG",
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "b3cdf144d8",
+          "label": "Blue",
+          "hexcode": "#40bbe5",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709451134613.jpg"
+        },
+        {
+          "id": "5a724a0886",
+          "label": "Mini Fluorescent Highliter Green",
+          "hexcode": "#3eb649",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709451165328.jpg"
+        },
+        {
+          "id": "3f22af1b16",
+          "label": "Mini Fluorescent Highliter Orange",
+          "hexcode": "#f16c23",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709451191869.jpg"
+        },
+        {
+          "id": "139712af3ac",
+          "label": "Mini Fluorescent Highliter Pink",
+          "hexcode": "#ed4a99",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709451206519.jpg"
+        },
+        {
+          "id": "16b7387b3f2",
+          "label": "Mini Fluorescent Highliter Yellow",
+          "hexcode": "#dbd60d",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709451230482.jpg"
+        }
+      ]
+    },
+    {
+      "stamps": [],
+      "_id": "653cf788471446742ffaa862",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Mini Pastel",
+      "description": "The Mini Pastel Highlighter is a compact and versatile highlighting tool equipped with a hydrocarbon tip for smooth and clear markings on paper, copies, and faxes. It uses fluorescent water-based ink for vibrant highlighting and is also available in delightful and scented ink options.",
+      "icon": "Hydrocarbon Tip\nFluorescent Water-Based Ink\nFruitful Scented Ink:",
+      "did_you_know": "Red, orange, and yellow are warm colors, while violet and blue are cool colors.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.372Z",
+      "__v": 0,
+      "file_name": "11709457887808.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "color_variant": [
+        {
+          "id": "1777bb9092b",
+          "label": "Light Yellow",
+          "hexcode": "#e6cc97",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709451347202.jpg"
+        },
+        {
+          "id": "442c46f67d",
+          "label": "Red",
+          "hexcode": "#e55974",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709451378229.jpg"
+        },
+        {
+          "id": "f6c397a625",
+          "label": "Green",
+          "hexcode": "#5dbfa6",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709451441565.jpg"
+        },
+        {
+          "id": "ea2261ebef",
+          "label": "Light Green",
+          "hexcode": "#93ca8f",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709451468755.jpg"
+        },
+        {
+          "id": "b31716fbde",
+          "label": "Golden",
+          "hexcode": "#efaf78",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709451531918.jpg"
+        },
+        {
+          "id": "f9b81c3fd0",
+          "label": "Light Pink",
+          "hexcode": "#eba5ab",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709451569417.jpg"
+        },
+        {
+          "id": "9556092212",
+          "label": "Yellow",
+          "hexcode": "#efd289",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "71709451583442.jpg"
+        },
+        {
+          "id": "1157ee30a59",
+          "label": "Light Violet",
+          "hexcode": "#a8a1c5",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "81709451613451.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa863",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Eyeliter Fluorescent",
+      "description": "The Eyeliter Fluorescent is an exceptional highlighting tool featuring a hydrocarbon tip for smooth and clear markings on paper, copies, and faxes. It utilizes fluorescent water-based ink for vibrant highlighting.",
+      "icon": "Hydrocarbon TipFluorescent Water-Based Ink",
+      "did_you_know": "The colours of the rainbow always go in the same colour: red, orange, yellow, green, blue, indigo and violet.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.373Z",
+      "__v": 0,
+      "stamps": [
+        "Flourescent_Water_Based_Ink.PNG",
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "185cc8281ee",
+          "label": "Blue",
+          "hexcode": "#73b3f7",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709448707492.jpg"
+        },
+        {
+          "id": "15440f49c97",
+          "label": "Green",
+          "hexcode": "#0be541",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709448766077.jpg"
+        },
+        {
+          "id": "16cf28d32ed",
+          "label": "Orange",
+          "hexcode": "#ed7f35",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709448793319.jpg"
+        },
+        {
+          "id": "17e5d9dcf34",
+          "label": "Pink",
+          "hexcode": "#ef4ee9",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709448814609.jpg"
+        },
+        {
+          "id": "1590bf799c8",
+          "label": "Yellow",
+          "hexcode": "#f7fb28",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709448832052.jpg"
+        }
+      ],
+      "file_name": "11709457098776.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "category_type": null
+    },
+    {
+      "_id": "653cf788471446742ffaa864",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Eyeliter Pastel",
+      "description": "The Eyeliter Pastel is a high-quality highlighting tool featuring a hydrocarbon tip for smooth and clear markings on paper, copies, and faxes. It uses fluorescent water-based ink for bright and vibrant highlighting.",
+      "icon": " Non-Toxic\nHigh Visibilty",
+      "did_you_know": "The colours of the rainbow always go in the same colour: red, orange, yellow, green, blue, indigo and violet.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.374Z",
+      "__v": 0,
+      "file_name": "11709457186567.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "High_Visibility.PNG",
+        "Non_Toxic.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "3dbb10e60e",
+          "label": "Blue",
+          "hexcode": "#91e7fd",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709448972275.jpg"
+        },
+        {
+          "id": "12eff34349c",
+          "label": "Green",
+          "hexcode": "#7af5bc",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709448995293.jpg"
+        },
+        {
+          "id": "24cae6142c",
+          "label": "Orange",
+          "hexcode": "#ffbb5c",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709449015906.jpg"
+        },
+        {
+          "id": "58573f0f3b",
+          "label": "Pink",
+          "hexcode": "#ff85f5",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709449135839.jpg"
+        },
+        {
+          "id": "5484b05f4d",
+          "label": "Purple ",
+          "hexcode": "#d6a0f3",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709449171038.jpg"
+        },
+        {
+          "id": "1305b8143a7",
+          "label": "Yellow",
+          "hexcode": "#fdff94",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "61709449194338.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa865",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Textmarker Fluorescent ",
+      "description": "The Textmarker Fluorescent Colour Body Black Cap is an excellent highlighting tool equipped with a hydrocarbon tip, ensuring smooth and clear markings on paper, copies, and faxes. It utilizes fluorescent water-based ink for vivid highlighting and is also available in a black body with color-wise caps for added personalization.",
+      "icon": " Hydrocarbon Tip\nColor-Coded Caps",
+      "did_you_know": "The option of color-wise caps with a black body allows you to organize your highlights and notes by color, enhancing efficiency.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.375Z",
+      "__v": 0,
+      "file_name": "11709459451444.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "f67432513b",
+          "label": "Textmarker Fluorescent Yellow",
+          "hexcode": "#eae60e",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709452873662.jpg"
+        },
+        {
+          "id": "5f39a98d83",
+          "label": "Textmarker Fluorescent Green",
+          "hexcode": "#3fb54b",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709452892909.jpg"
+        },
+        {
+          "id": "137596de94e",
+          "label": "Textmarker Fluorescent Orange",
+          "hexcode": "#f26e21",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709452925682.jpg"
+        },
+        {
+          "id": "669de12501",
+          "label": "Textmarker Fluorescent Pink",
+          "hexcode": "#ed0d7a",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709453118648.jpg"
+        },
+        {
+          "id": "16945734715",
+          "label": "Textmarker Fluorescent Blue",
+          "hexcode": "#00afe4",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709453133141.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa866",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Textmarker Fluorescent ",
+      "description": "The Textmarker Fluorescent Color Cap, Body Black, is a reliable highlighting tool equipped with a hydrocarbon tip for smooth and clear markings on paper, copies, and faxes. It utilizes fluorescent water-based ink for vibrant highlighting and features color-coded caps for added convenience.",
+      "icon": " Fluorescent Water-Based Ink\n Color-Coded Caps",
+      "did_you_know": "Primary colors are blue, red, and yellow.\nThese are pure colors that have no component other than themselves.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.376Z",
+      "__v": 0,
+      "file_name": "11709459475462.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Fluorescent_Water_Based_Ink.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "13addb89bb8",
+          "label": "Textmarker Fluorescent 2 Blue",
+          "hexcode": "#00beef",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709453217629.jpg"
+        },
+        {
+          "id": "1430a1a8b16",
+          "label": "Textmarker Fluorescent 2 Green ",
+          "hexcode": "#73bc48",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709453245503.jpg"
+        },
+        {
+          "id": "ae3210c5c0",
+          "label": "Textmarker Fluorescent 2 Orange",
+          "hexcode": "#f47f29",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709453277620.jpg"
+        },
+        {
+          "id": "1120ad0df7b",
+          "label": "Textmarker Fluorescent 2 Pink",
+          "hexcode": "#da5c91",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709453296168.jpg"
+        },
+        {
+          "id": "70d955e98d",
+          "label": "Textmarker Fluorescent 2 Yellow",
+          "hexcode": "#e8e322",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709453310334.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa867",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Erasable Highliter",
+      "description": "The Erasable Highlighter is a unique tool with a dual tip, allowing you to highlight from one end and erase with the other. It features a hydrocarbon tip for smooth and clear markings on paper, copies, and faxes, using fluorescent water-based ink.",
+      "icon": "Dual Tip\nHydrocarbon Tip",
+      "did_you_know": "The colours of the rainbow always go in the same colour: red, orange, yellow, green, blue, indigo and violet.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.378Z",
+      "__v": 0,
+      "file_name": "11709457023011.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "stamps": [
+        "Dual_Tip.PNG",
+        "Hydrocarbon_Tip.PNG"
+      ],
+      "color_variant": [
+        {
+          "id": "a53ec84242",
+          "label": "Erasable Highliter Blue",
+          "hexcode": "#3fcff3",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709447674161.jpg"
+        },
+        {
+          "id": "124df53159e",
+          "label": "Erasable Highliter Pink",
+          "hexcode": "#e693f1",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709447789361.jpg"
+        },
+        {
+          "id": "15eaf2dfe7",
+          "label": "Yellow",
+          "hexcode": "#fbfe34",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709448306909.jpg"
+        },
+        {
+          "id": "1c9c2167e3",
+          "label": "Light purple",
+          "hexcode": "#c6c1df",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709448531353.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "653cf788471446742ffaa868",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Gloliter Fluorescent",
+      "description": "The Gloliter Fluorescent is an exceptional highlighting tool equipped with a hydrocarbon tip, ensuring smooth and clear markings on paper, copies, and faxes. It features fluorescent water-based ink for vivid and attention-grabbing highlighting.",
+      "icon": "Chisel Tip\nFluorescent\nHigh Visibility",
+      "did_you_know": "      The three primary colors are red, blue, and yellow.\nAll other colors can be made by mixing these three\ncolors together.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.379Z",
+      "__v": 0,
+      "stamps": [
+        "Chisel_Tip.PNG",
+        "High_Visibility.PNG"
+      ],
+      "file_name": "11709457234886.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/product_images/products/",
+      "color_variant": [
+        {
+          "id": "98b817bcb6",
+          "label": "Blue",
+          "hexcode": "#2ecbff",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "11709449323538.jpg"
+        },
+        {
+          "id": "c26afe3072",
+          "label": "Green",
+          "hexcode": "#60fb7f",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "21709449346722.jpg"
+        },
+        {
+          "id": "85b66cc130",
+          "label": "Pink",
+          "hexcode": "#f160fb",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "31709449362912.jpg"
+        },
+        {
+          "id": "aa6c3a7387",
+          "label": "Yellow",
+          "hexcode": "#f7fe90",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "41709449386217.jpg"
+        },
+        {
+          "id": "2f2e72a810",
+          "label": "Orange",
+          "hexcode": "#ffab5c",
+          "root_folder_name": "master_prd_icons/heighlighters/product_images/products/color_variants/",
+          "file_name": "51709449406287.jpg"
+        }
+      ]
+    },
+    {
+      "color_variant": [],
+      "stamps": [],
+      "_id": "653cf788471446742ffaa85d",
+      "main_category_type": "653911ba8e6902ca42c1d6e9",
+      "name": "Textliter Fluorescent ",
+      "description": "The Textliter Fluorescent is a highly efficient highlighting tool with a hydrocarbon tip, offering smooth and clear markings on paper, copies, and faxes. It uses vibrant fluorescent water-based ink to make your highlights stand out.",
+      "icon": "Hydrocarbon Tip\n Fluorescent Water-Based Ink",
+      "did_you_know": "These highlighters are perfect for use in dimly lit environments or when you want your highlights to be easily visible from a distance.",
+      "color": "all color",
+      "created_on": "2023-10-28T11:59:04.358Z",
+      "__v": 0,
+      "file_name": "textliter blue.jpg",
+      "root_folder_name": "master_prd_icons/heighlighters/products/"
+    },
+    {
+      "color_variant": [],
+      "_id": "6539171003cf56019ffe55bd",
+      "main_category_type": "653911ce6d8ae7473f9325a7",
+      "name": "Dough Art ",
+      "description": "Shaping childhood is an exciting adventure with Luxor Dough Art. This creative tool transforms playful imagination into tangible, artistic expressions. Easy to use and reusable, it fosters learning in shapes, sizes, and motor skills development. Get ready to unleash your creativity! \n\nInstructions:\n\nIf the dough becomes hard after use, simply add a few drops of water to restore its softness.\nFor an extended product life, store the dough in an airtight container after use.\nKeep the dough in a cool and dry place, away from direct sunlight.\n\nCaution:\n\nPlease note that this product is not for consumption.\nAfter playing with the dough, remember to wash your hands thoroughly.",
+      "icon": "Non Toxic \nSafe for Children \n",
+      "did_you_know": "Molded shapes can help children understand various concepts, from basic geometry to motor skills, contributing to their educational development.",
+      "color": "all color",
+      "created_on": "2023-10-25T13:24:32.118Z",
+      "__v": 0,
+      "file_name": "My Creative Modeling Dough 20Pcs.jpg",
+      "root_folder_name": "master_prd_icons/art_hobby/products/",
+      "stamps": [
+        "Safe_For_Children.png",
+        "Non_Toxic.PNG"
+      ]
+    }
+  ],
+  "total": 114
+}

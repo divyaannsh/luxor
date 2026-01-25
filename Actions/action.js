@@ -1,6 +1,6 @@
 import axios from "axios";
 import CONSTANT from "constant";
-import { localProducts, localCategories, popularProducts } from "./localData";
+import { localProducts, localCategories, popularProducts, localPenSubCategories, localMarkerSubCategories } from "./localData";
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -121,9 +121,14 @@ export const newProductCategory = (data) => {
 
 export const newProductSubCategory = (data) => {
   if (useLocalData()) {
+    // Return combined pen and marker subcategories
+    const allSubCategories = [
+      ...(localPenSubCategories || []),
+      ...(localMarkerSubCategories || [])
+    ];
     return Promise.resolve({
       status: true,
-      result: localCategories
+      result: allSubCategories
     });
   }
   

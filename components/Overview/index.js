@@ -25,7 +25,7 @@ import ORK from "/public/assets/images/certificates/ORK.jpg";
 import Reach from "/public/assets/images/certificates/Reach.jpg";
 import Recycled from "/public/assets/images/certificates/Recycled.jpg";
 import Tpat from "/public/assets/images/certificates/Tpat.jpg";
-import feo from "/public/assets/images/aboutpage/feo.jpg";
+import feo from "/public/assets/images/aboutpage/webp/feo.webp";
 import style from "../../components/HomePage/style.module.css";
 import fortyyearsImg from "/public/assets/images/aboutpage/fortyyears.jpg";
 import birthofluxor from "/public/assets/images/aboutpage/birth-of-luxor.jpg";

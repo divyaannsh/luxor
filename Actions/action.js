@@ -7,226 +7,141 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_BASE_URL;
 
-// Check if we're offline or want to use local data
+// Always use local data - NO BACKEND DEPENDENCY
+// This makes the app completely frontend-only
 const useLocalData = () => {
-  return !navigator.onLine || process.env.USE_LOCAL_DATA === 'true';
+  return true; // Always return true - no backend calls
 };
 
 //get-all-global-products(new collection created)
-export const getAllGlobalProducts = (_id, page_no) => {
-  if (useLocalData()) {
-    return Promise.resolve({
-      status: true,
-      result: { 
-        cat_wise_products: localProducts.slice(0, 12) 
-      }
-    });
-  }
+// FRONTEND ONLY - NO BACKEND CALLS
+export const getAllGlobalProducts = async (_id, page_no) => {
+  // Always return local products - no API calls
+  const products = localProducts.map(product => ({
+    ...product,
+    // Ensure root_folder_name and file_name are set for image display
+    root_folder_name: product.root_folder_name || (product.image ? product.image.substring(0, product.image.lastIndexOf('/') + 1) : 'assets/new_launches/'),
+    file_name: product.file_name || (product.image ? product.image.substring(product.image.lastIndexOf('/') + 1) : ''),
+  }));
   
-  const url = `${API_BASE_URL}/get-all-global-products?_id=${_id}&page_no=${page_no}`;
-  return axios
-    .get(url)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: { cat_wise_products: [], total: 0 } }));
-};
-export const getAllPens = (_id, page_no) => {
-  if (useLocalData()) {
-    return Promise.resolve({
-      status: true,
-      result: localProducts.filter(p => p.category === "Pens")
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-all-pens`;
-  return axios
-    .get(url)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: [] }));
-};
-
-export const getMarkerCategory = (data) => {
-  if (useLocalData()) {
-    return Promise.resolve({
-      status: true,
-      result: localProducts.filter(p => p.category === "Markers")
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-all-marker-category`;
-  return axios
-    .get(url, data)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: [] }));
-};
-
-export const allProductsCategory = (data) => {
-  if (useLocalData()) {
-    return Promise.resolve({
-      status: true, 
-      result: localCategories
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-all-categories`;
-  return axios
-    .get(url, data)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: [] }));
-};
-
-export const newProductCategory = (data) => {
-  if (useLocalData()) {
-    return Promise.resolve({
-      status: true,
-      result: localCategories
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-all-categories`;
-  return axios
-    .get(url, data)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: [] }));
-};
-
-export const newProductSubCategory = (data) => {
-  if (useLocalData()) {
-    // Return combined pen and marker subcategories
-    const allSubCategories = [
-      ...(localPenSubCategories || []),
-      ...(localMarkerSubCategories || [])
-    ];
-    return Promise.resolve({
-      status: true,
-      result: allSubCategories
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-pen-category`;
-  return axios
-    .get(url, data)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: [] }));
-};
-
-export const getCategoryWiseProducts = (_id, cat_type, page_no) => {
-  if (useLocalData()) {
-    let filtered = localProducts;
-    if (cat_type) {
-      filtered = localProducts.filter(p => p.cat_type === cat_type);
+  return Promise.resolve({
+    status: true,
+    result: { 
+      cat_wise_products: products,
+      total: products.length
     }
-    return Promise.resolve({
-      status: true,
-      result: { cat_wise_products: filtered }
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-cate-wise-products?_id=${_id}&cat_type=${cat_type}&page_no=${page_no}`;
-  return axios
-    .get(url)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: { cat_wise_products: [], total: 0 } }));
+  });
+};
+// FRONTEND ONLY - NO BACKEND CALLS
+export const getAllPens = (_id, page_no) => {
+  return Promise.resolve({
+    status: true,
+    result: localProducts.filter(p => p.category === "Pens")
+  });
 };
 
+// FRONTEND ONLY - NO BACKEND CALLS
+export const getMarkerCategory = (data) => {
+  return Promise.resolve({
+    status: true,
+    result: localProducts.filter(p => p.category === "Markers")
+  });
+};
+
+// FRONTEND ONLY - NO BACKEND CALLS
+export const allProductsCategory = (data) => {
+  return Promise.resolve({
+    status: true, 
+    result: localCategories
+  });
+};
+
+// FRONTEND ONLY - NO BACKEND CALLS
+export const newProductCategory = (data) => {
+  return Promise.resolve({
+    status: true,
+    result: localCategories
+  });
+};
+
+// FRONTEND ONLY - NO BACKEND CALLS
+export const newProductSubCategory = (data) => {
+  // Return combined pen and marker subcategories
+  const allSubCategories = [
+    ...(localPenSubCategories || []),
+    ...(localMarkerSubCategories || [])
+  ];
+  return Promise.resolve({
+    status: true,
+    result: allSubCategories
+  });
+};
+
+// FRONTEND ONLY - NO BACKEND CALLS
+export const getCategoryWiseProducts = (_id, cat_type, page_no) => {
+  let filtered = localProducts;
+  if (cat_type) {
+    filtered = localProducts.filter(p => p.cat_type === cat_type || p.category?.toLowerCase() === cat_type?.toLowerCase());
+  }
+  return Promise.resolve({
+    status: true,
+    result: { cat_wise_products: filtered, total: filtered.length }
+  });
+};
+
+// FRONTEND ONLY - NO BACKEND CALLS
 export const getProductDetail = async (_id) => {
-  if (useLocalData()) {
-    const product = localProducts.find(p => p._id === _id);
-    return Promise.resolve({
-      status: true,
-      result: { 
-        product: product || localProducts[0], 
-        popular_pics: popularProducts 
-      }
-    });
+  const product = localProducts.find(p => p._id === _id) || localProducts[0];
+  // Ensure product has required fields for image display
+  if (product && !product.root_folder_name && product.image) {
+    // Extract folder and filename from image path
+    const imagePath = product.image.replace(/^\//, ''); // Remove leading slash
+    const lastSlash = imagePath.lastIndexOf('/');
+    if (lastSlash !== -1) {
+      product.root_folder_name = imagePath.substring(0, lastSlash + 1);
+      product.file_name = imagePath.substring(lastSlash + 1);
+    } else {
+      product.root_folder_name = "assets/new_launches/";
+      product.file_name = imagePath;
+    }
   }
-  
-  const url = `${API_BASE_URL}/get-pen-by-id?_id=${_id}`;
-  return axios
-    .get(url)
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: { product: {}, popular_pics: [] } }));
+  return Promise.resolve({
+    status: true,
+    result: { 
+      product: product, 
+      popular_pics: popularProducts 
+    }
+  });
 };
 
+// FRONTEND ONLY - NO BACKEND CALLS
 export const getProductByOnlyId = (model) => {
-  if (useLocalData()) {
-    const product = localProducts.find(p => p._id === model._id);
-    return Promise.resolve({
-      status: true,
-      result: product || localProducts[0]
-    });
-  }
-  
-  const url = `${API_BASE_URL}/get-product-by-only-id`;
-  return axios
-    .post(url, model, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((res) => {
-      if (res.data.status) {
-        return res.data;
-      } else {
-        return res.data;
-      }
-    })
-    .catch(() => ({ status: false, result: [] }));
+  const product = localProducts.find(p => p._id === model?._id || p._id === model);
+  return Promise.resolve({
+    status: true,
+    result: product || localProducts[0]
+  });
 };
 
+// FRONTEND ONLY - NO BACKEND CALLS
 export const getAllCatWiseProducts = async () => {
-  const url = `${API_BASE_URL}/get-master-main-cat-wise-products`;
-  try {
-    const prods = await axios.get(url);
-    return prods.data;
-  } catch (err) {
-    return err.message;
-  }
+  // Return local products organized by category
+  const catWiseProducts = {};
+  localCategories.forEach(cat => {
+    catWiseProducts[cat._id] = {
+      cat_wise_products: localProducts.filter(p => 
+        p.category === cat.name || 
+        p.category?.toLowerCase() === cat.name?.toLowerCase()
+      ),
+      total: localProducts.filter(p => 
+        p.category === cat.name || 
+        p.category?.toLowerCase() === cat.name?.toLowerCase()
+      ).length
+    };
+  });
+  
+  return Promise.resolve({
+    status: true,
+    result: catWiseProducts
+  });
 };

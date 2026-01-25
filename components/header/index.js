@@ -231,7 +231,7 @@ const Header = (props) => {
     <React.Fragment>
       {/* <header className='header'>
                 <Link href='/' className='logo'>
-                    <img src='https://luxorpen.com/images/logo/logo.png' />
+                    <img src='/assets/images/logo/logo.png' alt="Luxor Logo" />
                 </Link>
                 <div className='search'>
                     <input className='inputData' placeholder='Search' />
@@ -267,7 +267,7 @@ const Header = (props) => {
                   {searchedString !== "" && (
                     <datalist id="filtered_main_cat_wise_prods">
                       {filtered_main_cat_wise_prods.map((item, ind) => {
-                        return <option value={item._id}>{item.name}</option>;
+                        return <option key={`filter-${ind}-${item._id || ind}`} value={item._id}>{item.name}</option>;
                       })}
                     </datalist>
                   )}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 // import './../assets/'
 // import './.assets./css./hp.css'
 import { AiOutlineSearch } from "react-icons/ai";
@@ -6,6 +6,7 @@ import Image1 from "public/assets/Products School.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+import { convertToLocalPath, getLocalAssetPath } from "@utils/imageUtils";
 
 import productimg1 from "public/assets/product1.png";
 import broadmarker from "public/assets/broadline-marker.png";
@@ -67,35 +68,61 @@ const ProductPage = (props) => {
   // const data = router.query;
   console.log("prod data-->", props.selected_prd_data);
 
-  let color_variants;
-  let other_images;
-  if (props.selected_prd_data.color_variant) {
-    color_variants = props.selected_prd_data.color_variant.filter(
-      (item) => !item.hasOwnProperty("isOtherImage")
-    );
-    other_images = props.selected_prd_data.color_variant.filter((item) =>
-      item.hasOwnProperty("isOtherImage")
-    );
-  }
-  let sessionStoreData;
-  if (typeof window !== "undefined") {
-    sessionStoreData = JSON.parse(sessionStorage.getItem("pop_picks"));
-  }
-  const [cat_prdcts, setPrd] = useState(props.cat_prd);
-  const [selected_prd, set_selected_prd] = useState(props.selected_prd_data);
-  const [pop_picks_array, setPop_picks_array] = useState(
-    (sessionStoreData && sessionStoreData.slice(0, 3)) || props.popular_picks
-  );
+  // Initialize color variants and other images (safe for SSR)
+  const color_variants = useMemo(() => {
+    if (props.selected_prd_data && props.selected_prd_data.color_variant && Array.isArray(props.selected_prd_data.color_variant)) {
+      return props.selected_prd_data.color_variant.filter(
+        (item) => !item.hasOwnProperty("isOtherImage")
+      );
+    }
+    return [];
+  }, [props.selected_prd_data]);
+
+  const other_images = useMemo(() => {
+    if (props.selected_prd_data && props.selected_prd_data.color_variant && Array.isArray(props.selected_prd_data.color_variant)) {
+      return props.selected_prd_data.color_variant.filter((item) =>
+        item.hasOwnProperty("isOtherImage")
+      );
+    }
+    return [];
+  }, [props.selected_prd_data]);
+
+  const [cat_prdcts, setPrd] = useState(props.cat_prd || []);
+  const [selected_prd, set_selected_prd] = useState(props.selected_prd_data || {
+    root_folder_name: "",
+    file_name: "",
+    color_variant: [],
+  });
+  
+  // Initialize with server props only to avoid hydration mismatch
+  const [pop_picks_array, setPop_picks_array] = useState(props.popular_picks || []);
   const [selectedVariant, setSelectedVariant] = useState(
     color_variants && color_variants.length > 0 ? color_variants[0] : null
   );
+  const [isClient, setIsClient] = useState(false);
+
+  // Load sessionStorage data only on client side after hydration
+  useEffect(() => {
+    setIsClient(true);
+    try {
+      const sessionStoreData = typeof window !== "undefined" 
+        ? JSON.parse(sessionStorage.getItem("pop_picks") || "null")
+        : null;
+      if (sessionStoreData && Array.isArray(sessionStoreData) && sessionStoreData.length > 0) {
+        setPop_picks_array(sessionStoreData.slice(0, 3));
+      }
+    } catch (e) {
+      // Ignore sessionStorage errors
+      console.warn("Failed to load sessionStorage data:", e);
+    }
+  }, []);
   console.log("pop pics-->", pop_picks_array);
   console.log("color-variant==>", selectedVariant);
-  const bannerObj = productBanners.find(
+  const bannerObj = props?.selected_prd_data ? productBanners.find(
     (item) =>
-      item.uid == props?.selected_prd_data?.category_type ||
-      item.uid == props?.selected_prd_data?.main_category_type
-  );
+      item.uid == props.selected_prd_data?.category_type ||
+      item.uid == props.selected_prd_data?.main_category_type
+  ) : null;
 
   console.log("selected product-->", selected_prd);
 
@@ -143,11 +170,25 @@ const ProductPage = (props) => {
   //       )
   //     : "";
 
-  let product_image_files =
-    process.env.NEXT_PUBLIC_BASE_URL +
-    "/" +
-    props.selected_prd_data.root_folder_name +
-    props.selected_prd_data.file_name;
+  let product_image_files = "";
+  if (props.selected_prd_data) {
+    // Priority 1: Use image field if available (complete path)
+    if (props.selected_prd_data.image) {
+      product_image_files = convertToLocalPath(props.selected_prd_data.image);
+    }
+    // Priority 2: Construct from root_folder_name and file_name
+    else if (props.selected_prd_data.root_folder_name && props.selected_prd_data.file_name) {
+      product_image_files = getLocalAssetPath(
+        props.selected_prd_data.root_folder_name,
+        props.selected_prd_data.file_name
+      ) || "/assets/luxorlogo.png";
+    }
+  }
+  
+  // Debug logging
+  if (process.env.NODE_ENV === 'development') {
+    console.log("Product image path:", product_image_files, "Product:", props.selected_prd_data?.name);
+  }
 
   console.log("product-images-->", product_image_files);
   console.log("selected variant-->", selectedVariant);
@@ -245,12 +286,16 @@ const ProductPage = (props) => {
                 //     : broadmarker
                 // }
                 src={
-                  selectedVariant
-                    ? `${process.env.NEXT_PUBLIC_BASE_URL}/${selectedVariant.root_folder_name}${selectedVariant.file_name}`
-                    : product_image_files.includes("undefined")
-                    ? "/assets/luxorlogo.png"
-                    : product_image_files
+                  selectedVariant && selectedVariant.root_folder_name && selectedVariant.file_name
+                    ? getLocalAssetPath(selectedVariant.root_folder_name, selectedVariant.file_name) || "/assets/luxorlogo.png"
+                    : product_image_files && product_image_files !== "" && !product_image_files.includes("undefined")
+                    ? product_image_files
+                    : (props.selected_prd_data?.image 
+                        ? convertToLocalPath(props.selected_prd_data.image)
+                        : "/assets/luxorlogo.png")
                 }
+                unoptimized={true}
+                priority={true}
                 alt="Marker"
               />
             </div>
@@ -334,10 +379,10 @@ const ProductPage = (props) => {
               <div className="row">
                 {selected_prd?.stamps && selected_prd?.stamps.length > 0 ? (
                   selected_prd?.stamps.map((stamp) => (
-                    <div className="col-md-2 mb-3 ">
+                    <div className="col-md-2 mb-3 " key={`stamp-${stamp}`}>
                       <Image
                         className="img-fluid image_stamp"
-                        src={`${BASE_URL}/stamps/${stamp}`}
+                        src={convertToLocalPath(`/stamps/${stamp}`)}
                         alt="images detail"
                         width={200}
                         height={200}
@@ -376,19 +421,26 @@ const ProductPage = (props) => {
               </div>
               {/* ----------------part 4----- */}
               <div style={{ width: "100%", margin: "auto" }}>
-                <Slider {...settings}>
-                  {other_images.map((item) => (
-                    <div>
-                      <Image
-                        width={200}
-                        height={200}
-                        objectFit="contain"
-                        className="img-fluid"
-                        src={`${process.env.NEXT_PUBLIC_BASE_URL}/${item.root_folder_name}${item.file_name}`}
-                      />
-                    </div>
-                  ))}
-                </Slider>
+                {other_images && other_images.length > 0 ? (
+                  <Slider {...settings}>
+                    {other_images.map((item, index) => {
+                      const otherImageSrc = getLocalAssetPath(item.root_folder_name, item.file_name) || "/assets/luxorlogo.png";
+                      return (
+                        <div key={`other-img-${index}`}>
+                          <Image
+                            width={200}
+                            height={200}
+                            style={{ objectFit: "contain" }}
+                            className="img-fluid"
+                            src={otherImageSrc}
+                            alt={item.file_name || "Product image"}
+                            unoptimized={true}
+                          />
+                        </div>
+                      );
+                    })}
+                  </Slider>
+                ) : null}
 
                 {/* <Carousel
                   autoPlay={true}
@@ -637,7 +689,7 @@ const ProductPage = (props) => {
                             src={
                               item.root_folder_name !== undefined &&
                               item.file_name !== undefined
-                                ? `${process.env.NEXT_PUBLIC_BASE_URL}/${item.root_folder_name}/${item.file_name}`
+                                ? getLocalAssetPath(item.root_folder_name, item.file_name) || "/assets/luxorlogo.png"
                                 : "/assets/luxorlogo.png"
                             }
                             alt="homepage"

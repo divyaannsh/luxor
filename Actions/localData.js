@@ -8,12 +8,15 @@ export const localProducts = [
     category: "Markers",
     price: "₹25",
     description: "Premium quality black marker for all writing needs",
+    root_folder_name: "assets/new_launches/",
+    file_name: "marker_blue.png",
     image: "/assets/new_launches/marker_blue.png",
     images: [
       "/assets/new_launches/marker_blue.png",
       "/assets/new_launches/Outline-Marker-Purple.png",
       "/assets/new_launches/Broadtip Marker.png"
     ],
+    color_variant: [],
     features: ["Waterproof", "Quick-drying", "Non-toxic"],
     specifications: {
       tip: "Bullet Tip",
@@ -28,11 +31,14 @@ export const localProducts = [
     category: "Pens",
     price: "₹45",
     description: "Precision fineliner pen for detailed work",
+    root_folder_name: "assets/new_launches/",
+    file_name: "metal_pens.png",
     image: "/assets/new_launches/metal_pens.png",
     images: [
       "/assets/new_launches/metal_pens.png",
       "/assets/new_launches/Elan.png"
     ],
+    color_variant: [],
     features: ["0.4mm Tip", "Archival Quality", "Smudge-proof"],
     specifications: {
       tip: "0.4mm",
@@ -48,11 +54,14 @@ export const localProducts = [
     category: "Pens", 
     price: "₹120",
     description: "Smooth gel pens in assorted colors",
+    root_folder_name: "assets/new_launches/",
+    file_name: "Elan.png",
     image: "/assets/new_launches/Elan.png",
     images: [
       "/assets/new_launches/Elan.png",
       "/assets/new_launches/ikon_6.png"
     ],
+    color_variant: [],
     features: ["Gel Ink", "Comfort Grip", "Assorted Colors"],
     specifications: {
       tip: "0.7mm",
@@ -68,11 +77,14 @@ export const localProducts = [
     category: "Markers",
     price: "₹85",
     description: "Fluorescent highlighters for study and office",
+    root_folder_name: "assets/new_launches/",
+    file_name: "Fluorescent.png",
     image: "/assets/new_launches/Fluorescent.png",
     images: [
       "/assets/new_launches/Fluorescent.png",
       "/assets/new_launches/Pastel.png"
     ],
+    color_variant: [],
     features: ["Fluorescent Ink", "Chisel Tip", "Multiple Colors"],
     specifications: {
       tip: "Chisel",
@@ -88,11 +100,14 @@ export const localProducts = [
     category: "Markers",
     price: "₹150",
     description: "Professional whiteboard markers for presentations",
+    root_folder_name: "assets/new_launches/",
+    file_name: "WBM 120 Red.png",
     image: "/assets/new_launches/WBM 120 Red.png",
     images: [
       "/assets/new_launches/WBM 120 Red.png",
       "/assets/new_launches/MetallicMarkerGold11.png"
     ],
+    color_variant: [],
     features: ["Low Odor", "Erasable", "Bold Colors"],
     specifications: {
       tip: "Bullet",
@@ -108,11 +123,14 @@ export const localProducts = [
     category: "Markers",
     price: "₹95",
     description: "Premium metallic finish markers",
+    root_folder_name: "assets/new_launches/",
+    file_name: "MetallicMarkerGold11.png",
     image: "/assets/new_launches/MetallicMarkerGold11.png",
     images: [
       "/assets/new_launches/MetallicMarkerGold11.png",
       "/assets/new_launches/trendypaintMarkerProject1.png"
     ],
+    color_variant: [],
     features: ["Metallic Finish", "Water-based", "Non-toxic"],
     specifications: {
       tip: "Bullet",

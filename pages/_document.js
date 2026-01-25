@@ -9,7 +9,7 @@ export default function Document() {
       <Head>
       <link href="https://fonts.cdnfonts.com/css/blackadder-itc" rel="stylesheet"/>
       <link rel="icon" href="/favicons.ico" />
-      <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      <link rel="manifest" href="/manifest.json" />
 
         {/* <Script
           dangerouslySetInnerHTML={{
@@ -115,10 +115,13 @@ export default function Document() {
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/ldLoader@v1.0.0/dist/ldld.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
-<script src="js/wow.min.js"></script>
-              <script>
-              new WOW().init();
-              </script>
+              <script dangerouslySetInnerHTML={{
+                __html: `
+                  if (typeof WOW !== 'undefined') {
+                    new WOW().init();
+                  }
+                `
+              }}></script>
    {/* <script>
     $(".awards.owl-carousel").owlCarousel({
       // stagePadding: 50,

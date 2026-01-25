@@ -13,6 +13,7 @@ import {
 } from "Actions/action";
 import styles from "styles/productbar.module.css";
 import Logo from "public/assets/luxorlogo.png";
+import { convertToLocalPath, getLocalAssetPath } from "@utils/imageUtils";
 
 import { useRouter } from "next/router";
 
@@ -358,12 +359,22 @@ const index = (props) => {
                         ? props.all_prd.map((ele, index) => {
                             let image_file = "";
                             
-                            // Handle local data structure
+                            // Priority 1: Use image field if available (complete path)
                             if (ele.image) {
-                              image_file = ele.image;
-                            } else if (ele.root_folder_name && ele.file_name) {
-                              // Handle API data structure
-                              image_file = process.env.NEXT_PUBLIC_BASE_URL + "/" + ele.root_folder_name + ele.file_name;
+                              image_file = convertToLocalPath(ele.image);
+                            } 
+                            // Priority 2: Construct from root_folder_name and file_name
+                            else if (ele.root_folder_name && ele.file_name) {
+                              image_file = getLocalAssetPath(ele.root_folder_name, ele.file_name) || Logo.src || "/assets/luxorlogo.png";
+                            } 
+                            // Priority 3: Fallback to logo
+                            else {
+                              image_file = Logo.src || "/assets/luxorlogo.png";
+                            }
+                            
+                            // Debug logging
+                            if (process.env.NODE_ENV === 'development') {
+                              console.log(`Product: ${ele.name}, Image: ${image_file}`);
                             }
                             return (
                               <React.Fragment key={`prd-frag-${index}-${ele._id}`}>
@@ -417,14 +428,18 @@ const index = (props) => {
                                         {image_file && image_file !== "" ? (
                                           <Image
                                             width={300}
-                                            height={70}
-                                            style={{ mixBlendMode: "multiply" }}
+                                            height={300}
+                                            style={{ mixBlendMode: "multiply", objectFit: "contain" }}
                                             className="img-fluid min_height  h-100 position_static"
-                                            objectFit="contain"
                                             src={image_file}
                                             alt={ele.name || "Products"}
+                                            unoptimized={true}
+                                            priority={false}
                                             onError={(e) => {
-                                              e.target.src = Logo;
+                                              // Fallback to logo if image fails to load
+                                              if (e && e.target) {
+                                                e.target.src = Logo.src || "/assets/luxorlogo.png";
+                                              }
                                             }}
                                           />
                                         ) : (
@@ -520,32 +535,48 @@ export async function getServerSideProps(context) {
   } = context;
 
   try {
-    // let { result, status } = await getCategoryWiseProducts(
-    //   _id,
-    //   cat_name,
-    //   page_no ? page_no : 1
-    // );
     let { result, status } = await getAllGlobalProducts(
       _id,
       page_no ? page_no : 1
     );
 
-    if (status && result.cat_wise_products.length > 0) {
+    if (status && result && result.cat_wise_products && result.cat_wise_products.length > 0) {
       return {
         props: {
-          total: result.total || 0,
+          total: result.total || result.cat_wise_products.length,
           all_prd: result.cat_wise_products,
-          page_no: page_no ? page_no : 1,
+          page_no: page_no ? parseInt(page_no) : 1,
+          cat_name: cat_name || "All Products",
         },
       };
     }
   } catch (e) {
-    // swallow error and return fallback props
+    console.warn("Error fetching products, using fallback:", e);
+    // Return fallback with local products
+    const { localProducts } = await import("Actions/localData");
+    const fallbackProducts = localProducts.map(product => ({
+      ...product,
+      root_folder_name: product.root_folder_name || (product.image ? product.image.substring(0, product.image.lastIndexOf('/') + 1) : 'assets/new_launches/'),
+      file_name: product.file_name || (product.image ? product.image.substring(product.image.lastIndexOf('/') + 1) : ''),
+    }));
+    
+    return {
+      props: {
+        total: fallbackProducts.length,
+        all_prd: fallbackProducts,
+        page_no: page_no ? parseInt(page_no) : 1,
+        cat_name: cat_name || "All Products",
+      },
+    };
   }
 
+  // Final fallback - return empty array with defaults
   return {
     props: {
+      total: 0,
       all_prd: [],
+      page_no: 1,
+      cat_name: cat_name || "All Products",
     },
   };
 }

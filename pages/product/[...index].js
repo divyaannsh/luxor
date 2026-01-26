@@ -279,7 +279,7 @@ const ProductPage = (props) => {
                   }
                   console.log("Main Product Image:", props.selected_prd_data?.name, "Path:", mainImageSrc);
                   return (
-                    <Image
+                    <img
                       className="img-fluid"
                       style={{
                         maxHeight: "70vh",
@@ -287,11 +287,8 @@ const ProductPage = (props) => {
                         width: "100%",
                       }}
                       src={mainImageSrc}
-                      width={800}
-                      height={800}
-                      priority={true}
-                      unoptimized={true}
                       alt={selected_prd.name || "Product"}
+                      loading="eager"
                       onError={(e) => {
                         console.error("Main image failed to load:", mainImageSrc);
                         if (e && e.target) {
@@ -698,15 +695,12 @@ const ProductPage = (props) => {
                             }
                             console.log("Popular Pick Image:", item.name, "Path:", imageSrc);
                             return (
-                              <Image
+                              <img
                                 className="img-fluid"
                                 src={imageSrc}
                                 alt={item.name || "Product"}
-                                width={300}
-                                height={300}
-                                style={{ objectFit: "contain", maxWidth: "100%", height: "auto" }}
+                                style={{ objectFit: "contain", maxWidth: "100%", height: "auto", maxHeight: "300px" }}
                                 loading="lazy"
-                                unoptimized={true}
                                 onError={(e) => {
                                   console.error("Image failed to load:", imageSrc, "Item:", item);
                                   if (e && e.target) {

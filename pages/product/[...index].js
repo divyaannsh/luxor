@@ -268,27 +268,39 @@ const ProductPage = (props) => {
           <div className="row">
             <div style={{position:"relative"}} className="col-md-3 mb-3 text-center">
               <div style={{ paddingTop: "2rem" }}>
-                <Image
-                  className="img-fluid"
-                  style={{
-                    maxHeight: "70vh",
-                    objectFit: "contain",
-                    width: "100%",
-                  }}
-                  src={
-                    selectedVariant && selectedVariant.root_folder_name && selectedVariant.file_name
-                      ? getLocalAssetPath(selectedVariant.root_folder_name, selectedVariant.file_name) || "/assets/luxorlogo.png"
-                      : product_image_files && product_image_files !== "" && !product_image_files.includes("undefined")
-                      ? product_image_files
-                      : (props.selected_prd_data?.image 
-                          ? convertToLocalPath(props.selected_prd_data.image)
-                          : "/assets/luxorlogo.png")
+                {(() => {
+                  let mainImageSrc = "/assets/luxorlogo.png";
+                  if (selectedVariant && selectedVariant.root_folder_name && selectedVariant.file_name) {
+                    mainImageSrc = getLocalAssetPath(selectedVariant.root_folder_name, selectedVariant.file_name) || "/assets/luxorlogo.png";
+                  } else if (product_image_files && product_image_files !== "" && !product_image_files.includes("undefined")) {
+                    mainImageSrc = product_image_files;
+                  } else if (props.selected_prd_data?.image) {
+                    mainImageSrc = convertToLocalPath(props.selected_prd_data.image);
                   }
-                  width={800}
-                  height={800}
-                  priority={true}
-                  alt={selected_prd.name || "Product"}
-                />
+                  console.log("Main Product Image:", props.selected_prd_data?.name, "Path:", mainImageSrc);
+                  return (
+                    <Image
+                      className="img-fluid"
+                      style={{
+                        maxHeight: "70vh",
+                        objectFit: "contain",
+                        width: "100%",
+                      }}
+                      src={mainImageSrc}
+                      width={800}
+                      height={800}
+                      priority={true}
+                      unoptimized={true}
+                      alt={selected_prd.name || "Product"}
+                      onError={(e) => {
+                        console.error("Main image failed to load:", mainImageSrc);
+                        if (e && e.target) {
+                          e.target.src = "/assets/luxorlogo.png";
+                        }
+                      }}
+                    />
+                  );
+                })()}
               </div>
             </div>
 
@@ -676,27 +688,34 @@ const ProductPage = (props) => {
                   {pop_picks_array.map((item, index) => (
                     <div key={`popular-pick-${index}-${item._id || index}`} className="card p-2 border-1">
                       <div className="card-body">
-                        <div className="product-img">
-                          <Image
-                            className="img-fluid"
-                            src={
-                              item.image
-                                ? convertToLocalPath(item.image)
-                                : item.root_folder_name && item.file_name
-                                ? getLocalAssetPath(item.root_folder_name, item.file_name) || "/assets/luxorlogo.png"
-                                : "/assets/luxorlogo.png"
+                        <div className="product-img" style={{ minHeight: "200px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          {(() => {
+                            let imageSrc = "/assets/luxorlogo.png";
+                            if (item.image) {
+                              imageSrc = item.image.startsWith('/assets/') ? item.image : convertToLocalPath(item.image);
+                            } else if (item.root_folder_name && item.file_name) {
+                              imageSrc = getLocalAssetPath(item.root_folder_name, item.file_name) || "/assets/luxorlogo.png";
                             }
-                            alt={item.name || "Product"}
-                            width={300}
-                            height={300}
-                            style={{ objectFit: "contain" }}
-                            loading="lazy"
-                            onError={(e) => {
-                              if (e && e.target) {
-                                e.target.src = "/assets/luxorlogo.png";
-                              }
-                            }}
-                          />
+                            console.log("Popular Pick Image:", item.name, "Path:", imageSrc);
+                            return (
+                              <Image
+                                className="img-fluid"
+                                src={imageSrc}
+                                alt={item.name || "Product"}
+                                width={300}
+                                height={300}
+                                style={{ objectFit: "contain", maxWidth: "100%", height: "auto" }}
+                                loading="lazy"
+                                unoptimized={true}
+                                onError={(e) => {
+                                  console.error("Image failed to load:", imageSrc, "Item:", item);
+                                  if (e && e.target) {
+                                    e.target.src = "/assets/luxorlogo.png";
+                                  }
+                                }}
+                              />
+                            );
+                          })()}
                         </div>
                         <h6 style={{ textAlign: "center", marginTop: 6 }}>
                           {item.name ? item.name.toUpperCase() : "PRODUCT"}

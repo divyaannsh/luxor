@@ -80,15 +80,20 @@ export const getLocalAssetPath = (root_folder_name, file_name) => {
   
   // Clean up root_folder_name
   let folder = root_folder_name || '';
-  folder = folder.replace(/^undefined\/?/, '').replace(/\/$/, '');
+  folder = folder.replace(/^undefined\/?/, '').trim();
+  
+  // Remove trailing slash but ensure we add it back when constructing path
+  folder = folder.replace(/\/$/, '');
   
   // If folder starts with assets/, it's already local
   if (folder.startsWith('assets/')) {
-    return `/${folder}${file_name}`;
+    // Ensure there's a / between folder and filename
+    return `/${folder}/${file_name}`;
   }
   
   // Convert to local assets path
   if (folder) {
+    // Always add / between folder and filename
     return `/assets/${folder}/${file_name}`;
   }
   

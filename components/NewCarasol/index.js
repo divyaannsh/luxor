@@ -27,14 +27,14 @@ export default class NewCarasol extends Component {
   handleVideoError = (index, e) => {
     const currentSrc = e.target.src;
     const currentPath = currentSrc.replace(window.location.origin, '');
-    console.error(`❌ Video ${index + 1} failed to load:`, currentPath);
     
-    // Fallback to journey.mp4 if the specific video doesn't exist
+    // Only fallback if it's not already journey.mp4
     if (currentPath !== "/assets/videos/journey.mp4") {
-      console.log(`⚠️ Falling back to journey.mp4 for slide ${index + 1}`);
+      console.warn(`⚠️ Video ${index + 1} (${currentPath}) not found. Using journey.mp4 as fallback.`);
+      console.warn(`📝 To fix: Add ${this.videoSources[index].split('/').pop()} to public/assets/videos/`);
       e.target.src = "/assets/videos/journey.mp4";
     } else {
-      console.error(`❌ Video not found for slide ${index + 1}. Please check video file exists.`);
+      console.error(`❌ Even fallback video (journey.mp4) failed to load for slide ${index + 1}`);
       e.target.style.display = 'none';
     }
   };
@@ -53,13 +53,29 @@ export default class NewCarasol extends Component {
         interval={15000}
       >
         {this.videoSources.map((videoSrc, index) => (
-          <div key={`journey-video-${index}`} className="carousel_banner" style={this.state.imageStyle}>
+          <div 
+            key={`journey-video-${index}`} 
+            className="carousel_banner" 
+            style={{
+              ...this.state.imageStyle,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: '#000',
+              minHeight: '590px'
+            }}
+          >
             <video
               autoPlay={true}
               muted
               className={style["video-img1"]}
               loop
               src={videoSrc}
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'contain'
+              }}
               onError={(e) => this.handleVideoError(index, e)}
               onLoadedData={() => this.handleVideoLoad(index)}
             />

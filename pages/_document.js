@@ -7,7 +7,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <link href="https://fonts.cdnfonts.com/css/blackadder-itc" rel="stylesheet"/>
+      <link href="https://fonts.cdnfonts.com/css/blackadder-itc" rel="stylesheet" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://fonts.cdnfonts.com" />
       <link rel="icon" href="/favicons.ico" />
       <link rel="manifest" href="/manifest.json" />
 
@@ -106,22 +107,37 @@ export default function Document() {
         <NextScript />
          
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossOrigin="anonymous" referrerPolicy="no-referrer" defer ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossOrigin="anonymous" referrerPolicy="no-referrer" defer ></script>
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+          integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/ldLoader@v1.0.0/dist/ldld.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
-              <script dangerouslySetInnerHTML={{
-                __html: `
-                  if (typeof WOW !== 'undefined') {
-                    new WOW().init();
-                  }
-                `
-              }}></script>
+<Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+          integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
+              <Script
+                id="wow-init"
+                strategy="lazyOnload"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    if (typeof WOW !== 'undefined') {
+                      new WOW().init();
+                    }
+                  `
+                }}
+              />
    {/* <script>
     $(".awards.owl-carousel").owlCarousel({
       // stagePadding: 50,

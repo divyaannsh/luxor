@@ -267,24 +267,14 @@ const ProductPage = (props) => {
         <div className="container-fluid">
           <div className="row">
             <div style={{position:"relative"}} className="col-md-3 mb-3 text-center">
-              <img
+              <Image
                 className="img-fluid  position_static mt-lg-5 h-100"
                 style={{
                   maxHeight: "70vh",
                   objectFit: "contain",
                   width: "90%",
-                  "marginTop": "-40% !important"
-               /*    position: "absolute !important",
-                  top: "-30%",
-                  left: 0, */
+                  marginTop: "-40%"
                 }}
-                // src={
-                //   selectedVariant
-                //     ? `${process.env.NEXT_PUBLIC_BASE_URL}/${selectedVariant.root_folder_name}${selectedVariant.file_name}`
-                //     : Array.isArray(product_image_files)
-                //     ? product_image_files[1]
-                //     : broadmarker
-                // }
                 src={
                   selectedVariant && selectedVariant.root_folder_name && selectedVariant.file_name
                     ? getLocalAssetPath(selectedVariant.root_folder_name, selectedVariant.file_name) || "/assets/luxorlogo.png"
@@ -294,9 +284,11 @@ const ProductPage = (props) => {
                         ? convertToLocalPath(props.selected_prd_data.image)
                         : "/assets/luxorlogo.png")
                 }
-                unoptimized={true}
+                width={800}
+                height={800}
                 priority={true}
                 alt="Marker"
+                loading="eager"
               />
             </div>
 
@@ -434,7 +426,7 @@ const ProductPage = (props) => {
                             className="img-fluid"
                             src={otherImageSrc}
                             alt={item.file_name || "Product image"}
-                            unoptimized={true}
+                            loading="lazy"
                           />
                         </div>
                       );

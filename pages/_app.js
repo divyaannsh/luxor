@@ -70,7 +70,8 @@ function MyApp({ Component, pageProps }) {
       }
     }
 
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    // Load Bootstrap JS asynchronously
+    import("bootstrap/dist/js/bootstrap.bundle.min.js").catch(() => {});
   }, []);
 
   return (

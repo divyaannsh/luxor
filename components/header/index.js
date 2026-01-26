@@ -735,6 +735,7 @@ const Header = (props) => {
                       } else {
                         return (
                           <li
+                            key={`prd-simple-${ind}-${item._id || item.id || ind}`}
                             className={`d-block ${styles["main_prd"]} `}
                             onClick={() => goToProductPage(item)}
                           >

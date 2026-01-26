@@ -277,6 +277,12 @@ const ProductPage = (props) => {
                   } else if (props.selected_prd_data?.image) {
                     mainImageSrc = convertToLocalPath(props.selected_prd_data.image);
                   }
+                  
+                  // Ensure path is correct
+                  if (mainImageSrc && !mainImageSrc.startsWith('/assets/') && !mainImageSrc.startsWith('http')) {
+                    mainImageSrc = `/assets/${mainImageSrc.replace(/^\//, '')}`;
+                  }
+                  
                   console.log("Main Product Image:", props.selected_prd_data?.name, "Path:", mainImageSrc);
                   return (
                     <img
@@ -285,15 +291,19 @@ const ProductPage = (props) => {
                         maxHeight: "70vh",
                         objectFit: "contain",
                         width: "100%",
+                        display: "block"
                       }}
                       src={mainImageSrc}
                       alt={selected_prd.name || "Product"}
                       loading="eager"
                       onError={(e) => {
-                        console.error("Main image failed to load:", mainImageSrc);
-                        if (e && e.target) {
+                        console.error("❌ Main image failed to load:", mainImageSrc);
+                        if (e && e.target && e.target.src !== "/assets/luxorlogo.png") {
                           e.target.src = "/assets/luxorlogo.png";
                         }
+                      }}
+                      onLoad={() => {
+                        console.log("✅ Main image loaded successfully:", mainImageSrc);
                       }}
                     />
                   );
@@ -685,27 +695,46 @@ const ProductPage = (props) => {
                   {pop_picks_array.map((item, index) => (
                     <div key={`popular-pick-${index}-${item._id || index}`} className="card p-2 border-1">
                       <div className="card-body">
-                        <div className="product-img" style={{ minHeight: "200px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <div className="product-img" style={{ minHeight: "200px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#f8f9fa" }}>
                           {(() => {
-                            let imageSrc = "/assets/luxorlogo.png";
-                            if (item.image) {
-                              imageSrc = item.image.startsWith('/assets/') ? item.image : convertToLocalPath(item.image);
-                            } else if (item.root_folder_name && item.file_name) {
+                            // Use image path directly - it's already correct from localData
+                            let imageSrc = item.image || "/assets/luxorlogo.png";
+                            
+                            // Ensure path starts with /assets/
+                            if (imageSrc && !imageSrc.startsWith('/assets/') && !imageSrc.startsWith('http')) {
+                              imageSrc = `/assets/${imageSrc.replace(/^\//, '')}`;
+                            }
+                            
+                            // Fallback to root_folder_name + file_name if image not available
+                            if (!item.image && item.root_folder_name && item.file_name) {
                               imageSrc = getLocalAssetPath(item.root_folder_name, item.file_name) || "/assets/luxorlogo.png";
                             }
-                            console.log("Popular Pick Image:", item.name, "Path:", imageSrc);
+                            
+                            console.log("Popular Pick Image:", item.name, "Original path:", item.image, "Final path:", imageSrc);
+                            
                             return (
                               <img
                                 className="img-fluid"
                                 src={imageSrc}
                                 alt={item.name || "Product"}
-                                style={{ objectFit: "contain", maxWidth: "100%", height: "auto", maxHeight: "300px" }}
+                                style={{ 
+                                  objectFit: "contain", 
+                                  maxWidth: "100%", 
+                                  width: "100%",
+                                  height: "auto", 
+                                  maxHeight: "300px",
+                                  display: "block"
+                                }}
                                 loading="lazy"
                                 onError={(e) => {
-                                  console.error("Image failed to load:", imageSrc, "Item:", item);
-                                  if (e && e.target) {
+                                  console.error("❌ Image failed to load:", imageSrc, "Item:", item);
+                                  console.error("Trying fallback logo...");
+                                  if (e && e.target && e.target.src !== "/assets/luxorlogo.png") {
                                     e.target.src = "/assets/luxorlogo.png";
                                   }
+                                }}
+                                onLoad={() => {
+                                  console.log("✅ Image loaded successfully:", imageSrc);
                                 }}
                               />
                             );

@@ -267,29 +267,29 @@ const ProductPage = (props) => {
         <div className="container-fluid">
           <div className="row">
             <div style={{position:"relative"}} className="col-md-3 mb-3 text-center">
-              <Image
-                className="img-fluid  position_static mt-lg-5 h-100"
-                style={{
-                  maxHeight: "70vh",
-                  objectFit: "contain",
-                  width: "90%",
-                  marginTop: "-40%"
-                }}
-                src={
-                  selectedVariant && selectedVariant.root_folder_name && selectedVariant.file_name
-                    ? getLocalAssetPath(selectedVariant.root_folder_name, selectedVariant.file_name) || "/assets/luxorlogo.png"
-                    : product_image_files && product_image_files !== "" && !product_image_files.includes("undefined")
-                    ? product_image_files
-                    : (props.selected_prd_data?.image 
-                        ? convertToLocalPath(props.selected_prd_data.image)
-                        : "/assets/luxorlogo.png")
-                }
-                width={800}
-                height={800}
-                priority={true}
-                alt="Marker"
-                loading="eager"
-              />
+              <div style={{ paddingTop: "2rem" }}>
+                <Image
+                  className="img-fluid"
+                  style={{
+                    maxHeight: "70vh",
+                    objectFit: "contain",
+                    width: "100%",
+                  }}
+                  src={
+                    selectedVariant && selectedVariant.root_folder_name && selectedVariant.file_name
+                      ? getLocalAssetPath(selectedVariant.root_folder_name, selectedVariant.file_name) || "/assets/luxorlogo.png"
+                      : product_image_files && product_image_files !== "" && !product_image_files.includes("undefined")
+                      ? product_image_files
+                      : (props.selected_prd_data?.image 
+                          ? convertToLocalPath(props.selected_prd_data.image)
+                          : "/assets/luxorlogo.png")
+                  }
+                  width={800}
+                  height={800}
+                  priority={true}
+                  alt={selected_prd.name || "Product"}
+                />
+              </div>
             </div>
 
             {/* -------------------------container 2nd------------------------ */}
@@ -324,10 +324,11 @@ const ProductPage = (props) => {
                     <div className="color-section">
                       <div className="color-shade">
                         {color_variants && color_variants.length > 0 ? (
-                          color_variants.map((color) => (
+                          color_variants.map((color, idx) => (
                             <div
+                              key={`color-variant-${idx}-${color.id || idx}`}
                               style={
-                                selectedVariant.id === color.id
+                                selectedVariant && selectedVariant.id === color.id
                                   ? {
                                       padding: "0.1rem",
                                       border: "3px solid black",
@@ -672,35 +673,43 @@ const ProductPage = (props) => {
                 </h2>
 
                 <div className="popular_picks mb-5">
-                  {pop_picks_array.map((item) => (
-                    <div className="card p-2 border-1">
+                  {pop_picks_array.map((item, index) => (
+                    <div key={`popular-pick-${index}-${item._id || index}`} className="card p-2 border-1">
                       <div className="card-body">
                         <div className="product-img">
                           <Image
                             className="img-fluid"
                             src={
-                              item.root_folder_name !== undefined &&
-                              item.file_name !== undefined
+                              item.image
+                                ? convertToLocalPath(item.image)
+                                : item.root_folder_name && item.file_name
                                 ? getLocalAssetPath(item.root_folder_name, item.file_name) || "/assets/luxorlogo.png"
                                 : "/assets/luxorlogo.png"
                             }
-                            alt="homepage"
+                            alt={item.name || "Product"}
                             width={300}
                             height={300}
-                            objectFit="contain"
+                            style={{ objectFit: "contain" }}
                             loading="lazy"
+                            onError={(e) => {
+                              if (e && e.target) {
+                                e.target.src = "/assets/luxorlogo.png";
+                              }
+                            }}
                           />
                         </div>
                         <h6 style={{ textAlign: "center", marginTop: 6 }}>
-                          {item.name.toUpperCase()}
+                          {item.name ? item.name.toUpperCase() : "PRODUCT"}
                         </h6>
                       </div>
-                      <p
-                        className={styles.popularFont}
-                        style={{ textTransform: "uppercase" }}
-                      >
-                        {item.title}
-                      </p>
+                      {item.title && (
+                        <p
+                          className={styles.popularFont}
+                          style={{ textTransform: "uppercase" }}
+                        >
+                          {item.title}
+                        </p>
+                      )}
                     </div>
                   ))}
                   {/* <div className="card p-2 border-0">

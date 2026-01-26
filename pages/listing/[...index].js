@@ -433,7 +433,6 @@ const index = (props) => {
                                             className="img-fluid min_height  h-100 position_static"
                                             src={image_file}
                                             alt={ele.name || "Products"}
-                                            loading="lazy"
                                             priority={index < 6}
                                             onError={(e) => {
                                               // Fallback to logo if image fails to load

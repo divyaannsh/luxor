@@ -29,8 +29,8 @@ const carouselItems = [
   <Image key={1} src={News1} alt="Image 1" />,
   <Image key={2} src={News2} alt="Image 2" />,
   <Image key={3} src={News3} alt="Image 3" />,
-  <Image key={3} src={News4} alt="Image 4" />,
-  <Image key={3} src={News5} alt="Image 5" />,
+  <Image key={4} src={News4} alt="Image 4" />,
+  <Image key={5} src={News5} alt="Image 5" />,
 ];
 
 const index = () => {
@@ -162,8 +162,8 @@ const index = () => {
           <h1 className="media-news-title">Featured Across</h1>
           <div className="media-news-carousel">
             <Slider {...settings}>
-              {carouselItems.map((item) => (
-                <div>{item}</div>
+              {carouselItems.map((item, index) => (
+                <div key={`carousel-item-${index}`}>{item}</div>
               ))}
             </Slider>
           </div>

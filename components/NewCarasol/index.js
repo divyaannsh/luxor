@@ -12,7 +12,31 @@ export default class NewCarasol extends Component {
         width: "100%",
       },
     };
+    
+    // Different videos for each timeline item
+    // Add your video files to public/assets/videos/ with these names
+    this.videoSources = [
+      "/assets/videos/journey.mp4",      // Slide 1 - Default/2005
+      "/assets/videos/journey-2006.mp4", // Slide 2 - 2006 (fallback to journey.mp4 if not exists)
+      "/assets/videos/journey-2004.mp4", // Slide 3 - 2004 (fallback to journey.mp4 if not exists)
+      "/assets/videos/journey-2002.mp4", // Slide 4 - 2002 (fallback to journey.mp4 if not exists)
+    ];
   }
+
+  handleVideoError = (index, e) => {
+    console.error(`Video ${index + 1} failed to load:`, this.videoSources[index]);
+    // Fallback to journey.mp4 if specific video doesn't exist
+    if (e.target.src !== "/assets/videos/journey.mp4") {
+      console.log(`Falling back to journey.mp4 for slide ${index + 1}`);
+      e.target.src = "/assets/videos/journey.mp4";
+    } else {
+      e.target.style.display = 'none';
+    }
+  };
+
+  handleVideoLoad = (index) => {
+    console.log(`✅ Video ${index + 1} loaded successfully:`, this.videoSources[index]);
+  };
 
   render() {
     return (
@@ -23,90 +47,19 @@ export default class NewCarasol extends Component {
         infiniteLoop={true}
         interval={15000}
       >
-        <div className="carousel_banner" style={this.state.imageStyle}>
-          <video
-            autoPlay={true}
-            muted
-            className={style["video-img1"]}
-            loop
-            src="/assets/videos/journey.mp4"
-            onError={(e) => {
-              console.error("Video failed to load:", e);
-              e.target.style.display = 'none';
-            }}
-            onLoad={() => {
-              console.log("Video loaded successfully");
-            }}
-          />
-        </div>
-        <div className="carousel_banner" style={this.state.imageStyle}>
-          <video
-            autoPlay={true}
-            preload="none"
-            muted
-            className={style["video-img1"]}
-            loop
-            src="/assets/videos/journey.mp4"
-            onError={(e) => {
-              console.error("Map video failed to load:", e);
-              e.target.style.display = 'none';
-            }}
-            onLoad={() => {
-              console.log("Map video loaded successfully");
-            }}
-          />
-        </div>
-        <div className="carousel_banner" style={this.state.imageStyle}>
-          <video
-            autoPlay={true}
-            preload="none"
-            muted
-            className={style["video-img1"]}
-            loop
-            src="/assets/videos/journey.mp4"
-            onError={(e) => {
-              console.error("Video 3 failed to load:", e);
-              e.target.style.display = 'none';
-            }}
-            onLoad={() => {
-              console.log("Video 3 loaded successfully");
-            }}
-          />
-        </div>
-        <div className="carousel_banner" style={this.state.imageStyle}>
-          <video
-            autoPlay={true}
-            preload="none"
-            muted
-            className={style["video-img1"]}
-            loop
-            src="/assets/videos/journey.mp4"
-            onError={(e) => {
-              console.error("Video 4 failed to load:", e);
-              e.target.style.display = 'none';
-            }}
-            onLoad={() => {
-              console.log("Video 4 loaded successfully");
-            }}
-          />
-        </div>
-        <div className="carousel_banner" style={this.state.imageStyle}>
-          <div 
-            style={{
-              width: '100%',
-              height: '400px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold'
-            }}
-          >
-            🎨 Luxor Writing Instruments
+        {this.videoSources.map((videoSrc, index) => (
+          <div key={`journey-video-${index}`} className="carousel_banner" style={this.state.imageStyle}>
+            <video
+              autoPlay={true}
+              muted
+              className={style["video-img1"]}
+              loop
+              src={videoSrc}
+              onError={(e) => this.handleVideoError(index, e)}
+              onLoadedData={() => this.handleVideoLoad(index)}
+            />
           </div>
-        </div>
+        ))}
       </Carousel>
     );
   }

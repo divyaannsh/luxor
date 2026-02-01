@@ -73,6 +73,8 @@ function App(props) {
   let router = useRouter();
   const [gallery, setGallery] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [certSlide, setCertSlide] = useState(0);
+  const certSlidesTotal = 2;
   useEffect(() => {
     newLaumch();
   }, []);
@@ -1595,14 +1597,21 @@ function App(props) {
                   className={`row flex-nowrap overflow-auto ${gallery ? "px-4" : ""}`}
                   style={{ marginLeft: gallery ? "88px" : "0" }}
                 >
-                  {[0, 1, 2].map((index) => (
+                  {[
+                    "https://www.youtube.com/embed/Sla-7sRFFPg",
+                    "https://www.youtube.com/embed/wUmn96nAnkU",
+                    "https://www.youtube.com/embed/zLN-B8qg7FA",
+                  ].map((embedUrl, index) => (
                     <div key={index} className="col-12 col-md-4 mb-3 d-flex justify-content-center">
-                      <video
+                      <iframe
                         width="100%"
                         className="rounded"
-                        height="300px"
-                        controls
-                        src="/assets/videos/journey.mp4"
+                        height="300"
+                        src={embedUrl}
+                        title={`Luxor Art Gallery Video ${index + 1}`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
                       />
                     </div>
                   ))}
@@ -1726,9 +1735,9 @@ function App(props) {
               Certificates
             </h2>
             <div className="row">
-              <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride=" ">
+              <div id="carouselExampleSlidesOnly" className="carousel slide">
                 <div className="carousel-inner">
-                  <div className="carousel-item active">
+                  <div className={`carousel-item ${certSlide === 0 ? "active" : ""}`}>
                     <div className="row">
                       <div className="col">
                         <Image 
@@ -1792,7 +1801,7 @@ function App(props) {
                       </div>
                     </div>
                   </div>
-                  <div className="carousel-item">
+                  <div className={`carousel-item ${certSlide === 1 ? "active" : ""}`}>
                     <div className="row">
                       <div className="col">
                         <Image 
@@ -1869,17 +1878,41 @@ function App(props) {
                     </div>
                   </div>
                 </div>
-                <button className="carousel-control-prev button_left" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+                <button
+                  className="carousel-control-prev button_left"
+                  type="button"
+                  onClick={() => setCertSlide((prev) => (prev === 0 ? certSlidesTotal - 1 : prev - 1))}
+                  aria-label="Previous certificates"
+                >
                   <span className="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
                   <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next button_right" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+                <button
+                  className="carousel-control-next button_right"
+                  type="button"
+                  onClick={() => setCertSlide((prev) => (prev + 1) % certSlidesTotal)}
+                  aria-label="Next certificates"
+                >
                   <span className="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
                   <span className="visually-hidden">Next</span>
                 </button>
                 <ol className="carousel-indicators">
-                  <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" className="active"></li>
-                  <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"></li>
+                  <li
+                    role="button"
+                    tabIndex={0}
+                    className={certSlide === 0 ? "active" : ""}
+                    onClick={() => setCertSlide(0)}
+                    onKeyDown={(e) => e.key === "Enter" && setCertSlide(0)}
+                    aria-label="Go to slide 1"
+                  />
+                  <li
+                    role="button"
+                    tabIndex={0}
+                    className={certSlide === 1 ? "active" : ""}
+                    onClick={() => setCertSlide(1)}
+                    onKeyDown={(e) => e.key === "Enter" && setCertSlide(1)}
+                    aria-label="Go to slide 2"
+                  />
                 </ol>
               </div>
             </div>

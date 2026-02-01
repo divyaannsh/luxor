@@ -48,32 +48,41 @@ export default function () {
           ) : (
             <div className="row mt-5">
               <div className="col-md-4 mb-2">
-                <video
+                <iframe
                   width="100%"
                   className="rounded"
-                  height="300px"
-                  controls
-                  src="/assets/videos/journey.mp4"
+                  height="300"
+                  src="https://www.youtube.com/embed/Sla-7sRFFPg"
+                  title="Luxor Video 1"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
 
               <div className="col-md-4 mb-2">
-                <video
+                <iframe
                   width="100%"
                   className="rounded"
-                  height="300px"
-                  controls
-                  src="/assets/videos/journey.mp4"
+                  height="300"
+                  src="https://www.youtube.com/embed/wUmn96nAnkU"
+                  title="Luxor Video 2"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
 
               <div className="col-md-4 mb-2">
-                <video
+                <iframe
                   width="100%"
                   className="rounded"
-                  height="300px"
-                  controls
-                  src="/assets/videos/journey.mp4"
+                  height="300"
+                  src="https://www.youtube.com/embed/zLN-B8qg7FA"
+                  title="Luxor Video 3"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
             </div>

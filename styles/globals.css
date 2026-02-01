@@ -1525,17 +1525,45 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   align-items: center;
 }
 
-.Art_gallery_button {
+/* Art Gallery section: button and layout like luxorpen.com */
+.parallax-inner {
   position: absolute;
-  background-color: red !important;
-  border-radius: 45px;
-  /* padding: 24px 47px; */
-  padding: 1rem 5rem;
-  right: 10%;
-  top: 41%;
-  font-weight: bolder;
-  font-size: x-large;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8%;
+  pointer-events: none;
+}
+
+.parallax-inner .Art_gallery_button {
+  pointer-events: auto;
+}
+
+.Art_gallery_button {
+  position: relative;
+  background-color: #ed1b24 !important;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 2.5rem;
+  min-height: 56px;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
   z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Art_gallery_button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .art-gallery {
@@ -2347,6 +2375,25 @@ transition: all 1s ease; */
   max-height: 240px !important;
 }
 
+/* Listing page: prevent pen image cropping - enough room for full product + rotation */
+.listing-card-img-wrap {
+  min-height: 300px;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.listing-card-img-wrap .min_height,
+.listing-card-img-wrap img {
+  max-height: 300px !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .accordion-item {
   border-radius: 7px;
 }
@@ -2462,10 +2509,10 @@ transition: all 1s ease; */
 }
 
 .artGallery-img {
-  /* background: url("../public//assets/Art\ Gallery.webp"); */
-  background: url("/assets/Art%20Gallery.webp");
+  position: relative;
+  background: url("/assets/Art%20Gallery.webp") center center no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #fff;
 }
 
 .page-item .button_pagination.active {

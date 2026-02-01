@@ -404,8 +404,9 @@
   }
 
   .Art_gallery_button {
-    border-radius: 20px;
-    padding: 9px 19px;
+    border-radius: 9999px;
+    padding: 14px 28px;
+    font-size: 1.2rem;
   }
 
   .fs-40 {
@@ -462,9 +463,9 @@
   }
 
   .Art_gallery_button {
-    border-radius: 20px;
-    padding: 8px 15px;
-    top: 23rem;
+    border-radius: 9999px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
   }
 
   .fs-40 {
@@ -477,6 +478,11 @@
 
   .artGallery-img {
     background-size: cover;
+  }
+
+  .parallax-inner {
+    padding-right: 5%;
+    justify-content: center;
   }
 
   .side-curve-left {
@@ -510,8 +516,9 @@
     font-size: 3.5vw;
   }
   .Art_gallery_button {
-    border-radius: 20px;
-    padding: 13px 23px;
+    border-radius: 9999px;
+    padding: 16px 32px;
+    font-size: 1.3rem;
   }
 
   .products_list {

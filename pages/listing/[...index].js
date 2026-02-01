@@ -424,13 +424,13 @@ const index = (props) => {
                                       </h3>
                                     </div>
                                     <div className="card-body  d-flex flex-column justify-content-evenly">
-                                      <div className="">
+                                      <div className="listing-card-img-wrap">
                                         {image_file && image_file !== "" ? (
                                           <Image
                                             width={300}
                                             height={300}
                                             style={{ mixBlendMode: "multiply", objectFit: "contain" }}
-                                            className="img-fluid min_height  h-100 position_static"
+                                            className="img-fluid min_height position_static"
                                             src={image_file}
                                             alt={ele.name || "Products"}
                                             priority={index < 6}
@@ -445,9 +445,8 @@ const index = (props) => {
                                           <Image
                                             width={300}
                                             height={70}
-                                            style={{ mixBlendMode: "multiply" }}
-                                            className="img-fluid min_height  h-100 position_static"
-                                            objectFit="contain"
+                                            style={{ mixBlendMode: "multiply", objectFit: "contain" }}
+                                            className="img-fluid min_height position_static"
                                             src={Logo}
                                             alt={ele.name || "Products"}
                                           />

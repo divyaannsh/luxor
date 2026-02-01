@@ -76,14 +76,46 @@
   flex-direction: row;
   width: fit-content;
   padding: 18px;
+  min-height: 300px;
+  align-items: center;
   animation: scroll-left 140s linear 1s infinite;
 }
 
 .img {
   margin: 0 10px;
   /* Adjust spacing between images */
-  height: 75%;
+  height: 280px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 8px;
   /* Ensure images are responsive */
+}
+
+/* Mobile phones */
+@media screen and (max-width: 576px) {
+  .img {
+    width: 200px;
+    height: 180px;
+    margin: 0 5px;
+  }
+  
+  .slideContent {
+    min-height: 200px;
+    padding: 10px;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .img {
+    width: 250px;
+    height: 230px;
+    margin: 0 8px;
+  }
+  
+  .slideContent {
+    min-height: 250px;
+  }
 }
 
 @keyframes scroll-left {

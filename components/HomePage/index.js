@@ -61,7 +61,7 @@ import WomanLed from "@components/WomanLed";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import Modal from "../Model";
-import NewCarasol from "components/NewCarasol";
+// NewCarasol removed - using single video for Our Journey section
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
@@ -1410,7 +1410,7 @@ function App(props) {
 
       {/* creating Impresive World Wide Component */}
       <section className="">
-        <div className="container-fluid p-0 vid-section">
+        <div className="container-fluid p-0">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -1420,57 +1420,40 @@ function App(props) {
               </div>
             </div>
           </div>
-          <div className="mt-5">
-            <video
-              autoPlay
-              muted
-              className={`img-fluid ${style["video-img1"]}`}
-              loop
-              src="/assets/videos/journey.mp4"
-              onError={(e) => {
-                console.error("Map video failed to load:", e);
-                e.target.style.display = 'none';
-                // Fallback to placeholder
-                e.target.parentElement.innerHTML = `
-                  <div style="
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center; 
-                    height: 400px;
-                    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-                    color: #6c757d;
-                    font-size: 18px;
-                    font-weight: 500;
-                    border-radius: 8px;
-                  ">
-                    Global Presence Map
-                  </div>
-                `;
-              }}
-              onLoad={() => {
-                console.log("Map video loaded successfully");
-              }}
-            />
-          </div>
         </div>
       </section>
-
       {/* END creating Impresive World Wide Component */}
 
-      {/* Our Journey Componets */}
+      {/* Our Journey Component - Single Video */}
       <section className="py-5 pt-1">
         <div className="container-fluid p-0 vid-section">
           <h1 className="fs-50 text-center my-5 fw-600">Our Journey</h1>
           <div className="">
             <div className="row">
               <div className="col-12">
-                <NewCarasol />
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  className={`img-fluid ${style["video-img1"]}`}
+                  src="/assets/videos/journey.mp4"
+                  style={{
+                    width: '100%',
+                    maxHeight: '590px',
+                    objectFit: 'contain',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    console.error("Journey video failed to load");
+                    e.target.style.display = 'none';
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* END Our Journey Componets */}
+      {/* END Our Journey Component */}
 
       {/* Environment Components */}
       <section className="py-2 pt-1">

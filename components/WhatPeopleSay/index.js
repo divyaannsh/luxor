@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import style from "./style.module.css";
 import image1 from "public/assets/whatpeoplesay/images1.jpg";
@@ -47,72 +47,44 @@ const availableImages = [
 
 export default function WhatPeopleSayCarosel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % availableImages.length);
-        setIsTransitioning(false);
-      }, 400); // Half of transition time
-    }, 3000); // Change every 3 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % availableImages.length);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Get three images: previous, current (center), next
-  const getVisibleImages = () => {
-    const prevIndex = (currentIndex - 1 + availableImages.length) % availableImages.length;
-    const nextIndex = (currentIndex + 1) % availableImages.length;
-    
-    return [
-      availableImages[prevIndex],
-      availableImages[currentIndex],
-      availableImages[nextIndex],
-    ];
-  };
-
-  const visibleImages = getVisibleImages();
-
   return (
     <div className={style.body}>
-      <div className={style.imgcontainer}>
-        <h1 className="fs-40 text-center my-5 fw-600">Social Impact Initiatives</h1>
-        <div className={style.slideContainer}>
-          <div className={style.carouselWrapper}>
-            {visibleImages.map((image, index) => {
-              const isCenter = index === 1;
-              const isLeft = index === 0;
-              const isRight = index === 2;
-              
-              return (
-                <div
-                  key={`${currentIndex}-${index}-${isTransitioning ? 'transition' : 'static'}`}
-                  className={`${style.carouselSlide} ${
-                    isCenter 
-                      ? style.centerSlide 
-                      : isLeft 
-                        ? style.leftSlide 
-                        : style.rightSlide
-                  }`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    className="img-fluid"
-                    width={isCenter ? 550 : 350}
-                    height={isCenter ? 500 : 400}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
-              );
-            })}
-          </div>
+      <h1 className="fs-40 text-center my-5 fw-600">Social Impact Initiatives</h1>
+      <div className={style.fullWidthCarousel}>
+        <div className={style.carouselTrack}>
+          {availableImages.map((image, index) => (
+            <div
+              key={`slide-${index}`}
+              className={`${style.fullWidthSlide} ${index === currentIndex ? style.activeSlide : ''}`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="100vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className={style.carouselDots}>
+          {availableImages.map((_, index) => (
+            <button
+              key={index}
+              className={`${style.dot} ${index === currentIndex ? style.activeDot : ''}`}
+              onClick={() => setCurrentIndex(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>

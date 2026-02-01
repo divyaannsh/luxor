@@ -64,13 +64,44 @@
   display: block;
 }
 
-@media screen and (max-width: 500px) {
-  .video-img1 {
-    object-fit: contain;
-    height: auto;
-  }
+/* Mobile phones */
+@media screen and (max-width: 576px) {
+  .video-img1,
   .video-img {
     object-fit: contain;
     height: auto;
+    max-height: 300px;
+  }
+  
+  .blogText1,
+  .blogText2,
+  .blogText3 {
+    font-size: 14px !important;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .video-img1,
+  .video-img {
+    object-fit: contain;
+    height: auto;
+    max-height: 400px;
+  }
+}
+
+/* Small laptops */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .video-img1,
+  .video-img {
+    height: 450px;
+  }
+}
+
+/* Laptops and above */
+@media screen and (min-width: 993px) {
+  .video-img1,
+  .video-img {
+    height: 590px;
   }
 }

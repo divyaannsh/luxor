@@ -8,7 +8,7 @@ import style from "./style.module.css";
 
 const sliderImgSize = {
   width: 300,
-  // height:280,
+  height: 280,
 };
 
 export default function Carasol() {

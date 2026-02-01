@@ -2702,3 +2702,302 @@ transition: all 1s ease; */
   justify-content: flex-end;
   font-size: 25px;
 }
+
+/* =============================================
+   COMPREHENSIVE RESPONSIVE STYLES
+   For all screen sizes: Mobile, Tablet, Laptop, Desktop
+   ============================================= */
+
+/* Base responsive settings */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container responsive widths */
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =============================================
+   MOBILE FIRST - Small devices (phones, 576px and below)
+   ============================================= */
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .fs-50 {
+    font-size: 28px !important;
+  }
+  
+  .fs-40 {
+    font-size: 24px !important;
+  }
+  
+  .fs-30 {
+    font-size: 20px !important;
+  }
+  
+  .fs-20 {
+    font-size: 16px !important;
+  }
+  
+  .fs-16 {
+    font-size: 14px !important;
+  }
+  
+  /* Header adjustments */
+  header {
+    padding: 10px 2% !important;
+  }
+  
+  /* Video sections */
+  .vid-section video {
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+  }
+  
+  /* Partner content */
+  .partner-cont {
+    padding: 0 10px;
+  }
+  
+  .partner-cont img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Carousel adjustments */
+  .carousel_banner {
+    min-height: 250px !important;
+  }
+  
+  /* Award images */
+  .award-img-cont {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .award-img {
+    width: 100% !important;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  /* Certificates */
+  .certifications .row .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 15px;
+  }
+  
+  /* Footer buttons */
+  .footer-btn {
+    padding: 0 15px;
+  }
+  
+  .footer-btn button {
+    width: 100%;
+    padding: 12px 20px;
+  }
+  
+  /* Reuse images section */
+  .reuse-image {
+    max-width: 80px !important;
+  }
+  
+  /* Look book section */
+  .text_lookbook {
+    font-size: 12px !important;
+  }
+  
+  .text_lookbook p {
+    font-size: 14px !important;
+  }
+}
+
+/* =============================================
+   TABLETS - Medium devices (tablets, 577px to 768px)
+   ============================================= */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .fs-50 {
+    font-size: 36px !important;
+  }
+  
+  .fs-40 {
+    font-size: 30px !important;
+  }
+  
+  /* Video sections */
+  .vid-section video {
+    height: auto !important;
+    max-height: 400px !important;
+    object-fit: contain !important;
+  }
+  
+  /* Carousel */
+  .carousel_banner {
+    min-height: 350px !important;
+  }
+  
+  /* Partner content */
+  .partner-cont img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Award images */
+  .award-img-cont {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .award-img {
+    width: 30% !important;
+    min-width: 150px;
+  }
+  
+  /* Certificates grid */
+  .certifications .row .col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+/* =============================================
+   SMALL LAPTOPS - (769px to 992px)
+   ============================================= */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .fs-50 {
+    font-size: 42px !important;
+  }
+  
+  /* Video sections */
+  .vid-section video {
+    height: auto !important;
+    max-height: 500px !important;
+    object-fit: contain !important;
+  }
+  
+  /* Carousel */
+  .carousel_banner {
+    min-height: 450px !important;
+  }
+}
+
+/* =============================================
+   LAPTOPS - (993px to 1200px)
+   ============================================= */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  /* Video sections */
+  .vid-section video {
+    max-height: 550px !important;
+  }
+}
+
+/* =============================================
+   LARGE SCREENS - (1201px and above)
+   ============================================= */
+@media screen and (min-width: 1201px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* =============================================
+   EXTRA LARGE SCREENS - (1400px and above)
+   ============================================= */
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* =============================================
+   UNIVERSAL RESPONSIVE UTILITIES
+   ============================================= */
+
+/* Prevent horizontal overflow on all devices */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Responsive images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive videos */
+video {
+  max-width: 100%;
+}
+
+/* Fix for full-width sections */
+.container-fluid {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure no element breaks layout */
+* {
+  max-width: 100vw;
+}
+
+/* Fix for carousel overflow */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  overflow: hidden;
+}
+
+/* Responsive padding adjustments */
+@media screen and (max-width: 768px) {
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .my-5 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  section {
+    padding: 0 !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  header, footer, .whatsapp-icon {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+}
+

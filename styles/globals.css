@@ -2714,9 +2714,27 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-img, video, iframe {
+video, iframe {
   max-width: 100%;
   height: auto;
+}
+
+/* Preserve New Launches pen image sizes */
+.carouselItem img,
+[class*="posterBlock"] img {
+  max-width: none !important;
+  height: auto !important;
+  min-height: 180px;
+  width: 257px !important;
+  object-fit: contain;
+}
+
+/* Card container for pen images */
+[class*="posterBlock-card"] {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Container responsive widths */
@@ -2825,6 +2843,24 @@ img, video, iframe {
   .text_lookbook p {
     font-size: 14px !important;
   }
+  
+  /* New Launches pen images - mobile */
+  .carouselItem {
+    gap: 2rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .carouselItem img,
+  [class*="posterBlock"] img {
+    width: 150px !important;
+    min-height: 120px;
+  }
+  
+  [class*="posterBlock-card"] {
+    min-height: 150px;
+    padding: 10px !important;
+  }
 }
 
 /* =============================================
@@ -2877,6 +2913,24 @@ img, video, iframe {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
+  
+  /* New Launches pen images - tablet */
+  .carouselItem {
+    gap: 3rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  .carouselItem img,
+  [class*="posterBlock"] img {
+    width: 200px !important;
+    min-height: 150px;
+  }
+  
+  [class*="posterBlock-card"] {
+    min-height: 180px;
+    padding: 12px !important;
+  }
 }
 
 /* =============================================
@@ -2897,6 +2951,23 @@ img, video, iframe {
   /* Carousel */
   .carousel_banner {
     min-height: 450px !important;
+  }
+  
+  /* New Launches pen images - small laptops */
+  .carouselItem {
+    gap: 4rem !important;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+  
+  .carouselItem img,
+  [class*="posterBlock"] img {
+    width: 220px !important;
+    min-height: 160px;
+  }
+  
+  [class*="posterBlock-card"] {
+    min-height: 200px;
   }
 }
 

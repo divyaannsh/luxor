@@ -2186,10 +2186,12 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   padding: 0;
 }
 
+/* Removed: was hiding images until hover on pages inside .sections
 .sections img {
   opacity: 0;
   background-color: red;
 }
+*/
 
 .homeImg img {
   height: 60%;
@@ -2216,8 +2218,16 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
-.footer-links-column a:hover  {
+
+/* Remove underlines from footer links */
+.footer_bg a,
+.footer-links-column a {
+  text-decoration: none !important;
+}
+
+.footer-links-column a:hover {
   color: #000000 !important;
+  text-decoration: none !important;
 }
 
 .contact-form {
@@ -2406,6 +2416,9 @@ transition: all 1s ease; */
   object-fit: contain !important;
   object-position: center center !important;
   display: block !important;
+  /* Always visible – override any rule that hides images until hover */
+  opacity: 1 !important;
+  visibility: visible !important;
   /* Sharper downscale on WebKit; avoid blur from scaling */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: auto;

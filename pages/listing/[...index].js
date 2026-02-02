@@ -110,7 +110,7 @@ const index = (props) => {
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button
-                        className="accordion-button collapsed"
+                        className="accordion-button"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
@@ -123,9 +123,8 @@ const index = (props) => {
                     </h2>
                     <div
                       id="collapseOne"
-                      className="accordion-collapse collapse"
+                      className="accordion-collapse collapse show"
                       aria-labelledby="headingOne"
-                      data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
                         <a
@@ -187,7 +186,7 @@ const index = (props) => {
                   <div className="accordion-item border">
                     <h2 className="accordion-header" id="headingTwo">
                       <button
-                        className="accordion-button collapsed"
+                        className="accordion-button"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -200,9 +199,8 @@ const index = (props) => {
                     </h2>
                     <div
                       id="collapseTwo"
-                      className="accordion-collapse collapse"
+                      className="accordion-collapse collapse show"
                       aria-labelledby="headingTwo"
-                      data-bs-parent="#accordionExample"
                       style={{ color: "#fff" }}
                     >
                       <div className="accordion-body">

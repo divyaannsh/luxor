@@ -99,7 +99,12 @@ function MyApp({ Component, pageProps }) {
           </div>
         )}
         <Header all_main_cat_wise_prods={all_main_cat_wise_prods} />
-        <NextNProgress color="#ffffff" />
+        <NextNProgress
+          color="#ed1b24"
+          height={3}
+          showOnShallow={false}
+          options={{ showSpinner: false }}
+        />
         <Component {...pageProps} />
       </div>
     </React.Fragment>

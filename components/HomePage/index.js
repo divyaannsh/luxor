@@ -1636,10 +1636,10 @@ function App(props) {
       </section>
       {/* END Art Gallery Components*/}
 
-      {/* Look Book Components */}
-      < section className="py-1" >
+      {/* Look Book Components - centered below Art Gallery like reference */}
+      <section className="py-4 pt-5">
         <div className="container">
-          <h1 className="fs-50 text-center my-5 fw-600">Look Book</h1>
+          <h1 className="fs-50 text-center my-4 my-md-5 fw-600">Look Book</h1>
 
           <div className="row mt-4">
             <div
@@ -1677,7 +1677,7 @@ function App(props) {
             </div>
           </div>
         </div>
-      </section >
+      </section>
       {/*END  Look Book Components */}
 
       {/* Happy Customer Components */}

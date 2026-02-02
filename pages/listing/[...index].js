@@ -416,26 +416,27 @@ const index = (props) => {
                                     );
                                   }}
                                 >
-                                  <div className="card shadow border-0 h-100 bg-transparent">
+                                  <div className="card shadow border-0 h-100 bg-transparent listing-product-card">
                                     <div className=" card-header border-0 bg-transparent p-3">
                                       <h3 className="fs-20 text_black fw-500">
                                         {" "}
                                         {ele.name}
                                       </h3>
                                     </div>
-                                    <div className="card-body  d-flex flex-column justify-content-evenly">
+                                    <div className="card-body d-flex flex-column justify-content-evenly">
                                       <div className="listing-card-img-wrap">
                                         {image_file && image_file !== "" ? (
                                           <Image
-                                            width={300}
-                                            height={300}
-                                            style={{ mixBlendMode: "multiply", objectFit: "contain" }}
-                                            className="img-fluid min_height position_static"
+                                            width={560}
+                                            height={560}
+                                            sizes="(max-width: 576px) 50vw, (max-width: 992px) 33vw, 280px"
+                                            style={{ objectFit: "contain" }}
+                                            className="img-fluid min_height listing-product-img"
                                             src={image_file}
                                             alt={ele.name || "Products"}
                                             priority={index < 6}
+                                            quality={90}
                                             onError={(e) => {
-                                              // Fallback to logo if image fails to load
                                               if (e && e.target) {
                                                 e.target.src = Logo.src || "/assets/luxorlogo.png";
                                               }
@@ -445,8 +446,8 @@ const index = (props) => {
                                           <Image
                                             width={300}
                                             height={70}
-                                            style={{ mixBlendMode: "multiply", objectFit: "contain" }}
-                                            className="img-fluid min_height position_static"
+                                            style={{ objectFit: "contain" }}
+                                            className="img-fluid min_height listing-product-img"
                                             src={Logo}
                                             alt={ele.name || "Products"}
                                           />

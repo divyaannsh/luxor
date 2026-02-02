@@ -2375,23 +2375,49 @@ transition: all 1s ease; */
   max-height: 240px !important;
 }
 
-/* Listing page: prevent pen image cropping - enough room for full product + rotation */
+/* Listing page: show full product image like product page - centered, no cropping */
 .listing-card-img-wrap {
-  min-height: 300px;
-  padding: 24px 16px;
+  height: 320px;
+  min-height: 320px;
+  padding: 20px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: visible;
+  position: relative;
 }
 
-.listing-card-img-wrap .min_height,
-.listing-card-img-wrap img {
-  max-height: 300px !important;
+/* Next.js Image wrapper - center content */
+.listing-card-img-wrap > span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 320px !important;
+}
+
+.listing-card-img-wrap img,
+.listing-card-img-wrap .listing-product-img {
   width: auto !important;
   height: auto !important;
-  max-width: 100%;
-  object-fit: contain;
+  max-width: 100% !important;
+  max-height: 280px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+  /* Sharper downscale on WebKit; avoid blur from scaling */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+}
+
+.listing-card-img-wrap .min_height {
+  max-height: 280px !important;
+}
+
+/* Ensure listing card doesn't clip the image */
+.listing-product-card .card-body {
+  overflow: visible;
 }
 
 .accordion-item {

@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import LuxorGroupbrandsinindia from "/public/assets/images/Overview/LuxorGroupbrandsinindia.png";
 import banner from "/public/assets/images/Overview/Overview Section Banner.jpg";
@@ -44,7 +46,13 @@ const index = () => {
         <>
             <section>
                 <div>
-                    <Image src={banner} alt="banner" className="w-100 img-fluid" />
+                    <LazyLoadImage 
+                        src={banner} 
+                        alt="banner" 
+                        className="w-100 img-fluid"
+                        effect="blur"
+                        placeholderSrc="/assets/placeholder.png"
+                    />
                 </div>
             </section>
             <section className="pt-3 pb-5">
@@ -67,10 +75,12 @@ const index = () => {
                         >
                         </div>
                         <div className="col-md-4 mb-4 px-md-1">
-                            <Image
+                            <LazyLoadImage
                                 src={birthofluxor}
                                 alt="birth of luxor"
                                 className="img-fluid w-100"
+                                effect="blur"
+                                placeholderSrc="/assets/placeholder.png"
                             />
                         </div>
                         <Link href={"/start"}>
@@ -78,10 +88,12 @@ const index = () => {
                                 className="col-md-4 mb-4 px-md-1"
                                 style={{ cursor: "pointer" }}
                             >
-                                <Image
+                                <LazyLoadImage
                                     src={fortyyearsImg}
                                     alt="40 Years"
                                     className="img-fluid mw-100"
+                                    effect="blur"
+                                    placeholderSrc="/assets/placeholder.png"
                                 />
                             </div>
                         </Link>
@@ -112,7 +124,7 @@ const index = () => {
                         muted
                         className={style["video-img1"]}
                         loop
-                        src="/assets/videos/journey.mp4"
+                        src="/dot.mp4"
                     />
                 </div>
             </section>
@@ -127,27 +139,33 @@ const index = () => {
                 <div className="container">
                     <div >
                         <div className="partner-cont">
-                            <Image src={success} alt="homepage" />
+                            <LazyLoadImage 
+                                src={success} 
+                                alt="homepage" 
+                                className="img-fluid"
+                                effect="blur"
+                                placeholderSrc="/assets/placeholder.png"
+                            />
                         </div>
                     </div>
                 </div>
             </section>
             <div class="achievements">
                 <div class="achievement">
-                    <div class="icon"><Image height={90} width={90} src={luxor1} alt="Pen icon" /></div>
+                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor1} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
                     <div class="description">Pioneer of writing<br /> instruments<br /> industry in India</div>
                 </div>
                 <div class="achievement">
-                    <div class="icon"><Image height={90} width={90} src={luxor2} alt="Pen icon" /></div>
+                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor2} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
                     <div class="description">Celebrating<br /> <b>60 years</b> <br /> of innovation</div>
                 </div>
                 <div class="achievement">
-                    <div class="icon"><Image height={90} width={90} src={luxor3} alt="Pen icon" /></div>
+                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor3} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
                     <div class="description">Winner of <br /> <b>"SUPERBRAND"</b> <br /> award for 4 <br />consecutive years</div>
                 </div>
                 <div class="achievement">
-                    <div class="icon"><Image height={90} width={90} src={luxor4} alt="Pen icon" /></div>
-                    <div class="description">'Highest Exporter <br />of the Year Award'<br /> for 12 consecutive<br /> years</div>
+                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor4} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
+                    <div class="description">'Highest Exporter <br />of Year Award'<br /> for 12 consecutive<br /> years</div>
                 </div>
             </div>
 

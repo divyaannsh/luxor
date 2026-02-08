@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import MediaBanner from "public/assets/images/media/media-banner.jpg";
 import Gallery1 from "public/assets/images/media/1.jpg";
 import Gallery2 from "public/assets/images/media/2.jpg";
@@ -40,23 +42,34 @@ const index = () => {
     <div className="media-container">
       <section>
         <div>
-          <Image src={MediaBanner} alt="banner" className="w-100 img-fluid" />
+          <LazyLoadImage 
+            src={MediaBanner} 
+            alt="banner" 
+            className="w-100 img-fluid"
+            effect="blur"
+            placeholderSrc="/assets/placeholder.png"
+          />
         </div>
       </section>
       <section className="media-section-container container">
         <div className="media-gallery-container ">
           <div className="row">
             <div className="col-sm gallery-left">
-              <Image src={Gallery1} onClick={() => setOpen(true)} />
+              <LazyLoadImage 
+                src={Gallery1} 
+                onClick={() => setOpen(true)}
+                effect="blur"
+                placeholderSrc="/assets/placeholder.png"
+              />
 
               <div className="media-gallery-content">
                 <h5 className="media-gallery-title">
-                  Redefining the Face of the Future for Women{" "}
+                  Redefining Face of Future for Women{" "}
                 </h5>
               
                 <p className="media-gallery-description">
                   The motto of our lives needs to be to keep trying and to
-                  embrace change. We need to have the attitude of never giving
+                  embrace change. We need to have attitude of never giving
                   up, and if we do that, everything can be achieved.
                 </p>
               </div>
@@ -110,7 +123,11 @@ const index = () => {
               )}
             </div>
             <div className="col-sm gallery-right">
-              <Image src={Gallery2} />
+              <LazyLoadImage 
+                src={Gallery2}
+                effect="blur"
+                placeholderSrc="/assets/placeholder.png"
+              />
               <div className="media-gallery-content">
                 <h5 className="media-gallery-title">
                 Tomorrow's Luxor collaboration with Schneider Pen is future-oriented.
@@ -126,23 +143,31 @@ const index = () => {
           </div>
           <div className="row media-gallery-row2">
             <div className="col-sm gallery-left">
-              <Image src={Gallery3} />
+              <LazyLoadImage 
+                src={Gallery3}
+                effect="blur"
+                placeholderSrc="/assets/placeholder.png"
+              />
               <div className="media-gallery-content">
                 <h5 className="media-gallery-title">
                   Virat Kohli Announced Brand Ambassador For Luxor
                 </h5>
                 <p className="media-gallery-description">
-                  Luxor has appointed Virat Kohli as the new brand ambassador.
-                  Luxor, has unveiled a new brand film ahead of the ICC Cricket
+                  Luxor has appointed Virat Kohli as new brand ambassador.
+                  Luxor, has unveiled a new brand film ahead of ICC Cricket
                   World Cup 2023, featuring their new brand ambassador,
-                  cricketer Virat Kohli.The film showcases the Luxor Schneider
-                  LX MAX pen, the first brand launch as part of the Luxor
+                  cricketer Virat Kohli.The film showcases Luxor Schneider
+                  LX MAX pen, first brand launch as part of Luxor
                   Schneider partnership, signed earlier this year.
                 </p>
               </div>
             </div>
             <div className="col-sm gallery-right">
-              <Image src={Gallery4} />
+              <LazyLoadImage 
+                src={Gallery4}
+                effect="blur"
+                placeholderSrc="/assets/placeholder.png"
+              />
               <div className="media-gallery-content">
                 <h5 className="media-gallery-title">
                   Luxor to be a Rs 1000 crore company in three to five years
@@ -152,20 +177,10 @@ const index = () => {
                   crore company in the next 3-5 years and to grow its market
                   share from current 22 per cent to 30 per cent in its operating
                   industry segments, said Pooja Jain Gupta, Managing Director of
-                  the company in an interview with Sangeetha G.
+                  company in an interview with Sangeetha G.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="media-news-section">
-          <h1 className="media-news-title">Featured Across</h1>
-          <div className="media-news-carousel">
-            <Slider {...settings}>
-              {carouselItems.map((item, index) => (
-                <div key={`carousel-item-${index}`}>{item}</div>
-              ))}
-            </Slider>
           </div>
         </div>
       </section>

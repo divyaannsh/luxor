@@ -125,7 +125,6 @@ function App(props) {
 
   const switchVideo = (videoIndex) => {
     const video = document.getElementById('bannerVideo');
-    const dots = document.querySelectorAll('.video-dot');
     const videos = ['/Map (2).mp4', '/dot.mp4'];
     
     if (video) {
@@ -133,10 +132,13 @@ function App(props) {
       video.load();
       video.play();
       
-      // Update dots opacity
-      dots.forEach((dot, index) => {
-        dot.style.opacity = index === videoIndex ? '1' : '0.5';
-      });
+      // Auto-play next video when current one ends
+      video.onended = () => {
+        const nextIndex = (videoIndex + 1) % videos.length;
+        video.src = videos[nextIndex];
+        video.load();
+        video.play();
+      };
     }
   };
 
@@ -315,7 +317,13 @@ function App(props) {
               </div>
             </div>
             <div className="col-md-6 home1-img wow animate__fadeInRight animate__animated  ">
-              <Image src={worldMap} className="img-fluid ms-md-5" alt="Map" />
+              <LazyLoadImage 
+                src={worldMap} 
+                className="img-fluid ms-md-5" 
+                alt="Map"
+                effect="blur"
+                placeholderSrc="/assets/placeholder.png"
+              />
             </div>
           </div>
         </div>
@@ -1434,7 +1442,13 @@ function App(props) {
             <div className="row">
               <div className="col-12">
                 <div className="partner-cont">
-                  <Image src={revamped} alt="homepage" className="img-fluid" />
+                  <LazyLoadImage 
+                    src={revamped} 
+                    alt="homepage" 
+                    className="img-fluid"
+                    effect="blur"
+                    placeholderSrc="/assets/placeholder.png"
+                  />
                 </div>
               </div>
             </div>
@@ -1549,14 +1563,22 @@ function App(props) {
                 data-wow-delay="0.2s"
                 className="wow  animate__fadeInLeft  animate__animated"
               >
-                <Image className=" img-fluid" src={ReuseImage1} alt="Re Use" />
+                <LazyLoadImage 
+                  className=" img-fluid" 
+                  src={ReuseImage1} 
+                  alt="Re Use"
+                  effect="blur"
+                  placeholderSrc="/assets/placeholder.png"
+                />
               </span>
             </div>
             <span className="wow animate__zoomIn animate__animated" style={{ width: "25%" }}>
-              <Image
+              <LazyLoadImage
                 className=" img-fluid reuse-image "
                 src={ReuseImage}
                 alt="Re Use"
+                effect="blur"
+                placeholderSrc="/assets/placeholder.png"
               />
             </span>
             <div className="align-self-end w_20" style={{ width: "18%" }}>
@@ -1564,7 +1586,13 @@ function App(props) {
                 data-wow-delay="1.2s"
                 className=" wow animate__fadeInRight animate__animated"
               >
-                <Image className=" img-fluid " src={ReuseImage6} alt="Re Use" />
+                <LazyLoadImage 
+                  className=" img-fluid " 
+                  src={ReuseImage6} 
+                  alt="Re Use"
+                  effect="blur"
+                  placeholderSrc="/assets/placeholder.png"
+                />
               </span>
             </div>
           </div>
@@ -1574,10 +1602,12 @@ function App(props) {
                 data-wow-delay="0.5s"
                 className=" wow animate__fadeInBottomLeft animate__animated"
               >
-                <Image
+                <LazyLoadImage
                   className=" img-fluid reuse-image"
                   src={ReuseImage2}
                   alt="Re Use"
+                  effect="blur"
+                  placeholderSrc="/assets/placeholder.png"
                 />
               </span>
             </div>
@@ -1586,36 +1616,42 @@ function App(props) {
                 data-wow-delay="1s"
                 className=" wow animate__fadeInBottomRight animate__animated"
               >
-                <Image
+                <LazyLoadImage
                   className="  img-fluid reuse-image"
                   src={ReuseImage5}
                   alt="Re Use"
+                  effect="blur"
+                  placeholderSrc="/assets/placeholder.png"
                 />
               </span>
             </div>
           </div>
-          <div className="d-flex mt-0 gap-5 justify-content-center">
-            <div className="w_20" style={{ width: "18%" }}>
+          <div className="d-flex mt-4 gap-5 justify-content-between">
+            <div style={{ marginLeft: "16%", width: "18%" }} className="w_20">
               <span
                 data-wow-delay="0.7s"
                 className=" wow animate__fadeInUp animate__animated"
               >
-                <Image
+                <LazyLoadImage
                   className="  img-fluid reuse-image"
                   src={ReuseImage3}
                   alt="Re Use"
+                  effect="blur"
+                  placeholderSrc="/assets/placeholder.png"
                 />
               </span>
             </div>
-            <div className="w_20" style={{ width: "18%" }}>
+            <div style={{ marginRight: "16%", width: "18%" }} className="w_20">
               <span
                 data-wow-delay="0.9s"
                 className=" wow animate__fadeInUp animate__animated"
               >
-                <Image
+                <LazyLoadImage
                   className=" img-fluid reuse-image"
                   src={ReuseImage4}
                   alt="Re Use"
+                  effect="blur"
+                  placeholderSrc="/assets/placeholder.png"
                 />
               </span>
             </div>

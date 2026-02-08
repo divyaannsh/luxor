@@ -224,7 +224,7 @@ function index() {
                     <i className="fa-brands fa-square-facebook fs-24 me-2"></i>
                   </a>
                   <a
-                    href="https://www.instagram.com/luxorpenofficial//"
+                    href="https://www.instagram.com/luxorpenofficial/"
                     style={{ color: "#fff" }}
                     target="_blank"
                   >
@@ -246,6 +246,9 @@ function index() {
           <div className="py-4">
             <h3 className="text-white fs-16 text-center">
               Copyright Luxor {new Date().getFullYear()} | All Rights Reserved
+            </h3>
+            <h3 className="text-white fs-14 text-center mt-2">
+              This site is managed by <a href="https://www.sociapa.com/" target="_blank" rel="noopener noreferrer" style={{ color: "#fff" }}>Sociapa</a>
             </h3>
           </div>
         </div>

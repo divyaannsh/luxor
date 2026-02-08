@@ -123,6 +123,23 @@ function App(props) {
     }
   };
 
+  const switchVideo = (videoIndex) => {
+    const video = document.getElementById('bannerVideo');
+    const dots = document.querySelectorAll('.video-dot');
+    const videos = ['/Map (2).mp4', '/dot.mp4'];
+    
+    if (video) {
+      video.src = videos[videoIndex];
+      video.load();
+      video.play();
+      
+      // Update dots opacity
+      dots.forEach((dot, index) => {
+        dot.style.opacity = index === videoIndex ? '1' : '0.5';
+      });
+    }
+  };
+
   function newLaumch() {
     let pen_marker_line = document.querySelectorAll(".pen_marker_line");
     let marker_marks = document.querySelectorAll(".new_launch_marker img");
@@ -1427,22 +1444,22 @@ function App(props) {
       {/* END creating Impresive World Wide Component */}
 
       {/* Our Journey Component - Single Video */}
-      <section className="py-5 pt-1">
-        <div className="container-fluid p-0 vid-section">
+      <section className="py-5 pt-1 p-0">
+        <div className="container-fluid p-0">
           <h1 className="fs-50 text-center my-5 fw-600">Our Journey</h1>
           <div className="">
             <div className="row">
-              <div className="col-12">
+              <div className="col-12 p-0">
                 <video
                   autoPlay
                   muted
                   loop
-                  className={`img-fluid ${style["video-img1"]}`}
+                  className="w-100"
                   src="/assets/videos/journey.mp4"
                   style={{
-                    width: '100%',
-                    maxHeight: '590px',
-                    objectFit: 'contain',
+                    width: '100vw',
+                    height: 'auto',
+                    objectFit: 'cover',
                     display: 'block'
                   }}
                   onError={(e) => {
@@ -1456,6 +1473,54 @@ function App(props) {
         </div>
       </section>
       {/* END Our Journey Component */}
+
+      {/* Video Banner Section */}
+      <section className="py-5 p-0">
+        <div className="w-100">
+          <div className="w-100">
+            <div className="col-12 p-0">
+              <div className="position-relative">
+                <video
+                  id="bannerVideo"
+                  className="w-100"
+                  style={{
+                    width: '100vw',
+                    objectFit: 'cover',
+                    borderRadius: '0px',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                  }}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  src="/Map (2).mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
+                
+                {/* Dots Indicator */}
+                <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3">
+                  <div className="d-flex gap-2">
+                    <button
+                      className="video-dot rounded-circle bg-white border-0"
+                      style={{ width: '12px', height: '12px', opacity: '1' }}
+                      onClick={() => switchVideo(0)}
+                      aria-label="Switch to first video"
+                    />
+                    <button
+                      className="video-dot rounded-circle bg-white border-0"
+                      style={{ width: '12px', height: '12px', opacity: '0.5' }}
+                      onClick={() => switchVideo(1)}
+                      aria-label="Switch to second video"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* END Video Banner Section */}
 
       {/* Environment Components */}
       <section className="py-2 pt-1">

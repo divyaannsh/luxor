@@ -183,6 +183,16 @@ const index = () => {
             </div>
           </div>
         </div>
+        <div className="media-news-section">
+          <h1 className="media-news-title">Featured Across</h1>
+          <div className="media-news-carousel">
+            <Slider {...settings}>
+              {carouselItems.map((item, index) => (
+                <div key={`carousel-item-${index}`}>{item}</div>
+              ))}
+            </Slider>
+          </div>
+        </div>
       </section>
     </div>
   );

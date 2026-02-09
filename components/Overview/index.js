@@ -5,6 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 import LuxorGroupbrandsinindia from "/public/assets/images/Overview/LuxorGroupbrandsinindia.png";
 import banner from "/public/assets/images/Overview/Overview Section Banner.jpg";
+import overviewBanner from "/public/assets/images/Overview/Overview Section Banner.avif";
 import revamped from "/public/assets/images/Overview/about-us-revamped.png";
 import success from "/public/assets/images/Overview/OurInfra Structure.png";
 import luor from "/public/assets/images/Overview/Building & Pen Element.png";
@@ -55,7 +56,15 @@ const index = () => {
                     />
                 </div>
             </section>
-            <section className="pt-3 pb-5">
+            <section className="pt-3 pb-5 p-0">
+                <div className="w-100">
+                    <img 
+                        src="/assets/images/Overview/Overview Section Banner.avif" 
+                        alt="Overview Section Banner" 
+                        className="w-100 img-fluid"
+                        style={{ width: '100vw', objectFit: 'cover' }}
+                    />
+                </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-2"></div>
@@ -108,6 +117,34 @@ const index = () => {
                 className="img-fluid w-100"
               />
                     </div> */}
+                    </div>
+                </div>
+            </section>
+            <section className="py-5">
+                <div className="container">
+                    <div className="row mt-5">
+                        <div
+                            className="col-md-2 mb-2 px-md-1"
+                        >
+                        </div>
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <img
+                                src="/assets/images/Overview/birth-of-luxor.avif"
+                                alt="birth of luxor"
+                                className="img-fluid w-100"
+                            />
+                        </div>
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <img
+                                src="/assets/images/Overview/fortyyears.avif"
+                                alt="40 Years"
+                                className="img-fluid w-100"
+                            />
+                        </div>
+                        <div
+                            className="col-md-2 mb-2 px-md-1"
+                        >
+                        </div>
                     </div>
                 </div>
             </section>

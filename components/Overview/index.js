@@ -12,10 +12,6 @@ import datetat from "/public/assets/images/Overview/bwlow.png";
 import pen from "/public/assets/images/Overview/pen.png";
 import plexconsil from "/public/assets/images/aboutpage/webp/plexconsil.webp";
 import wim from "/public/assets/images/aboutpage/webp/wim.webp";
-import luxor1 from "/public/assets/images/Overview/luxor1.png";
-import luxor2 from "/public/assets/images/Overview/luxor2.png";
-import luxor3 from "/public/assets/images/Overview/luxor3.png";
-import luxor4 from "/public/assets/images/Overview/luxor4.png";
 import Ap from "/public/assets/images/certificates/Ap.jpg";
 import Ce from "/public/assets/images/certificates/Ce.jpg";
 import Eco from "/public/assets/images/certificates/Eco.jpg";
@@ -188,19 +184,19 @@ const index = () => {
             </section>
             <div class="achievements">
                 <div class="achievement">
-                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor1} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
+                    <div class="icon"><img height={90} width={90} src="/assets/images/Overview/luxor1.png" alt="Pen icon" /></div>
                     <div class="description">Pioneer of writing<br /> instruments<br /> industry in India</div>
                 </div>
                 <div class="achievement">
-                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor2} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
+                    <div class="icon"><img height={90} width={90} src="/assets/images/Overview/luxor2.png" alt="Pen icon" /></div>
                     <div class="description">Celebrating<br /> <b>60 years</b> <br /> of innovation</div>
                 </div>
                 <div class="achievement">
-                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor3} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
+                    <div class="icon"><img height={90} width={90} src="/assets/images/Overview/luxor3.png" alt="Pen icon" /></div>
                     <div class="description">Winner of <br /> <b>"SUPERBRAND"</b> <br /> award for 4 <br />consecutive years</div>
                 </div>
                 <div class="achievement">
-                    <div class="icon"><LazyLoadImage height={90} width={90} src={luxor4} alt="Pen icon" effect="blur" placeholderSrc="/assets/placeholder.png" /></div>
+                    <div class="icon"><img height={90} width={90} src="/assets/images/Overview/luxor4.png" alt="Pen icon" /></div>
                     <div class="description">'Highest Exporter <br />of Year Award'<br /> for 12 consecutive<br /> years</div>
                 </div>
             </div>
@@ -418,12 +414,12 @@ const index = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button className="carousel-control-prev button_left" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
-                                <span className="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev" style={{ position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)', zIndex: '1' }}>
+                                <span className="carousel-control-prev-icon bg-dark" aria-hidden="true" style={{ width: '30px', height: '30px' }}></span>
                                 <span className="visually-hidden">Previous</span>
                             </button>
-                            <button className="carousel-control-next button_right" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
-                                <span className="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next" style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)', zIndex: '1' }}>
+                                <span className="carousel-control-next-icon bg-dark" aria-hidden="true" style={{ width: '30px', height: '30px' }}></span>
                                 <span className="visually-hidden">Next</span>
                             </button>
                             <ol className="carousel-indicators">

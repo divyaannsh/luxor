@@ -326,7 +326,7 @@ const Header = (props) => {
             <ul className="navbar-nav align-self-center pt-2 d-flex justify-content-between w-100 d-flex gap-3">
               <li className="nav-item ">
                 <Link href="/" className="fs-16 text_black">
-                  <a className="text_black ahover">Home</a>
+                  <a className="text_black ahover" style={{ textDecoration: 'none' }}>Home</a>
                 </Link>
               </li>
               <div className="dropdown">
@@ -539,13 +539,14 @@ const Header = (props) => {
               </div>
               <li className="nav-item">
                 <Link href="/events">
-                  <a className="fs-16 text_black ahover">Events</a>
+                  <a className="fs-16 text_black ahover" style={{ textDecoration: 'none' }}>Events</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <a
                   className="fs-16 text_black ahover"
                   href="/assets/luxor-flip/index.html"
+                  style={{ textDecoration: 'none' }}
                 >
                   E- Catalogue
                 </a>
@@ -553,17 +554,17 @@ const Header = (props) => {
 
               <li className="nav-item">
                 <Link href="/media">
-                  <a className="fs-16 text_black ahover">Media</a>
+                  <a className="fs-16 text_black ahover" style={{ textDecoration: 'none' }}>Media</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link href="/art&gallery">
-                  <a className="fs-16 text_black ahover">Art Gallery</a>
+                  <a className="fs-16 text_black ahover" style={{ textDecoration: 'none' }}>Art Gallery</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link href="/career">
-                  <a className="fs-16 text_black ahover">Career</a>
+                  <a className="fs-16 text_black ahover" style={{ textDecoration: 'none' }}>Career</a>
                 </Link>
               </li>
               <li className="nav-item">
@@ -574,6 +575,7 @@ const Header = (props) => {
                     router.push("/contact");
                   }}
                   href=""
+                  style={{ textDecoration: 'none' }}
                 >
                   Contact Us
                 </a>

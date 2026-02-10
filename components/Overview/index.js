@@ -5,7 +5,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 import LuxorGroupbrandsinindia from "/public/assets/images/Overview/LuxorGroupbrandsinindia.png";
 import banner from "/public/assets/images/Overview/Overview Section Banner.jpg";
-import overviewBanner from "/public/assets/images/Overview/Overview Section Banner.avif";
 import revamped from "/public/assets/images/Overview/about-us-revamped.png";
 import success from "/public/assets/images/Overview/OurInfra Structure.png";
 import luor from "/public/assets/images/Overview/Building & Pen Element.png";

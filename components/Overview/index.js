@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import Image from "next/image";
 
 import LuxorGroupbrandsinindia from "/public/assets/images/Overview/LuxorGroupbrandsinindia.png";
 import banner from "/public/assets/images/Overview/Overview Section Banner.jpg";
@@ -28,7 +29,7 @@ import style from "../../components/HomePage/style.module.css";
 import fortyyearsImg from "/public/assets/images/aboutpage/fortyyears.jpg";
 import birthofluxor from "/public/assets/images/aboutpage/birth-of-luxor.jpg";
 import Sustainable from "/public/assets/images/Overview/Sustainable.jpg";
-import Image from "next/image";
+
 function scrollLeft() {
     document.querySelector("div").scrollLeft -= 100;
 }
@@ -42,9 +43,9 @@ const index = () => {
         <>
             <section>
                 <div>
-                    <LazyLoadImage 
-                        src={banner} 
-                        alt="banner" 
+                    <LazyLoadImage
+                        src={banner}
+                        alt="banner"
                         className="w-100 img-fluid"
                         effect="blur"
                         placeholderSrc="/assets/placeholder.png"
@@ -53,9 +54,9 @@ const index = () => {
             </section>
             <section className="pt-3 pb-5 p-0">
                 <div className="w-100">
-                    <img 
-                        src="/assets/images/Overview/Overview Section Banner.avif" 
-                        alt="Overview Section Banner" 
+                    <img
+                        src="/assets/images/Overview/Overview Section Banner.avif"
+                        alt="Overview Section Banner"
                         className="w-100 img-fluid"
                         style={{ width: '100vw', objectFit: 'cover' }}
                     />
@@ -171,9 +172,9 @@ const index = () => {
                 <div className="container">
                     <div >
                         <div className="partner-cont">
-                            <LazyLoadImage 
-                                src={success} 
-                                alt="homepage" 
+                            <LazyLoadImage
+                                src={success}
+                                alt="homepage"
                                 className="img-fluid"
                                 effect="blur"
                                 placeholderSrc="/assets/placeholder.png"
@@ -200,6 +201,8 @@ const index = () => {
                     <div class="description">'Highest Exporter <br />of Year Award'<br /> for 12 consecutive<br /> years</div>
                 </div>
             </div>
+
+
 
             {/* <section className="bg_grey">
                 <div className="container">
@@ -364,10 +367,46 @@ const index = () => {
 
                 <Image style={{ height: '100px', width: "20px", margin: '0 10px 0 10px 0' }} alt="AP Certified Materials Institute Logo" src={ap} />
             </div> */}
+            <section className="py-5">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-6">
+                            <div className="text-center">
+                                <img
+                                    src="/assets/100_Cust.png"
+                                    alt="100 Customer"
+                                    className="img-fluid mb-4"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <img
+                                    src="/assets/100_Quality.png"
+                                    alt="100 Quality"
+                                    className="img-fluid mb-4"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <img
+                                    src="/assets/Eco_Friendly.png"
+                                    alt="Eco Friendly"
+                                    className="img-fluid"
+                                />
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <img
+                                src="/map.avif"
+                                alt="Luxor Map"
+                                className="img-fluid w-100"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="certifications pb-5">
                 <div className="container">
                     <h2 class="fs-40 text-center my-5 fw-600" text_black id="award">
-                    Certificates
+                        Certificates
                     </h2>
                     <div className="row">
                         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">

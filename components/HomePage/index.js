@@ -35,7 +35,7 @@ import ReuseImage3 from "public/assets/Smooth.png";
 import ReuseImage4 from "public/assets/100_Quality.png";
 import ReuseImage5 from "public/assets/100_Cust.png";
 import ReuseImage6 from "public/assets/3r.png";
-import worldMap from "public/assets/map.png";
+import worldMap from "public/assets/map.avif";
 import style from "./style.module.css";
 import { useRouter } from "next/router";
 import Image23 from "public/assets/award1.png";
@@ -123,29 +123,12 @@ function App(props) {
     }
   };
 
-  const switchVideo = (videoIndex) => {
-    const video = document.getElementById('bannerVideo');
-    const videos = ['/Map (2).mp4', '/dot.mp4'];
-    
-    if (video) {
-      video.src = videos[videoIndex];
-      video.load();
-      video.play();
-      
-      // Auto-play next video when current one ends
-      video.onended = () => {
-        const nextIndex = (videoIndex + 1) % videos.length;
-        video.src = videos[nextIndex];
-        video.load();
-        video.play();
-      };
-    }
-  };
+
 
   function newLaumch() {
     let pen_marker_line = document.querySelectorAll(".pen_marker_line");
     let marker_marks = document.querySelectorAll(".new_launch_marker img");
-    
+
     // Only run GSAP animations if elements exist
     if (marker_marks && marker_marks.length > 0) {
       gsap.to(marker_marks, {
@@ -160,7 +143,7 @@ function App(props) {
         },
       });
     }
-    
+
     if (pen_marker_line && pen_marker_line.length > 0) {
       gsap.fromTo(
         pen_marker_line,
@@ -170,25 +153,25 @@ function App(props) {
           opacity: 5,
         },
 
-      {
-        duration: 2,
-        width: 400,
-        height: "100%",
-        opacity: 0,
-        borderRadius: "0 0 50% 50% ",
-        height: "fit-content",
-        backgroundColor: "rgba(99, 97, 7, 0.8)",
-        zIndex: -2,
-        scrollTrigger: {
-          trigger: pen_marker_line,
-          toggleActions: "restart pause resume restart",
+        {
+          duration: 2,
+          width: 400,
+          height: "100%",
+          opacity: 0,
+          borderRadius: "0 0 50% 50% ",
+          height: "fit-content",
+          backgroundColor: "rgba(99, 97, 7, 0.8)",
+          zIndex: -2,
+          scrollTrigger: {
+            trigger: pen_marker_line,
+            toggleActions: "restart pause resume restart",
 
-          onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-          start: "top 70%",
-          end: "bottom 50%",
-        },
-      }
-    );
+            onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+            start: "top 70%",
+            end: "bottom 50%",
+          },
+        }
+      );
     }
   }
   function drawPen(pen_div, pen_image_div, pen_draw_div, pen_colour, card_div, size_div) {
@@ -200,36 +183,36 @@ function App(props) {
     // Only run GSAP animations if elements exist
     if (penDiv && penDiv.length > 0) {
       gsap.to(penDiv, {
-      //  backgroundColor:"red",
-      // width: 300,
-      // scale: 1,
-      // dirat1ion: 2,
-      translateY: -40,
-      duration: 2,
-    });
+        //  backgroundColor:"red",
+        // width: 300,
+        // scale: 1,
+        // dirat1ion: 2,
+        translateY: -40,
+        duration: 2,
+      });
 
-    gsap.to(card, {
-      backgroundColor: "#da3131",
-    });
+      gsap.to(card, {
+        backgroundColor: "#da3131",
+      });
 
-    gsap.to(Image, {
-      //  backgroundColor:"red",
-      x: 100,
-      // width: 300,
-      // height: "86%",
-      scale: 1,
-      // dirat1ion: 2,
-      duration: 2,
-    });
+      gsap.to(Image, {
+        //  backgroundColor:"red",
+        x: 100,
+        // width: 300,
+        // height: "86%",
+        scale: 1,
+        // dirat1ion: 2,
+        duration: 2,
+      });
 
-    gsap.to(marker_line, {
-      //  backgroundColor:"red",
-      borderTop: `${size_div} solid ${pen_colour}`,
-      width: 100,
-      scale: 1,
-      // dirat1ion: 2,
-      duration: 2,
-    });
+      gsap.to(marker_line, {
+        //  backgroundColor:"red",
+        borderTop: `${size_div} solid ${pen_colour}`,
+        width: 100,
+        scale: 1,
+        // dirat1ion: 2,
+        duration: 2,
+      });
     }
   }
   function removeDrawPen(
@@ -317,9 +300,10 @@ function App(props) {
               </div>
             </div>
             <div className="col-md-6 home1-img wow animate__fadeInRight animate__animated  ">
-              <LazyLoadImage 
-                src={worldMap} 
-                className="img-fluid ms-md-5" 
+              <LazyLoadImage
+                src={worldMap.src}
+                className="ms-md-5"
+                style={{ maxWidth: '100%', height: 'auto' }}
                 alt="Map"
                 effect="blur"
                 placeholderSrc="/assets/placeholder.png"
@@ -960,8 +944,8 @@ function App(props) {
             </div>
           </div>
           {/* end of 12 */}
-{/* 13 */}
-<div
+          {/* 13 */}
+          <div
             className="posterBlock13new"
             onMouseEnter={(e) =>
               drawPen(
@@ -1008,7 +992,7 @@ function App(props) {
           </div>
           {/* end of 13 */}
           {/* 14 */}
-{/* <div
+          {/* <div
             className="posterBlock14new"
             onMouseEnter={(e) =>
               drawPen(
@@ -1337,7 +1321,7 @@ function App(props) {
             <div className="textBlock pt-3">
               <span className="title">Fineliner</span>
             </div>
-          </div> 
+          </div>
         </div>
         <button
           onClick={scrollRight}
@@ -1442,9 +1426,9 @@ function App(props) {
             <div className="row">
               <div className="col-12">
                 <div className="partner-cont">
-                  <LazyLoadImage 
-                    src={revamped} 
-                    alt="homepage" 
+                  <LazyLoadImage
+                    src={revamped}
+                    alt="homepage"
                     className="img-fluid"
                     effect="blur"
                     placeholderSrc="/assets/placeholder.png"
@@ -1491,6 +1475,7 @@ function App(props) {
       {/* Video Banner Section */}
       <section className="py-5 p-0">
         <div className="w-100">
+          <h1 className="fs-50 text-center my-5 fw-600">Our Presence</h1>
           <div className="w-100">
             <div className="col-12 p-0">
               <div className="position-relative">
@@ -1511,24 +1496,6 @@ function App(props) {
                 >
                   Your browser does not support the video tag.
                 </video>
-                
-                {/* Dots Indicator */}
-                <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3">
-                  <div className="d-flex gap-2">
-                    <button
-                      className="video-dot rounded-circle bg-white border-0"
-                      style={{ width: '12px', height: '12px', opacity: '1' }}
-                      onClick={() => switchVideo(0)}
-                      aria-label="Switch to first video"
-                    />
-                    <button
-                      className="video-dot rounded-circle bg-white border-0"
-                      style={{ width: '12px', height: '12px', opacity: '0.5' }}
-                      onClick={() => switchVideo(1)}
-                      aria-label="Switch to second video"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -1558,14 +1525,15 @@ function App(props) {
           </p>
 
           <div className="d-flex mt-2 justify-content-between">
-            <div className="align-self-end w_20" style={{ width: "18%" }}>
+            <div className="align-self-center w_20" style={{ width: "18%" }}>
               <span
                 data-wow-delay="0.2s"
                 className="wow  animate__fadeInLeft  animate__animated"
               >
-                <LazyLoadImage 
-                  className=" img-fluid" 
-                  src={ReuseImage1} 
+                <LazyLoadImage
+                  className="reuse-image"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  src={ReuseImage1.src}
                   alt="Re Use"
                   effect="blur"
                   placeholderSrc="/assets/placeholder.png"
@@ -1574,21 +1542,23 @@ function App(props) {
             </div>
             <span className="wow animate__zoomIn animate__animated" style={{ width: "25%" }}>
               <LazyLoadImage
-                className=" img-fluid reuse-image "
-                src={ReuseImage}
+                className="reuse-image"
+                style={{ maxWidth: '100%', height: 'auto' }}
+                src={ReuseImage.src}
                 alt="Re Use"
                 effect="blur"
                 placeholderSrc="/assets/placeholder.png"
               />
             </span>
-            <div className="align-self-end w_20" style={{ width: "18%" }}>
+            <div className="align-self-center w_20" style={{ width: "18%" }}>
               <span
                 data-wow-delay="1.2s"
                 className=" wow animate__fadeInRight animate__animated"
               >
-                <LazyLoadImage 
-                  className=" img-fluid " 
-                  src={ReuseImage6} 
+                <LazyLoadImage
+                  className="reuse-image"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  src={ReuseImage6.src}
                   alt="Re Use"
                   effect="blur"
                   placeholderSrc="/assets/placeholder.png"
@@ -1603,8 +1573,9 @@ function App(props) {
                 className=" wow animate__fadeInBottomLeft animate__animated"
               >
                 <LazyLoadImage
-                  className=" img-fluid reuse-image"
-                  src={ReuseImage2}
+                  className="reuse-image"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  src={ReuseImage2.src}
                   alt="Re Use"
                   effect="blur"
                   placeholderSrc="/assets/placeholder.png"
@@ -1617,8 +1588,9 @@ function App(props) {
                 className=" wow animate__fadeInBottomRight animate__animated"
               >
                 <LazyLoadImage
-                  className="  img-fluid reuse-image"
-                  src={ReuseImage5}
+                  className="reuse-image"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  src={ReuseImage5.src}
                   alt="Re Use"
                   effect="blur"
                   placeholderSrc="/assets/placeholder.png"
@@ -1633,8 +1605,9 @@ function App(props) {
                 className=" wow animate__fadeInUp animate__animated"
               >
                 <LazyLoadImage
-                  className="  img-fluid reuse-image"
-                  src={ReuseImage3}
+                  className="reuse-image"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  src={ReuseImage3.src}
                   alt="Re Use"
                   effect="blur"
                   placeholderSrc="/assets/placeholder.png"
@@ -1647,8 +1620,9 @@ function App(props) {
                 className=" wow animate__fadeInUp animate__animated"
               >
                 <LazyLoadImage
-                  className=" img-fluid reuse-image"
-                  src={ReuseImage4}
+                  className="reuse-image"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  src={ReuseImage4.src}
                   alt="Re Use"
                   effect="blur"
                   placeholderSrc="/assets/placeholder.png"
@@ -1814,11 +1788,11 @@ function App(props) {
           Be Our Partner/Reseller
         </h1>
         <div className="partner-cont">
-          <Image 
-            height={450} 
-            width={1000} 
-            src={Image18} 
-            alt="Luxor Partner Program" 
+          <Image
+            height={450}
+            width={1000}
+            src={Image18}
+            alt="Luxor Partner Program"
             onError={(e) => {
               console.error("Partner image failed to load:", e);
               e.target.src = "/assets/luxorlogo.png";
@@ -1841,9 +1815,9 @@ function App(props) {
                   <div className={`carousel-item ${certSlide === 0 ? "active" : ""}`}>
                     <div className="row">
                       <div className="col">
-                        <Image 
-                          src={Recycled} 
-                          alt="Recycled Certificate" 
+                        <Image
+                          src={Recycled}
+                          alt="Recycled Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1853,9 +1827,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={Reach} 
-                          alt="Reach Certificate" 
+                        <Image
+                          src={Reach}
+                          alt="Reach Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1865,9 +1839,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={ORK} 
-                          alt="ORK Certificate" 
+                        <Image
+                          src={ORK}
+                          alt="ORK Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1877,9 +1851,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={OHS} 
-                          alt="OHS Certificate" 
+                        <Image
+                          src={OHS}
+                          alt="OHS Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1889,9 +1863,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={ISO14001} 
-                          alt="ISO 14001 Certificate" 
+                        <Image
+                          src={ISO14001}
+                          alt="ISO 14001 Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1905,9 +1879,9 @@ function App(props) {
                   <div className={`carousel-item ${certSlide === 1 ? "active" : ""}`}>
                     <div className="row">
                       <div className="col">
-                        <Image 
-                          src={ISo9001} 
-                          alt="ISO 9001 Certificate" 
+                        <Image
+                          src={ISo9001}
+                          alt="ISO 9001 Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1917,9 +1891,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={EN71} 
-                          alt="EN71 Certificate" 
+                        <Image
+                          src={EN71}
+                          alt="EN71 Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1929,9 +1903,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={Eco} 
-                          alt="Eco Certificate" 
+                        <Image
+                          src={Eco}
+                          alt="Eco Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1941,9 +1915,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={Ce} 
-                          alt="CE Certificate" 
+                        <Image
+                          src={Ce}
+                          alt="CE Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1953,9 +1927,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={Ap} 
-                          alt="AP Certificate" 
+                        <Image
+                          src={Ap}
+                          alt="AP Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {
@@ -1965,9 +1939,9 @@ function App(props) {
                         />
                       </div>
                       <div className="col">
-                        <Image 
-                          src={Tpat} 
-                          alt="TPAT Certificate" 
+                        <Image
+                          src={Tpat}
+                          alt="TPAT Certificate"
                           width={200}
                           height={150}
                           onError={(e) => {

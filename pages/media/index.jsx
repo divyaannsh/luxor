@@ -42,10 +42,11 @@ const index = () => {
     <div className="media-container">
       <section>
         <div>
-          <LazyLoadImage 
-            src={MediaBanner} 
-            alt="banner" 
-            className="w-100 img-fluid"
+          <LazyLoadImage
+            src={MediaBanner.src}
+            alt="banner"
+            className="w-100"
+            style={{ maxWidth: '100%', height: 'auto' }}
             effect="blur"
             placeholderSrc="/assets/placeholder.png"
           />
@@ -55,9 +56,10 @@ const index = () => {
         <div className="media-gallery-container ">
           <div className="row">
             <div className="col-sm gallery-left">
-              <LazyLoadImage 
-                src={Gallery1} 
+              <LazyLoadImage
+                src={Gallery1.src}
                 onClick={() => setOpen(true)}
+                style={{ maxWidth: '100%', height: 'auto' }}
                 effect="blur"
                 placeholderSrc="/assets/placeholder.png"
               />
@@ -66,7 +68,7 @@ const index = () => {
                 <h5 className="media-gallery-title">
                   Redefining Face of Future for Women{" "}
                 </h5>
-              
+
                 <p className="media-gallery-description">
                   The motto of our lives needs to be to keep trying and to
                   embrace change. We need to have attitude of never giving
@@ -123,14 +125,15 @@ const index = () => {
               )}
             </div>
             <div className="col-sm gallery-right">
-              <LazyLoadImage 
-                src={Gallery2}
+              <LazyLoadImage
+                src={Gallery2.src}
+                style={{ maxWidth: '100%', height: 'auto' }}
                 effect="blur"
                 placeholderSrc="/assets/placeholder.png"
               />
               <div className="media-gallery-content">
                 <h5 className="media-gallery-title">
-                Tomorrow's Luxor collaboration with Schneider Pen is future-oriented.
+                  Tomorrow's Luxor collaboration with Schneider Pen is future-oriented.
                 </h5>
                 <p className="media-gallery-description">
                   One of India's largest writing instrument brands Luxor has
@@ -143,8 +146,9 @@ const index = () => {
           </div>
           <div className="row media-gallery-row2">
             <div className="col-sm gallery-left">
-              <LazyLoadImage 
-                src={Gallery3}
+              <LazyLoadImage
+                src={Gallery3.src}
+                style={{ maxWidth: '100%', height: 'auto' }}
                 effect="blur"
                 placeholderSrc="/assets/placeholder.png"
               />
@@ -163,8 +167,9 @@ const index = () => {
               </div>
             </div>
             <div className="col-sm gallery-right">
-              <LazyLoadImage 
-                src={Gallery4}
+              <LazyLoadImage
+                src={Gallery4.src}
+                style={{ maxWidth: '100%', height: 'auto' }}
                 effect="blur"
                 placeholderSrc="/assets/placeholder.png"
               />
@@ -183,16 +188,7 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="media-news-section">
-          <h1 className="media-news-title">Featured Across</h1>
-          <div className="media-news-carousel">
-            <Slider {...settings}>
-              {carouselItems.map((item, index) => (
-                <div key={`carousel-item-${index}`}>{item}</div>
-              ))}
-            </Slider>
-          </div>
-        </div>
+
       </section>
     </div>
   );

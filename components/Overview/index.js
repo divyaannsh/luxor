@@ -367,42 +367,7 @@ const index = () => {
 
                 <Image style={{ height: '100px', width: "20px", margin: '0 10px 0 10px 0' }} alt="AP Certified Materials Institute Logo" src={ap} />
             </div> */}
-            <section className="py-5">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-md-6">
-                            <div className="text-center">
-                                <img
-                                    src="/assets/100_Cust.png"
-                                    alt="100 Customer"
-                                    className="img-fluid mb-4"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <img
-                                    src="/assets/100_Quality.png"
-                                    alt="100 Quality"
-                                    className="img-fluid mb-4"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <img
-                                    src="/assets/Eco_Friendly.png"
-                                    alt="Eco Friendly"
-                                    className="img-fluid"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <img
-                                src="/map.avif"
-                                alt="Luxor Map"
-                                className="img-fluid w-100"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+
             <section className="certifications pb-5">
                 <div className="container">
                     <h2 class="fs-40 text-center my-5 fw-600" text_black id="award">
